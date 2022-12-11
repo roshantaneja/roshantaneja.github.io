@@ -17,16 +17,15 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          I like{' '}
-          <code className={styles.code}>systems programming</code>
+          {/*I like{' '}*/}
+          {/*<code className={styles.code}>systems programming</code>*/}
           <br>
           </br>
           <br>
           </br>
-          {/*<code>*/}
-          {/*  :(){ :|:& };:*/}
-          {/*</code>*/}
-          ^^^ paste in ur cmd pls 👉👈
+          <code className={styles.code}>
+            {":(){ :|:& };:"}
+          </code> {"<---"} paste in ur cmd pls 👉👈
           <br>
           </br>
           (dont actually do that its a fork bomb haha)
