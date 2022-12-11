@@ -1,20 +1,4 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
-
-module.exports = nextConfig
-
-// modified it from here on out
-
-const repo = 'https://github.com/Daroshi11260/daroshi11260.github.io'
-const assetPrefix = `/${repo}/`
-const basePath = `/${repo}`
-
-module.exports = {
-  assetPrefix: assetPrefix,
-  basePath: basePath,
-}
+// next.config.js
 
 const isGithubActions = process.env.GITHUB_ACTIONS || false
 
@@ -31,8 +15,4 @@ if (isGithubActions) {
 module.exports = {
   assetPrefix: assetPrefix,
   basePath: basePath,
-  images: {
-    loader: 'imgix',
-    path: 'the "domain" of your Imigix source',
-  },
 }
