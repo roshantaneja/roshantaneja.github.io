@@ -15,4 +15,8 @@ if (isGithubActions) {
 module.exports = {
   assetPrefix: assetPrefix,
   basePath: basePath,
+  images: {
+    loader: 'imgix',
+    path: 'https://daroshi11260.imgix.net',
+  },
 }
