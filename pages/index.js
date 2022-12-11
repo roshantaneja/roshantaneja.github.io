@@ -17,8 +17,19 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          I like to make{' '}
-          <code className={styles.code}>web applications</code>
+          I like{' '}
+          <code className={styles.code}>systems programming</code>
+          <br>
+          </br>
+          <br>
+          </br>
+          {/*<code>*/}
+          {/*  :(){ :|:& };:*/}
+          {/*</code>*/}
+          ^^^ paste in ur cmd pls 👉👈
+          <br>
+          </br>
+          (dont actually do that its a fork bomb haha)
         </p>
 
         <p className={styles.description}>Here are some of the projects i've worked on</p>
