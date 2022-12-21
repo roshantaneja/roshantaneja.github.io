@@ -7,7 +7,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Roshan Taneja</title>
-        <meta name="description" content="can i puts yo bawls in yo jaws" />
+        <meta name="description" content="can i puts my bawls in yo jaws" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
