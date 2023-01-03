@@ -13,7 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Hi, im <a href="https://roshan.codes">Roshan!</a>
+          Hi, im <a href="./resume/Roshan Taneja Resume.pdf" download>Roshan!</a>
         </h1>
 
         <p className={styles.description}>
