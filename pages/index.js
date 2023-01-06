@@ -13,7 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Hi, im <a href="./resume/Roshan Taneja Resume.pdf" download>Roshan!</a>
+          Hi, im <a href="./resume/Roshan Taneja Resume.pdf" download>Roshan Taneja!</a>
         </h1>
 
         <p className={styles.description}>
@@ -21,18 +21,17 @@ export default function Home() {
           {/*<code className={styles.code}>systems programming</code>*/}
           <br>
           </br>
-          <br>
-          </br>
-          <code className={styles.code}>
+          <a href="https://en.wikipedia.org/wiki/Fork_bomb" className={styles.code}>
             {":(){ :|:& };:"}
-          </code> {"<---"} paste in ur cmd pls 👉👈
+          </a> {"<---"} paste in ur cmd pls 👉👈
           <br>
           </br>
           (dont actually do that its a fork bomb haha)
         </p>
 
-        <p className={styles.description}>Here are some of the projects i've worked on</p>
 
+
+        <h2 className={styles.title}>Projects</h2>
         <div className={styles.grid}>
           <a href="https://github.com/Daroshi11260/APCSA" className={styles.card}>
             <h2>APCSA &rarr;</h2>
