@@ -6,20 +6,19 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
+         {/*// <!-- Google tag (gtag.js) -->*/}
+         {/*// <script async src="https://www.googletagmanager.com/gtag/js?id=G-6302CZ25FK"></script>*/}
+         {/*// <script>*/}
+         {/*//   window.dataLayer = window.dataLayer || [];*/}
+         {/*//   function gtag(){dataLayer.push(arguments);}*/}
+         {/*//   gtag('js', new Date());*/}
+         {/*//   gtag('config', 'G-6302CZ25FK');*/}
+         {/*// </script>*/}
         <title>Roshan Taneja</title>
         <meta name="description" content="can i puts my bawls in yo jaws" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6302CZ25FK"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-6302CZ25FK');
-      </script>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
