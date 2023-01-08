@@ -11,6 +11,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6302CZ25FK"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-6302CZ25FK');
+      </script>
+
       <main className={styles.main}>
         <h1 className={styles.title}>
           Hi, im <a href="https://roshan.codes">Roshan!</a>
@@ -57,7 +67,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a>Developed by Roshan Taneja</a>
+        <a>bing bong your opinion is wrong</a>
       </footer>
     </div>
   )
