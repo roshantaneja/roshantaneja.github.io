@@ -29,26 +29,30 @@ export default function Home() {
           (dont actually do that its a fork bomb haha)
         </p>
 
+        <a href="https://github.com/Daroshi11260" target="_blank" rel="noopener noreferrer" className={styles.description}>
+          Check out my Github! &rarr;
+        </a>
 
 
         <h2 className={styles.title}>Projects</h2>
+
         <div className={styles.grid}>
-          <a href="https://github.com/Daroshi11260/APCSA" className={styles.card}>
+          <a href="https://github.com/Daroshi11260/APCSA" target="_blank" rel="noopener noreferrer" className={styles.card}>
             <h2>APCSA &rarr;</h2>
             <p>Homework and project folder for my course learning of APCSA at school</p>
           </a>
 
-          <a href="https://github.com/Daroshi11260/AdventOfCode" className={styles.card}>
+          <a href="https://github.com/Daroshi11260/AdventOfCode" target="_blank" rel="noopener noreferrer" className={styles.card}>
             <h2>Advent Of Code &rarr;</h2>
             <p>Daily puzzle advent calendar and solutions repository</p>
           </a>
 
-          <a href="https://github.com/Daroshi11260/School_Notes" className={styles.card}>
+          <a href="https://github.com/Daroshi11260/School_Notes" target="_blank" rel="noopener noreferrer" className={styles.card}>
             <h2>School Notes &rarr;</h2>
             <p>Markdown based notetaking using github through obsidian</p>
           </a>
 
-          <a href="https://github.com/Daroshi11260/spaceinvaders-reinforcementlearning" className={styles.card}>
+          <a href="https://github.com/Daroshi11260/spaceinvaders-reinforcementlearning" target="_blank" rel="noopener noreferrer" className={styles.card}>
             <h2>Space Invaders &rarr;</h2>
             <p>Using reinforcement learning to beat space invaders</p>
           </a>
