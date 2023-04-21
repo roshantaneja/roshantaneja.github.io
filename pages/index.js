@@ -48,7 +48,7 @@ export default function Home() {
             <p>Daily puzzle advent calendar and solutions repository</p>
           </a>
 
-          <a href="https://github.com/Daroshi11260/School_Notes" target="_blank" rel="noopener noreferrer" className={styles.card}>
+          <a href="https://roshan.codes/School_Notes" target="_blank" rel="noopener noreferrer" className={styles.card}>
             <h2>School Notes &rarr;</h2>
             <p>Markdown based notetaking using github through obsidian</p>
           </a>
