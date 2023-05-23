@@ -57,6 +57,11 @@ export default function Home() {
             <h2>Space Invaders &rarr;</h2>
             <p>Using reinforcement learning to beat space invaders</p>
           </a>
+
+          <a href="https://roshantaneja.stck.me/" target="_blank" rel="noopener noreferrer" className={styles.card}>
+            <h2>My STCK &rarr;</h2>
+            <p>sometimes i write things and publish them here, check them out!</p>
+          </a>
         </div>
       </main>
 
