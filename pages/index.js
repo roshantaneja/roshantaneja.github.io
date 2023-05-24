@@ -50,7 +50,7 @@ export default function Home() {
 
           <a href="https://roshan.codes/School_Notes" target="_blank" rel="noopener noreferrer" className={styles.card}>
             <h2>School Notes &rarr;</h2>
-            <p>Markdown based notetaking using github through obsidian</p>
+            <p>Published notes in markdown based notetaking using obsidian</p>
           </a>
 
           <a href="https://github.com/Daroshi11260/spaceinvaders-reinforcementlearning" target="_blank" rel="noopener noreferrer" className={styles.card}>
@@ -66,7 +66,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a>bing bong your opinion is wrong</a>
+        <a>Roshan Taneja &#169; all rights reserved.</a>
       </footer>
     </div>
   )
