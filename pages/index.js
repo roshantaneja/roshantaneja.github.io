@@ -7,8 +7,8 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Roshan Taneja</title>
-        <meta name="description" content="can i puts my bawls in yo jaws" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="funny description here" />
+        <link rel="icon" href="/chevron_left_FILL0_wght400_GRAD0_opsz48.ico" />
       </Head>
 
 
@@ -59,7 +59,7 @@ export default function Home() {
           </a>
 
           <a href="https://roshantaneja.stck.me/" target="_blank" rel="noopener noreferrer" className={styles.card}>
-            <h2>My STCK &rarr;</h2>
+            <h2>My stck.me &rarr;</h2>
             <p>sometimes i write things and publish them here, check them out!</p>
           </a>
         </div>
