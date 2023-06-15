@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Resume.module.css'
+import styles from '../styles/Home.module.css'
 
 export default function Resume() {
     return (
@@ -222,7 +222,7 @@ export default function Resume() {
                         <span className="c16">
                         <a
                             className="c3"
-                            href="https://www.google.com/url?q=http://projectfuel.in&sa=D&source=editors&ust=1686707461543756&usg=AOvVaw2Ly85eaE32TzLYQSdwJiJ0"
+                            href="https://www.google.com/url?q=https://projectfuel.in&sa=D&source=editors&ust=1686707461543756&usg=AOvVaw2Ly85eaE32TzLYQSdwJiJ0"
                         >
                             Project FUEL
                         </a>
@@ -264,7 +264,7 @@ export default function Resume() {
                         <span className="c16">
                         <a
                             className="c3"
-                            href="https://www.google.com/url?q=http://calabazascyclery.com&sa=D&source=editors&ust=1686707461544767&usg=AOvVaw3murfgVMlH1F-xu0-_Z25E"
+                            href="https://www.google.com/url?q=https://calabazascyclery.com&sa=D&source=editors&ust=1686707461544767&usg=AOvVaw3murfgVMlH1F-xu0-_Z25E"
                         >
                             calabazascyclery.com
                         </a>
@@ -308,7 +308,7 @@ export default function Resume() {
                         <span className="c27 c1">
                         <a
                             className="c3"
-                            href="https://www.google.com/url?q=http://yoshiphotos.com&sa=D&source=editors&ust=1686707461545791&usg=AOvVaw3R1oXXpFLNoYvYURsevjc6"
+                            href="https://www.google.com/url?q=https://yoshiphotos.com&sa=D&source=editors&ust=1686707461545791&usg=AOvVaw3R1oXXpFLNoYvYURsevjc6"
                         >
                             yoshiphotos.com
                         </a>
@@ -317,7 +317,7 @@ export default function Resume() {
                         <span className="c1 c27">
                         <a
                             className="c3"
-                            href="https://www.google.com/url?q=http://www.artbygeetataneja.com&sa=D&source=editors&ust=1686707461545956&usg=AOvVaw0wRr3KTLhuJYYXv6rmDA2W"
+                            href="https://www.google.com/url?q=https://www.artbygeetataneja.com&sa=D&source=editors&ust=1686707461545956&usg=AOvVaw0wRr3KTLhuJYYXv6rmDA2W"
                         >
                             artbygeetataneja.com
                         </a>
@@ -451,7 +451,7 @@ export default function Resume() {
                         <span className="c16">
                         <a
                             className="c3"
-                            href="https://www.google.com/url?q=http://roshan.codes&sa=D&source=editors&ust=1686707461550327&usg=AOvVaw2R2NCaAFWrx6I3fFldDcm_"
+                            href="https://www.google.com/url?q=https://roshan.codes&sa=D&source=editors&ust=1686707461550327&usg=AOvVaw2R2NCaAFWrx6I3fFldDcm_"
                         >
                             roshan.codes
                         </a>

@@ -18,10 +18,6 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          {/*I like{' '}*/}
-          {/*<code className={styles.code}>systems programming</code>*/}
-          <br>
-          </br>
           <a href="https://en.wikipedia.org/wiki/Fork_bomb" className={styles.code}>
             {":(){ :|:& };:"}
           </a> {"<---"} paste in ur cmd pls 👉👈
@@ -30,9 +26,21 @@ export default function Home() {
           (dont actually do that its a fork bomb haha)
         </p>
 
-        <a href="https://github.com/Daroshi11260" target="_blank" rel="noopener noreferrer" className={styles.description}>
-          Check out my Github! &rarr;
-        </a>
+        <div>
+          <h2 classname={styles.title}>Important Links</h2>
+          <a href="https://github.com/Daroshi11260" target="_blank" rel="noopener noreferrer" className={styles.description}>
+            My Github! &rarr;
+          </a>
+          <br />
+          <a href="https://roshan.codes/resume/Roshan%20Taneja%20Resume.pdf" target="_blank" className={styles.description}>
+            My Resume (PDF)
+          </a>
+        </div>
+
+        <br>
+        </br>
+        <br>
+        </br>
 
 
         <h2 className={styles.title}>Projects</h2>
