@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           # update the Node version to meet your needs
-          node-version: *
+          node-version: latest
           cache: npm
 
       - name: Build
