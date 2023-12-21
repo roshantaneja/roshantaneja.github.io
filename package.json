@@ -1,6 +1,7 @@
 {
   "name": "daroshi11260.github.io",
   "version": "0.1.0",
+  "homepage": "https://www.roshan.codes",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,12 +11,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.0.6",
+    "next": "14.0.4",
+    "npm-check-updates": "^16.14.12",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "eslint": "8.29.0",
-    "eslint-config-next": "13.0.6"
+    "eslint": "8.56.0",
+    "eslint-config-next": "14.0.4",
+    "gh-pages": "^6.1.0"
   }
 }
