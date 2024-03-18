@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link';
+import { SpeedInsights } from '@vercel/speed-insights/next'
 export default function Custom404() {
     return (
         <div className={styles.container}>

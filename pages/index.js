@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export default function Home() {
   return (
@@ -17,19 +18,10 @@ export default function Home() {
           Hello, im <a href="./resume/Roshan Taneja Resume.pdf" download>Roshan Taneja!</a>
         </h1>
 
-        <p className={styles.description}>
-          <a href="https://en.wikipedia.org/wiki/Fork_bomb" className={styles.code}>
-            {":(){ :|:& };:"}
-          </a> {"<---"} paste in ur cmd pls 👉👈
-          <br>
-          </br>
-          (dont actually do that its a fork bomb haha)
-        </p>
-
         <div>
           <h2 classname={styles.title}>Important Links</h2>
           <a href="https://github.com/Daroshi11260" target="_blank" rel="noopener noreferrer" className={styles.description}>
-            My Github! &rarr;
+            My Github!
           </a>
           <br />
           <a href="https://roshan.codes/resume/Roshan%20Taneja%20Resume.pdf" target="_blank" className={styles.description}>
@@ -37,8 +29,6 @@ export default function Home() {
           </a>
         </div>
 
-        <br>
-        </br>
         <br>
         </br>
 
@@ -73,8 +63,16 @@ export default function Home() {
         </div>
       </main>
 
+      <p className={styles.description}>
+          <a href="https://en.wikipedia.org/wiki/Fork_bomb" className={styles.code}>
+            {":(){ :|:& };:"}
+          </a> {"<---"} paste in ur cmd
+          <br>
+          </br>
+        </p>
+
       <footer className={styles.footer}>
-        <a>Roshan Taneja &#169; all rights reserved.</a>
+        Roshan Taneja &copy; all rights reserved.
       </footer>
     </div>
   )
