@@ -20,11 +20,11 @@ export default function Home() {
 
         <div>
           <h2 classname={styles.title}>Important Links</h2>
-          <a href="https://github.com/Daroshi11260" target="_blank" rel="noopener noreferrer" className={styles.description}>
+          <a href="https://github.com/roshantaneja" target="_blank" rel="noopener noreferrer" className={styles.description}>
             My Github!
           </a>
           <br />
-          <a href="https://roshan.codes/resume/Roshan%20Taneja%20Resume.pdf" target="_blank" className={styles.description}>
+          <a href="/resume/Roshan%20Taneja%20Resume.pdf" target="_blank" className={styles.description}>
             My Resume (PDF)
           </a>
         </div>
@@ -57,7 +57,7 @@ export default function Home() {
           </a>
 
           <a href="https://roshantaneja.stck.me/" target="_blank" rel="noopener noreferrer" className={styles.card}>
-            <h2>My stck.me &rarr;</h2>
+            <h2>My Scrollstack &rarr;</h2>
             <p>sometimes i write things and publish them here, check them out!</p>
           </a>
         </div>
