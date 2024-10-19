@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export default function Tanzania() {
     return (
