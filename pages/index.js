@@ -14,7 +14,7 @@ export default function Home() {
 
   <main className={styles.main}>
   <h1 className={styles.title}>
-      Hello, I'm <a href="./resume/Roshan Taneja Resume.pdf" download className={styles.resumeLink}>Roshan!</a>
+      Hello, I'm <a href="./resume/Roshan Taneja Resume.pdf" className={styles.resumeLink}>Roshan!</a>
       <span className={styles.tooltip}>Click here for my resume!</span>
     </h1>
 
@@ -38,6 +38,11 @@ export default function Home() {
       <a href="./tanzania" className={styles.card}>
         <h2>Bringing Water to the Maasai &rarr;</h2>
         <p>Led the deployment of 100+ rainwater harvesting units, reducing water collection time for 4500+ Maasai people.</p>
+      </a>
+
+      <a href="https://github.com/roshantaneja/water-vision" target="_blank" rel="noopener noreferrer" className={styles.card}>
+        <h2>Water Vision &rarr;</h2>
+        <p>Leveraging AI and satellite imagery to improve water accessibility and resource management in underserved regions.</p>
       </a>
 
       <a href="https://github.com/roshantaneja/competitive-programming" target="_blank" rel="noopener noreferrer" className={styles.card}>
