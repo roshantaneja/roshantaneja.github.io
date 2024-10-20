@@ -13,7 +13,7 @@ export default function Tanzania() {
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    Bringing Water to the <a href="https://en.wikipedia.org/wiki/Maasai_people" target="_blank" rel="noopener noreferrer">Maasai</a> of Northern Tanzania
+                    Bringing Water to the <a href="https://en.wikipedia.org/wiki/Maasai_people" target="_blank" rel="noopener noreferrer">Maasai</a> of Tanzania
                 </h1>
 
                 <p className={styles.description}>

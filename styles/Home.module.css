@@ -38,7 +38,7 @@
 .tooltip {
     position: absolute;
     left: 50%;
-    top: 3rem;
+    top: 0rem;
     transform: translateX(-50%);
     background-color: #333;
     color: #fff;

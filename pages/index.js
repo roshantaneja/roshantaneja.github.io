@@ -13,7 +13,7 @@ export default function Home() {
   </Head>
 
   <main className={styles.main}>
-  <h1 className={styles.title}>
+    <h1 className={styles.title}>
       Hello, I'm <a href="./resume/Roshan Taneja Resume.pdf" className={styles.resumeLink}>Roshan!</a>
       <span className={styles.tooltip}>Click here for my resume!</span>
     </h1>
@@ -58,6 +58,11 @@ export default function Home() {
       <a href="https://roshantaneja.stck.me/" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>My Scrollstack &rarr;</h2>
         <p>I write fiction, publish stories, and share reflections on tech, life, and everything in between.</p>
+      </a>
+
+      <a href="/blog" className={styles.card}>
+        <h2>My Blog &rarr;</h2>
+        <p>Read about my experiences, insights, and technical tutorials on AI, remote sensing, environmental sustainability, and more.</p>
       </a>
     </div>
   </main>
