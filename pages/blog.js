@@ -42,6 +42,11 @@ export default function Blog({ posts }) {
         <div className={styles.container}>
             <main className={styles.main}>
                 <h1 className={styles.title}>My Blog</h1>
+                <p className={styles.description}>
+                    Welcome to my blog! Here, I share my thoughts on literally everything. <br />
+                    From tech to life to everything in between, you'll find it all here. <br />
+                    Enjoy reading! 📚
+                </p>
 
                 <div className={styles.grid}>
                     {posts.map((post) => (
