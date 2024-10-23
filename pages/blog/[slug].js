@@ -2,11 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
-import styles from '../../styles/Home.module.css';  // Adjust based on your folder structure
+import rehypeHighlight from 'rehype-highlight'; // Make sure this is imported
+import styles from '../../styles/Home.module.css';  // Adjust path if needed
 
 const blogDirectory = path.join(process.cwd(), 'public', 'blog');
 
-// Helper function to get all blog slugs
 export const getStaticPaths = async () => {
     const files = fs.readdirSync(blogDirectory);
 
@@ -22,7 +22,6 @@ export const getStaticPaths = async () => {
     };
 };
 
-// Helper function to get blog content by slug
 export const getStaticProps = async ({ params }) => {
     const filePath = path.join(blogDirectory, `${params.slug}.md`);
     const fileContent = fs.readFileSync(filePath, 'utf-8');
@@ -32,7 +31,6 @@ export const getStaticProps = async ({ params }) => {
         props: {
             title: data.title,
             date: data.date,
-            description: data.description,
             content,
         },
     };
@@ -44,7 +42,31 @@ export default function BlogPost({ title, date, content }) {
             <main className={styles.main}>
                 <h1 className={styles.title}>{title}</h1>
                 <p><small>{new Date(date).toLocaleDateString()}</small></p>
-                <ReactMarkdown>{content}</ReactMarkdown>
+                
+                {/* Add wrapper for markdown content */}
+                <div className={styles.contentWrapper}>
+                    <ReactMarkdown
+                        rehypePlugins={[rehypeHighlight]}  // Adds syntax highlighting
+                        components={{
+                            code({ node, inline, className, children, ...props }) {
+                                const match = /language-(\w+)/.exec(className || '')
+                                return !inline && match ? (
+                                    <pre className={styles.codeBlock}>
+                                        <code className={className} {...props}>
+                                            {children}
+                                        </code>
+                                    </pre>
+                                ) : (
+                                    <code className={styles.inlineCode} {...props}>
+                                        {children}
+                                    </code>
+                                )
+                            }
+                        }}
+                    >
+                        {content}
+                    </ReactMarkdown>
+                </div>
             </main>
 
             <footer className={styles.footer}>

@@ -14,34 +14,42 @@ This is my first post to see if the blog works. I hope you enjoy it!
 
 I used nextjs and a node package called gray-matter and react-markdown to parse the markdown files.
 
-How to set it up
+I also used fs and path to read the files from the public folder.
+
+---
 
 within your nextjs project, run the following commands:
 
-```bash
-npm install gray-matter react-markdown fs path
-```
+
+`npm install gray-matter react-markdown fs path`
+
+
+---
 
 Then create a folder called blog in the public folder and add a markdown file with the following front matter:
 
 heres the file structure:
 
 ```
-/public
-  /blog
-    post1.md
-    post2.md
-/pages
-  blog.js
-  /blog
-    [slug].js
-/styles
-  Home.module.css
+/your-nextjs-project
+    /public
+    /blog
+        post1.md
+        post2.md
+    /pages
+    blog.js
+    /blog
+        [slug].js
+    /styles
+    Home.module.css
 ```
+
+---
 
 Then create a file called [slug].js in the /pages/blog folder with the following code:
 
-```jsx
+
+```javascript
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -172,7 +180,7 @@ export default function Blog({ posts }) {
 
 to create your first blog post, create a markdown file in the /public/blog folder with the following front matter:
 
-```
+```md
 ---
 title: "My First Blog Post"
 date: "2024-10-01"

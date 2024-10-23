@@ -165,7 +165,7 @@
 }
 
 .timelineContent {
-    background-color: #fff;
+    background-color: #333;
     padding: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -173,12 +173,86 @@
 
 .timelineContent h3 {
     margin-top: 0;
-    color: #333;
+    color: #fff;
 }
 
 .timelineContent p {
-    color: #555;
+    color: #fff;
     margin: 0.5rem 0 0;
+}
+
+
+/* Code block styling */
+.codeBlock {
+    background-color: #333; /* Light background for the code block */
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace; /* Use a monospaced font for code */
+    overflow-x: auto; /* Allows horizontal scrolling if the code is too wide */
+    text-align: left; /* Ensure the code block is left-aligned */
+    margin-bottom: 1.5rem;
+}
+
+.inlineCode {
+    background-color: #333;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+/* Syntax highlighting customization */
+.hljs {
+    background: #333; /* Background for highlighted code */
+    color: #333;
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-align: left;
+}
+.hljs-keyword {
+    color: #0070f3;
+}
+.hljs-string {
+    color: #028e37;
+}
+.hljs-variable {
+    color: #b200f3;
+}
+.hljs-comment {
+    color: #777;
+}
+.hljs-function {
+    color: #ff4d4f;
+}
+
+/* Wrapper for markdown content */
+.contentWrapper {
+    padding: 1.5rem; /* Adds padding around the entire markdown content */
+    line-height: 1.75; /* Ensures good readability */
+    max-width: 800px;
+    margin: 0 auto; /* Centers the content on the page */
+}
+
+/* Paragraph styling for markdown content */
+.contentWrapper p {
+    margin-bottom: 1.5rem; /* Adds space between paragraphs */
+}
+
+/* Add some padding for code blocks to match the content */
+.contentWrapper pre {
+    margin-bottom: 1.5rem; /* Adds spacing below code blocks */
+}
+
+/* Optional: Add more spacing between headers and content */
+.contentWrapper h1, .contentWrapper h2, .contentWrapper h3 {
+    margin-top: 2rem; /* Adds space above headers */
+    margin-bottom: 1rem; /* Adds space below headers */
+}
+
+.contentWrapper img {
+    max-width: 100%; /* Ensure images in markdown are responsive */
+    height: auto;
+    display: block;
+    margin: 1.5rem 0;
 }
 
 @media (max-width: 600px) {

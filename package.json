@@ -14,12 +14,14 @@
     "@vercel/speed-insights": "^1.0.10",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.10.0",
     "next": "14.0.4",
     "npm-check-updates": "^16.14.12",
     "path": "^0.12.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-markdown": "^9.0.1"
+    "react-markdown": "^9.0.1",
+    "rehype-highlight": "^7.0.0"
   },
   "devDependencies": {
     "eslint": "8.56.0",
