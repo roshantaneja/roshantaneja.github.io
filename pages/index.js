@@ -42,7 +42,7 @@ export default function Home() {
 
       <a href="https://github.com/roshantaneja/water-vision" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>Water Vision &rarr;</h2>
-        <p>Leveraging AI and satellite imagery to improve water accessibility and resource management in underserved regions in Northern Africa.</p>
+        <p>Leveraging AI and satellite imagery to improve water accessibility and resource management in underserved regions in Northern Tanzania.</p>
       </a>
 
       <a href="https://github.com/roshantaneja/competitive-programming" target="_blank" rel="noopener noreferrer" className={styles.card}>
