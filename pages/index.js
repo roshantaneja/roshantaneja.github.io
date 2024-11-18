@@ -9,18 +9,18 @@ export default function Home() {
   <Head>
     <title>Roshan Taneja</title>
     <meta name="description" content="High school student passionate about using AI, remote sensing, and technology to solve global problems." />
-    <link rel="icon" href="/chevron_left_FILL0_wght400_GRAD0_opsz48.ico" />
+    <link rel="icon" href="/favicon.ico" />
   </Head>
 
   <main className={styles.main}>
     <h1 className={styles.title}>
       Hello, I'm <a href="./resume/Roshan Taneja Resume.pdf" className={styles.resumeLink}>Roshan!</a>
-      <span className={styles.tooltip}>Click here for my resume!</span>
+      <span className={styles.tooltip}>Click for my resume!</span>
     </h1>
 
     <p className={styles.description}>
       I'm a high school student, programmer, researcher, and writer. <br />
-      My passion lies at the intersection of technology, machine learning, <br />
+      My work lies at the intersection of technology, machine learning, <br />
       and environmental sciences, with a focus on solving global water challenges.
     </p>
 
@@ -42,7 +42,7 @@ export default function Home() {
 
       <a href="https://github.com/roshantaneja/water-vision" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>Water Vision &rarr;</h2>
-        <p>Leveraging AI and satellite imagery to improve water accessibility and resource management in underserved regions.</p>
+        <p>Leveraging AI and satellite imagery to improve water accessibility and resource management in underserved regions in Northern Africa.</p>
       </a>
 
       <a href="https://github.com/roshantaneja/competitive-programming" target="_blank" rel="noopener noreferrer" className={styles.card}>
