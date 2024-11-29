@@ -11,15 +11,19 @@ const blogDirectory = path.join(process.cwd(), 'public', 'blog');
 
 // Helper function to get blog posts
 export const getStaticProps = async () => {
-    const files = fs.readdirSync(blogDirectory);
+    // Get all entries in the blog directory
+    const entries = fs.readdirSync(blogDirectory, { withFileTypes: true });
 
-    const posts = files.map((filename) => {
-        const filePath = path.join(blogDirectory, filename);
+    // Filter out directories and process only files
+    const files = entries.filter((entry) => entry.isFile());
+
+    const posts = files.map((file) => {
+        const filePath = path.join(blogDirectory, file.name);
         const fileContent = fs.readFileSync(filePath, 'utf-8');
         const { data, content } = matter(fileContent);
 
         return {
-            slug: filename.replace('.md', ''),
+            slug: file.name.replace('.md', ''), // Remove .md extension for slug
             title: data.title,
             date: data.date,
             description: data.description,

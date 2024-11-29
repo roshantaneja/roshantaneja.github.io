@@ -224,6 +224,14 @@
     color: #ff4d4f;
 }
 
+.blogImage {
+    max-width: 100%; /* Ensures the image does not overflow its container */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 5px; /* Optional: Rounds the corners */
+    margin: 1.5rem 0; /* Adds spacing above and below the image */
+    display: block; /* Centers the image when combined with margin: auto in parent */
+}
+
 /* Wrapper for markdown content */
 .contentWrapper {
     padding: 1.5rem; /* Adds padding around the entire markdown content */

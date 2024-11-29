@@ -48,6 +48,14 @@ export default function BlogPost({ title, date, content }) {
                     <ReactMarkdown
                         rehypePlugins={[rehypeHighlight]}  // Adds syntax highlighting
                         components={{
+                            img: ({ src, alt }) => (
+                                <img
+                                    src={src}
+                                    alt={alt}
+                                    className={styles.blogImage}
+                                />
+                            ),
+
                             code({ node, inline, className, children, ...props }) {
                                 const match = /language-(\w+)/.exec(className || '')
                                 return !inline && match ? (
