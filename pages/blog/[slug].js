@@ -8,22 +8,33 @@ import styles from '../../styles/Home.module.css';  // Adjust path if needed
 const blogDirectory = path.join(process.cwd(), 'public', 'blog');
 
 export const getStaticPaths = async () => {
-    const files = fs.readdirSync(blogDirectory);
+    // Read all entries in the blog directory
+    const entries = fs.readdirSync(blogDirectory, { withFileTypes: true });
 
-    const paths = files.map((filename) => ({
+    // Filter for markdown files only
+    const markdownFiles = entries
+        .filter((entry) => entry.isFile() && entry.name.endsWith('.md'));
+
+    const paths = markdownFiles.map((file) => ({
         params: {
-            slug: filename.replace('.md', ''),
+            slug: file.name.replace('.md', ''), // Remove .md extension
         },
     }));
 
     return {
         paths,
-        fallback: false,
+        fallback: false, // Return 404 for invalid paths
     };
 };
 
 export const getStaticProps = async ({ params }) => {
     const filePath = path.join(blogDirectory, `${params.slug}.md`);
+
+    // Check if the file exists (shouldn't be necessary but ensures robustness)
+    if (!fs.existsSync(filePath)) {
+        return { notFound: true };
+    }
+
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const { data, content } = matter(fileContent);
 
@@ -31,6 +42,7 @@ export const getStaticProps = async ({ params }) => {
         props: {
             title: data.title,
             date: data.date,
+            description: data.description,
             content,
         },
     };
