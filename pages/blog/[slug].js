@@ -54,6 +54,7 @@ export default function BlogPost({ title, date, content }) {
             <main className={styles.main}>
                 <h1 className={styles.title}>{title}</h1>
                 <p><small>{new Date(date).toLocaleDateString()}</small></p>
+                <p>Roshan Taneja</p>
                 
                 {/* Add wrapper for markdown content */}
                 <div className={styles.contentWrapper}>

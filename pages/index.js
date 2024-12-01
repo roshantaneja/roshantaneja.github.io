@@ -35,6 +35,11 @@ export default function Home() {
 
     <h2 className={styles.title}>Projects</h2>
     <div className={styles.grid}>
+      <a href="/blog" className={styles.card}>
+        <h2>My Blog &rarr;</h2>
+        <p>Read about my experiences, insights, and technical tutorials on AI, remote sensing, environmental sustainability, and more.</p>
+      </a>
+      
       <a href="./tanzania" className={styles.card}>
         <h2>Bringing Water to the Maasai &rarr;</h2>
         <p>Led the deployment of 100+ rainwater harvesting units, reducing water collection time for 4500+ Maasai people.</p>
@@ -56,14 +61,10 @@ export default function Home() {
       </a>
 
       <a href="https://roshantaneja.stck.me/" target="_blank" rel="noopener noreferrer" className={styles.card}>
-        <h2>My Scrollstack &rarr;</h2>
+        <h2>My STCK &rarr;</h2>
         <p>I write fiction, publish stories, and share reflections on tech, life, and everything in between.</p>
       </a>
-
-      <a href="/blog" className={styles.card}>
-        <h2>My Blog &rarr;</h2>
-        <p>Read about my experiences, insights, and technical tutorials on AI, remote sensing, environmental sustainability, and more.</p>
-      </a>
+      
     </div>
   </main>
 
