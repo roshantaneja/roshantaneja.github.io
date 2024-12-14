@@ -72,6 +72,12 @@ const timelineEvents = [
         icon: 'FaChartLine',
     },
     {
+        date: 'Sept 2024',
+        title: 'Presidential Volunteer Service Award',
+        description: 'Received the Presidential Volunteer Service Award for the project’s impact on the Maasai community.',
+        icon: 'FaGlobe',
+    },
+    {
         date: 'Sept/Oct 2024',
         title: 'Deployment Plan for 100 Units',
         description: 'Started the project to deploy 100 rainwater units in zones identified through satellite image maps.',
@@ -79,9 +85,21 @@ const timelineEvents = [
     },
     {
         date: 'Nov 2024',
+        title: 'Fundraising Dinner with Mbayani in California',
+        description: 'Hosted a fundraising dinner with Mbayani, a Maasai leader, in California to raise funds for the 100 rainwater harvesting units.',
+        icon: 'FaHandsHelping',
+    },
+    {
+        date: 'Nov 2024',
         title: 'Completion of 100 Unit Deployment',
         description: 'Successfully completed the deployment of 100 rainwater units, providing sustainable water access to the Maasai community.',
         icon: 'FaWater',
+    },
+    {
+        date: 'Dec 2024',
+        title: 'presentation to NeurIPS',
+        description: 'Presented the project at NeurIPS, a leading AI conference, to discuss the use of AI in water access projects.',
+        icon: 'FaGlobe',
     },
 ];
 
