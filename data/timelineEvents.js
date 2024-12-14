@@ -78,7 +78,7 @@ const timelineEvents = [
         icon: 'FaWater',
     },
     {
-        date: 'Dec 2024',
+        date: 'Nov 2024',
         title: 'Completion of 100 Unit Deployment',
         description: 'Successfully completed the deployment of 100 rainwater units, providing sustainable water access to the Maasai community.',
         icon: 'FaWater',

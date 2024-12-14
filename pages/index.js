@@ -45,10 +45,10 @@ export default function Home() {
         <p>Led the deployment of 100+ rainwater harvesting units, reducing water collection time for 4500+ Maasai people.</p>
       </a>
 
-      <a href="https://github.com/roshantaneja/water-vision" target="_blank" rel="noopener noreferrer" className={styles.card}>
+      {/* <a href="https://github.com/roshantaneja/water-vision" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>Water Vision &rarr;</h2>
         <p>Leveraging AI and satellite imagery to improve water accessibility and resource management in underserved regions in Northern Tanzania.</p>
-      </a>
+      </a> */}
 
       <a href="https://github.com/roshantaneja/competitive-programming" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>Competitive Programming &rarr;</h2>
