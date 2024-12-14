@@ -11,7 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@vercel/speed-insights": "^1.0.10",
+    "@vercel/speed-insights": "^1.1.0",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.10.0",

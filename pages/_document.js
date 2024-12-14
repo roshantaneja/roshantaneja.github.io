@@ -1,4 +1,5 @@
 import {Html, Head, Main, NextScript} from "next/document";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Document() {
     return(
@@ -21,6 +22,7 @@ export default function Document() {
                 async
                 src='https://cdn.startbootstrap.com/sb-forms-latest.js'
             ></script>
+            <SpeedInsights />
             </body>
         </Html>
     )

@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight'; // Make sure this is imported
 import styles from '../../styles/Home.module.css';  // Adjust path if needed
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const blogDirectory = path.join(process.cwd(), 'public', 'blog');
 
@@ -88,6 +89,7 @@ export default function BlogPost({ title, date, content }) {
                         {content}
                     </ReactMarkdown>
                 </div>
+                <SpeedInsights />
             </main>
 
             <footer className={styles.footer}>

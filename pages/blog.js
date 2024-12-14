@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';  // Adjust based on your folder structure
 import ReactMarkdown from 'react-markdown';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // Define the blog directory
 const blogDirectory = path.join(process.cwd(), 'public', 'blog');
@@ -67,6 +68,7 @@ export default function Blog({ posts }) {
                         </div>
                     ))}
                 </div>
+                <SpeedInsights />
             </main>
 
             <footer className={styles.footer}>

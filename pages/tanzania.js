@@ -2,6 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css'; // Import the default styles
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import {
     FaHandsHelping,
@@ -57,6 +58,7 @@ export default function Tanzania() {
                         </VerticalTimelineElement>
                     ))}
                 </VerticalTimeline>
+                <SpeedInsights />
             </main>
 
             <footer style={{ textAlign: 'center', padding: '2rem 0' }}>

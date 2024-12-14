@@ -16,6 +16,7 @@ export default function Custom404() {
                 <h1 className={styles.title}>Looks like you're a little lost.</h1>
                 <a className={styles.description} href="https://www.roshan.codes/"> click here to head back to the main page! &rarr;</a>
             </main>
+            <SpeedInsights />
         </div>
 
     )

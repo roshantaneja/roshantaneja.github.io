@@ -66,6 +66,7 @@ export default function Home() {
       </a>
       
     </div>
+    <SpeedInsights />
   </main>
 
   <footer className={styles.footer}>
