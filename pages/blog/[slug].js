@@ -3,7 +3,8 @@ import path from 'path';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight'; // Make sure this is imported
-import styles from '../../styles/Home.module.css';  // Adjust path if needed
+import styles from '../../styles/blog.module.css';  // Adjust path if needed
+import styles2 from '../../styles/Home.module.css';  // Adjust path if needed
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const blogDirectory = path.join(process.cwd(), 'public', 'blog');
@@ -51,9 +52,9 @@ export const getStaticProps = async ({ params }) => {
 
 export default function BlogPost({ title, date, content }) {
     return (
-        <div className={styles.container}>
-            <main className={styles.main}>
-                <h1 className={styles.title}>{title}</h1>
+        <div className={styles2.container}>
+            <main className={styles2.main}>
+                <h1 className={styles2.title}>{title}</h1>
                 <p><small>{new Date(date).toLocaleDateString()}</small></p>
                 <p>Roshan Taneja</p>
                 
