@@ -6,6 +6,7 @@ import rehypeHighlight from 'rehype-highlight'; // Make sure this is imported
 import styles from '../../styles/blog.module.css';  // Adjust path if needed
 import styles2 from '../../styles/Home.module.css';  // Adjust path if needed
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 const blogDirectory = path.join(process.cwd(), 'public', 'blog');
 
@@ -90,10 +91,11 @@ export default function BlogPost({ title, date, content }) {
                         {content}
                     </ReactMarkdown>
                 </div>
-                <SpeedInsights />
+                <SpeedInsights/>
+                <Analytics/>
             </main>
 
-            <footer className={styles.footer}>
+            <footer className={styles2.footer}>
                 Roshan Taneja &copy; all rights reserved.
             </footer>
         </div>

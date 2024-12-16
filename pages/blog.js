@@ -6,6 +6,7 @@ import Link from 'next/link';
 import styles from '../styles/Home.module.css';  // Adjust based on your folder structure
 import ReactMarkdown from 'react-markdown';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 // Define the blog directory
 const blogDirectory = path.join(process.cwd(), 'public', 'blog');
@@ -68,7 +69,8 @@ export default function Blog({ posts }) {
                         </div>
                     ))}
                 </div>
-                <SpeedInsights />
+                <SpeedInsights/>
+                <Analytics/>
             </main>
 
             <footer className={styles.footer}>

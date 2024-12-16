@@ -1,7 +1,7 @@
 /* Code block styling */
 .codeBlock {
     background-color: #333; /* Light background for the code block */
-    padding: 1rem;
+    padding: 0rem;
     border-radius: 8px;
     font-family: 'Fira Code', monospace; /* Use a monospaced font for code */
     overflow-x: auto; /* Allows horizontal scrolling if the code is too wide */
