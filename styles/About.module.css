@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .main {
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    color: #5b7fc5;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section {
+    margin-bottom: 2rem;
+  }
+  
+  .section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #5b7fc5;
+    display: inline-block;
+    padding-bottom: 0.2rem;
+  }
+  
+  .section p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .statsList,
+  .interestsList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .statsList li,
+  .interestsList li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+  
+  .statsList li strong {
+    color: #5b7fc5;
+  }
+  
+  .footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+  }
