@@ -55,6 +55,7 @@ export default function BlogPost({ title, date, content }) {
     return (
         <div className={styles2.container}>
             <main className={styles2.main}>
+                <a href="/blog" className={styles2.backLink}> &larr; Back to Blog</a>
                 <h1 className={styles2.title}>{title}</h1>
                 <p><small>{new Date(date).toLocaleDateString()}</small></p>
                 <p>Roshan Taneja</p>
