@@ -40,8 +40,13 @@ export default function Home() {
         <h2>My Blog &rarr;</h2>
         <p>Read about my experiences, insights, and technical tutorials on AI, remote sensing, environmental sustainability, and more.</p>
       </a>
+
+      <a href="/blog/3_faces-of-rainwater-harvesting" className={styles.card}>
+        <h2>Faces of Rainwater Harvesting &rarr;</h2>
+        <p>Using machine learning to identify indigenous dwellings and improve water accessibility in underserved regions.</p>
+      </a>
       
-      <a href="./tanzania" className={styles.card}>
+      <a href="/tanzania" className={styles.card}>
         <h2>Bringing Water to the Maasai &rarr;</h2>
         <p>Led the deployment of 100+ rainwater harvesting units, reducing water collection time for 4500+ Maasai people.</p>
       </a>
@@ -56,10 +61,10 @@ export default function Home() {
         <p>Daily puzzle advent calendar and my solutions repository—join me in cracking algorithmic challenges!</p>
       </a>
 
-      <a href="https://github.com/roshantaneja/spaceinvaders-reinforcementlearning" target="_blank" rel="noopener noreferrer" className={styles.card}>
+      {/* <a href="https://github.com/roshantaneja/spaceinvaders-reinforcementlearning" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>Space Invaders &rarr;</h2>
         <p>Using reinforcement learning to beat the classic game—exploring AI for fun and learning.</p>
-      </a>
+      </a> */}
 
       <a href="https://roshantaneja.stck.me/" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>My STCK &rarr;</h2>
