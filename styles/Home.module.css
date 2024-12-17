@@ -31,14 +31,13 @@
 
 .resumeLink:hover + .tooltip, .resumeLink:focus + .tooltip {
     opacity: 1;
-    transform: translateY(-5px);
 }
 
 /* Tooltip styling */
 .tooltip {
     position: absolute;
-    left: 50%;
-    top: 0rem;
+    left: 77%;
+    top: -40%;
     transform: translateX(-50%);
     background-color: #333;
     color: #fff;
@@ -46,7 +45,7 @@
     border-radius: 6px;
     font-size: 0.85rem;
     white-space: nowrap;
-    opacity: 0;
+    opacity: 0.3;
     transition: all 0.3s ease;
 }
 

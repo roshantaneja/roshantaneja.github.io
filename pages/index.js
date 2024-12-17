@@ -16,7 +16,7 @@ export default function Home() {
   <main className={styles.main}>
     <h1 className={styles.title}>
       Hello, I'm <a href="./resume/Roshan Taneja Resume.pdf" className={styles.resumeLink}>Roshan!</a>
-      <span className={styles.tooltip}>Click for my resume!</span>
+      <span className={styles.tooltip}>Click my name for my resumé!</span>
     </h1>
 
     <p className={styles.description}>
@@ -64,6 +64,11 @@ export default function Home() {
       <a href="https://roshantaneja.stck.me/" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>My STCK &rarr;</h2>
         <p>I write fiction, publish stories, and share reflections on tech, life, and everything in between.</p>
+      </a>
+
+      <a href="/about" className={styles.card}>
+        <h2>More About Me &rarr;</h2>
+        <p>Learn more about me, my interests, experiences, and achievements.</p>
       </a>
       
     </div>

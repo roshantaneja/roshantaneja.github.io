@@ -1,3 +1,45 @@
+/* Default Light Mode */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.vertical-timeline-element-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.vertical-timeline-element-icon {
+  background-color: var(--icon-bg);
+  color: var(--icon-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Define CSS variables for light and dark modes */
+body.light {
+  --card-bg: #ffffff;
+  --text-color: #000000;
+  --border-color: #e0e0e0;
+  --icon-bg: #0070f3;
+  --icon-color: #ffffff;
+}
+
+body.dark {
+  --card-bg: #1e1e1e;
+  --text-color: #ffffff;
+  --border-color: #333333;
+  --icon-bg: #bb86fc;
+  --icon-color: #ffffff;
+}
+
 html,
 body {
   padding: 0;
@@ -8,14 +50,14 @@ body {
 }
 
 a {
-  color: #b200f3;
+  color: --icon-bg;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 a:hover,
 a:focus {
-  color: #b200f3;
+  color: --icon-bg;
   text-decoration: underline;
 }
 

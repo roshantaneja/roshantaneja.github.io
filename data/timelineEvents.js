@@ -97,7 +97,7 @@ const timelineEvents = [
     },
     {
         date: 'Dec 2024',
-        title: 'presentation to NeurIPS',
+        title: 'Presentation to NeurIPS',
         description: 'Presented the project at NeurIPS, a leading AI conference, to discuss the use of AI in water access projects.',
         icon: 'FaGlobe',
     },
