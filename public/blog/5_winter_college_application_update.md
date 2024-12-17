@@ -6,9 +6,29 @@ description: My College Applications Journey
 
 ## **It’s December, and I’m still going.**
 
-Over the past couple of months, I’ve spent more time with Google Docs, Common App, and my to-do lists than with my family. From writing personal stories about my childhood obsession with maps to crafting essays on custom trophy-making (yes, that *Dumpster Fire Award* made an appearance), the college application process has been both a sprint and a marathon. And yet, I’m not done—almost, but not quite. I still have a plethora of essays to get through before the year's end.
+Over the past couple of months, I’ve spent more time with Google Docs, Common App, and my to-do lists than with my family. From writing personal stories about my childhood obsession with maps to crafting essays on custom trophy-making (yes, that *Dumpster Fire Award* made an appearance), the college application process has been both a sprint and a marathon. And yet, I’m not done—almost, but not quite. I still have a plethora of essays to get through before the year's end. It’s a packed schedule. *But*, I’ve made a decision that feels oddly freeing:
 
-It’s a packed schedule in an ever-shrinking amount of time. *But*, I’ve made a decision that feels oddly freeing:
+<!-- ## Where I Stand Right Now
+
+At this point, here’s where I’m at:
+
+* **Early Action:** Finished and submitted.
+* Stanford? ✅
+* USC? ✅
+* Georgia Tech? ✅
+* Wisconsin, UIUC, Maryland? Also ✅.
+
+I debated Michigan for EA but decided to manage my educational priorities. I still have a few months left.
+
+
+* **Regular Decision:** In full swing.
+* UC apps? Submitted.
+* Rice, CMU, Case and UCSB-CCS? Submitted.
+* Dartmouth, Columbia, and Brown? Also done.
+
+There are still a few big names on my horizon—**Duke**, **Harvard**, **MIT**, **Yale**, **Harvey Mudd**, and **UPenn-NETS**—all due by end of December. And I’m leaving one last wildcard choice for **Cornell**, **Johns Hopkins**, **UChicago**, or **Princeton**.
+
+It’s a packed schedule. *But*, I’ve made a decision that feels oddly freeing: -->
 
 ---
 
