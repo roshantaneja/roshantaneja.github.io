@@ -52,12 +52,18 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export default function BlogPost({ title, date, content }) {
+    const postDate = new Date(date);
+    const currentDate = new Date();
+    const timeDiff = Math.abs(currentDate - postDate);
+    const daysAgo = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
     return (
         <div className={styles2.container}>
             <main className={styles2.main}>
                 <a href="/blog" className={styles2.backLink}> &larr; Back to Blog</a>
                 <h1 className={styles2.title}>{title}</h1>
                 <p><small>{new Date(date).toLocaleDateString()}</small></p>
+                <p><small>{daysAgo} days ago</small></p>
                 <p>Roshan Taneja</p>
                 
                 {/* Add wrapper for markdown content */}
