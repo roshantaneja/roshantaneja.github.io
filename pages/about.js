@@ -14,6 +14,7 @@ export default function About() {
       </Head>
 
       <main className={styles.main}>
+        <a href="/" className={styles.backLink}> &larr; Back to Home</a>
         <h1 className={styles.title}>About Me</h1>
         <section className={styles.section}>
           <p>

@@ -36,6 +36,7 @@ export default function Tanzania() {
             </Head>
 
             <main>
+                <a href="/" className={styles.backLink}> &larr; Back to Home</a>
                 <h1 style={{ textAlign: 'center', marginBottom: '2rem' }}>
                     Bringing Water to the Maasai of Tanzania
                 </h1>

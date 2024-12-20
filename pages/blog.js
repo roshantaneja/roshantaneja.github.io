@@ -47,6 +47,7 @@ export default function Blog({ posts }) {
     return (
         <div className={styles.container}>
             <main className={styles.main}>
+                <a href="/" className={styles.backLink}> &larr; Back to Home</a>
                 <h1 className={styles.title}>My Blog</h1>
                 <p className={styles.description}>
                     Welcome to my blog! Here, I share my thoughts on literally everything. <br />
