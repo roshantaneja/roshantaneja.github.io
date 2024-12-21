@@ -63,7 +63,8 @@ export default function Blog({ posts }) {
                                     <div>
                                         <h2>{post.title} &rarr;</h2>
                                         <p>{post.description}</p>
-                                        <p><small>{new Date(post.date).toLocaleDateString()}</small></p>
+                                        <p><small><strong>{Math.ceil(Math.abs(new Date() - new Date(post.date)) / (1000 * 60 * 60 * 24))} days ago</strong></small></p>
+                                        {/* <p><small>{new Date(post.date).toLocaleDateString()}</small></p> */}
                                     </div>
                                 </a>
                             </Link>

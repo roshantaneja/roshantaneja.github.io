@@ -12,7 +12,7 @@ const timelineEvents = [
         icon: 'FaGlobe',
     },
     {
-        date: 'June 2022',
+        date: 'Jun 2022',
         title: 'Second Round of Fundraising',
         description: 'Launched another round of fundraising, raising $27K and engaging more families to join the effort.',
         icon: 'FaChartLine',
@@ -30,9 +30,9 @@ const timelineEvents = [
         icon: 'FaWater',
     },
     {
-        date: 'April 2023',
+        date: 'Apr 2023',
         title: 'Speech in Arusha',
-        description: 'Spoke in front of 600+ people at a conference in Arusha, discussing the project’s impact on the Maasai community.',
+        description: 'Spoke in front of 600+ international delegates at a conference in Arusha, discussing the project’s impact on the Maasai community.',
         icon: 'FaGlobe',
     },
     {
@@ -49,18 +49,24 @@ const timelineEvents = [
     },
     {
         date: 'Nov 2023',
-        title: 'Bay Area Panel',
-        description: 'Participated in a panel with 40 people in the Bay Area to discuss the work and future goals for the project.',
+        title: 'Fundraising Dinner with Mbayani in California',
+        description: 'Hosted a fundraising dinner with Mbayani, a Maasai leader, in California to raise funds for the 100 rainwater harvesting units.',
         icon: 'FaHandsHelping',
     },
     {
-        date: 'Dec 2023 / Spring 2024',
+        date: 'Dec 2023 / Sep 2024',
         title: 'Remote Sensing Studies',
         description: 'Studied remote sensing, satellite imaging, and related technologies to enhance project outcomes.',
         icon: 'FaGlobe',
     },
     {
-        date: 'June 2024',
+        date: 'Mar 2024',
+        title: 'Melvin Jones Humanitarian Award',
+        description: 'Received the Melvin Jones Humanitarian Award for the project’s impact on the Maasai community.',
+        icon: 'FaMedal',
+    },
+    {
+        date: 'Jun 2024',
         title: 'Deployment of 10 Tanks',
         description: 'Deployed 10 more 5000-liter tanks, expanding the program to involve more families and students.',
         icon: 'FaWater',
@@ -72,21 +78,21 @@ const timelineEvents = [
         icon: 'FaChartLine',
     },
     {
-        date: 'Sept 2024',
+        date: 'Sep 2024',
         title: 'Presidential Volunteer Service Award',
         description: 'Received the Presidential Volunteer Service Award for the project’s impact on the Maasai community.',
-        icon: 'FaGlobe',
+        icon: 'FaMedal',
     },
     {
-        date: 'Sept/Oct 2024',
+        date: 'Sep/Oct 2024',
         title: 'Deployment Plan for 100 Units',
         description: 'Started the project to deploy 100 rainwater units in zones identified through satellite image maps.',
         icon: 'FaWater',
     },
     {
-        date: 'Nov 2024',
-        title: 'Fundraising Dinner with Mbayani in California',
-        description: 'Hosted a fundraising dinner with Mbayani, a Maasai leader, in California to raise funds for the 100 rainwater harvesting units.',
+        date: 'Nov 2023',
+        title: 'Community Meeting with Deepak Ramola',
+        description: 'Organized a dinner with 40 people in the Bay Area to discuss the work and future goals for the project.',
         icon: 'FaHandsHelping',
     },
     {

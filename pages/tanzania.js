@@ -11,6 +11,7 @@ import {
     FaChartLine,
     FaSchool,
     FaWater,
+    FaMedal,
 } from 'react-icons/fa'; // Import required icons
 import timelineEvents from '../data/timelineEvents'; // Import timeline data
 
@@ -22,6 +23,7 @@ export default function Tanzania() {
         FaChartLine: <FaChartLine />,
         FaSchool: <FaSchool />,
         FaWater: <FaWater />,
+        FaMedal: <FaMedal />,
     };
 
     return (
