@@ -34,6 +34,10 @@ export default function Home() {
       particularly for the Maasai people of Northern Tanzania.
     </p>
 
+    
+    
+
+
     <h2 className={styles.title}>Projects</h2>
     <div className={styles.grid}>
       <a href="/blog" className={styles.card}>
@@ -75,8 +79,28 @@ export default function Home() {
         <h2>More About Me &rarr;</h2>
         <p>Learn more about me, my interests, experiences, and achievements.</p>
       </a>
-      
     </div>
+
+    <h2 className={styles.title}>Publications</h2>
+    <div className={styles.grid}>
+    <a href="./publications/Remote_Sensing_Machine_Learning.pdf" className={styles.card}>
+        <h2>Remote Sensing and Machine Learning for Water Accessibility in Maasai Regions &rarr;</h2>
+        <p>- Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track]</p>
+        <p>- Presented at NeurIPS Convention 2024 in Vancouver</p>
+        <p>- US Patent Pending Number 63/703,232</p>
+        <p>- Presenter at ML4EO 2024 Conference at Univ. of Exeter UK</p>
+        <p>- Published in National High School Journal of Science [Jan 2025 projected publishing]</p>
+      </a>
+
+      <a href="./publications/Impact_of_Water_Harvesting_Unit.pdf" className={styles.card}>
+        <h2>Impact of Rainwater Harvesting Units On Maasai Regions in Northern Tanzania &rarr;</h2>
+        <p>- Published in National High School Journal of Science [Oct 2024]</p>
+        <p>- Presidential Volunteer Service Award - Gold Medal</p>
+        <p>- Presented at MDCON23 [Multi District East Africa Convention] Audience of 600+ delegates</p>
+        <p>- Melvin Jones Humanitarian Service Award</p>
+      </a>
+    </div>
+
     <SpeedInsights/>
     <Analytics/>
   </main>
