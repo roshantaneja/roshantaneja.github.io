@@ -87,8 +87,8 @@ export default function Home() {
         <h2>Remote Sensing and Machine Learning for Water Accessibility in Maasai Regions &rarr;</h2>
         <p>- Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track]</p>
         <p>- Presented at NeurIPS Convention 2024 in Vancouver</p>
-        <p>- US Patent Pending Number 63/703,232</p>
-        <p>- Presenter at ML4EO 2024 Conference at Univ. of Exeter UK</p>
+        <p>- US Patent Pending Number 63/703,232 “Dwelling Detection in Satellite Image Data Using a Model”</p>
+        <p>- Presented at ML4EO 2024 Conference at Univ. of Exeter UK</p>
         <p>- Published in National High School Journal of Science [Jan 2025 projected publishing]</p>
       </a>
 
