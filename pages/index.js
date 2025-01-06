@@ -60,15 +60,15 @@ export default function Home() {
         <p>Come check out some of the projects I'm working on!</p>
       </a>
 
-      <a href="https://github.com/roshantaneja/competitive-programming" target="_blank" rel="noopener noreferrer" className={styles.card}>
+      {/* <a href="https://github.com/roshantaneja/competitive-programming" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>Competitive Programming &rarr;</h2>
         <p>Daily puzzle advent calendar and my solutions repository—join me in cracking algorithmic challenges!</p>
-      </a>
+      </a> */}
 
-      <a href="https://github.com/roshantaneja/spaceinvaders-reinforcementlearning" target="_blank" rel="noopener noreferrer" className={styles.card}>
+      {/* <a href="https://github.com/roshantaneja/spaceinvaders-reinforcementlearning" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>Space Invaders &rarr;</h2>
         <p>Using reinforcement learning to beat the classic game—exploring AI for fun and learning.</p>
-      </a>
+      </a> */}
 
       <a href="https://roshantaneja.stck.me/" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>My STCK &rarr;</h2>
