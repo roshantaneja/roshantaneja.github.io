@@ -89,7 +89,7 @@ export default function Home() {
         <p>- Presented at NeurIPS Convention 2024 in Vancouver</p>
         <p>- US Patent Pending Number 63/703,232 “Dwelling Detection in Satellite Image Data Using a Model”</p>
         <p>- Presented at ML4EO 2024 Conference at Univ. of Exeter UK</p>
-        <p>- Published in National High School Journal of Science [Jan 2025 projected publishing]</p>
+        <p>- Published in National High School Journal of Science [Dec 2024]</p>
       </a>
 
       <a href="./publications/Impact_of_Water_Harvesting_Unit.pdf" className={styles.card}>

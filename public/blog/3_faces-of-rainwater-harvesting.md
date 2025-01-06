@@ -8,7 +8,7 @@ description: A collage of 100 faces, impacted by rainwater harvesting
 
 Before every rainwater harvesting unit lies a story of transformation. For the Maasai community of northern Tanzania, these units represent more than just access to clean water—they symbolize health, education, and hope. Women save hours each day previously spent walking miles for water, children return to classrooms, and families thrive with improved health and opportunities for economic growth. The faces in this collage reflect the resilience, gratitude, and potential of a community empowered by sustainable solutions. Each smile and gaze tells a part of the story—a testament to the profound impact of rainwater harvesting on daily life.
 
-106 rainwater harvesting units [77 pictures] are deployed across Losimingori, Tanzania to eliminate the need to walk 9 hrs/day to fetch water. This work is led by Roshan Taneja and Yuvraj Taneja from the [Maji Wells Foundation](https://majiwells.org/) who have helped with fund raising, deploying large community rainwater units and subsidized units, over the last 5 years.
+108 rainwater harvesting units [77 pictures] are deployed across Losimingori, Tanzania to eliminate the need to walk 9 hrs/day to fetch water. This work is led by Roshan Taneja and Yuvraj Taneja from the [Maji Wells Foundation](https://majiwells.org/) who have helped with fund raising, deploying large community rainwater units and subsidized units, over the last 5 years.
 
 An interactive map to display all of the units in a spatial manner is in progress.
 
