@@ -1,7 +1,7 @@
 ---
-title: Haikus About Myself
-date: 8-21-2022
-description: 4 haikus that describe who I am
+title: "Haikus About Myself"
+date: "8-21-2022"
+description: "4 haikus that describe who I am"
 ---
 Seen too many screens
 

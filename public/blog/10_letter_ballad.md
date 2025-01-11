@@ -1,7 +1,7 @@
 ---
-title: A letter from my Future Self - A Ballad
-date: 6-22-2022
-description: A letter from my graduated self from 2025 to me today
+title: "A letter from my Future Self - A Ballad"
+date: "6-22-2022"
+description: "A letter from my graduated self from 2025 to me today"
 ---
 High School is over, life has begun.
 

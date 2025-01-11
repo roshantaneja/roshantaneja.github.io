@@ -1,7 +1,7 @@
 ---
-title: The Beginning - A Villanelle
-date: 4-29-2022
-description: A villanelle about the beginning of lockdown
+title: "The Beginning - A Villanelle"
+date: "4-29-2022"
+description: "A villanelle about the beginning of lockdown"
 ---
 Shelter in Place! Shelter in Place!
 

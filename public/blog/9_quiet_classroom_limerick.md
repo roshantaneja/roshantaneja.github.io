@@ -1,7 +1,7 @@
 ---
-title: Quiet Classroom - A Limerick
-date: 5-14-2022
-description: A limerick about digital classes
+title: "Quiet Classroom - A Limerick"
+date: "5-14-2022"
+description: "A limerick about digital classes"
 ---
 Before Covid, one could barely get students to stop squawking.
 

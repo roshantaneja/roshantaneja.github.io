@@ -1,6 +1,7 @@
 ---
-title: The Misanthrope
-date: 2-2-2023
+title: "The Misanthrope"
+date: "2-2-2023"
+description: "A good Poem, I think"
 ---
 frustration lives within me,
 
