@@ -71,14 +71,31 @@ export default function BlogPost({ title, date, content }) {
                     <ReactMarkdown
                         rehypePlugins={[rehypeHighlight]}  // Adds syntax highlighting
                         components={{
-                            img: ({ src, alt }) => (
-                                <img
-                                    src={src}
-                                    alt={alt}
-                                    className={styles.blogImage}
-                                />
-                            ),
-
+                            img: ({ src, alt }) => {
+                                if (src.endsWith('.mp4')) {
+                                    // Render video for .mp4 files
+                                    return (
+                                        <video
+                                            controls
+                                            className={styles.blogVideo}
+                                            preload="metadata"
+                                            style={{ maxWidth: '100%', height: 'auto' }}
+                                        >
+                                            <source src={src} type="video/mp4" />
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    );
+                                }
+                                // Default image rendering
+                                return (
+                                    <img
+                                        src={src}
+                                        alt={alt}
+                                        className={styles.blogImage}
+                                    />
+                                );
+                            },
+                            
                             code({ node, inline, className, children, ...props }) {
                                 const match = /language-(\w+)/.exec(className || '')
                                 return !inline && match ? (
