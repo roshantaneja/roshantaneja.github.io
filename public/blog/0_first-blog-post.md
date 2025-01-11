@@ -1,10 +1,10 @@
 ---
-title: "My First Blog Post"
+title: "How I made this Blogging Platform"
 date: "10-19-2024"
-description: "This is the first post in my blog."
+description: "This is the first post in my updated blog."
 ---
 
-# Welcome to My Blog
+# Welcome to My New Blog
 
 Here I share thoughts about coding, life, and everything in between.
 
@@ -21,7 +21,9 @@ I also used fs and path to read the files from the public folder.
 within your nextjs project, run the following commands:
 
 
-`npm install gray-matter react-markdown fs path`
+```txt
+npm install gray-matter react-markdown fs path
+```
 
 
 ---
@@ -180,10 +182,10 @@ export default function Blog({ posts }) {
 
 to create your first blog post, create a markdown file in the /public/blog folder with the following front matter:
 
-```md
+```txt
 ---
 title: "My First Blog Post"
-date: "2024-10-01"
+date: "2024-01-01"
 description: "This is the first post in my blog."
 ---
 
