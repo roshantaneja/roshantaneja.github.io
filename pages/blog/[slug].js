@@ -68,52 +68,82 @@ export default function BlogPost({ title, date, content }) {
                 
                 {/* Add wrapper for markdown content */}
                 <div className={styles.contentWrapper}>
-                    <ReactMarkdown
-                        rehypePlugins={[rehypeHighlight]}  // Adds syntax highlighting
-                        components={{
-                            img: ({ src, alt }) => {
-                                if (src.endsWith('.mp4')) {
-                                    // Render video for .mp4 files
-                                    return (
-                                        <video
-                                            controls
-                                            className={styles.blogVideo}
-                                            preload="metadata"
-                                            style={{ maxWidth: '100%', height: 'auto' }}
-                                        >
-                                            <source src={src} type="video/mp4" />
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    );
-                                }
-                                // Default image rendering
+                <ReactMarkdown
+                    rehypePlugins={[rehypeHighlight]} // Adds syntax highlighting
+                    components={{
+                        img: ({ src, alt }) => {
+                            if (src.endsWith('.mp4')) {
                                 return (
-                                    <img
-                                        src={src}
-                                        alt={alt}
-                                        className={styles.blogImage}
-                                    />
+                                    <video
+                                        controls
+                                        className={styles.blogVideo}
+                                        preload="metadata"
+                                        style={{ maxWidth: '100%', height: 'auto' }}
+                                    >
+                                        <source src={src} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
                                 );
-                            },
-                            
-                            code({ node, inline, className, children, ...props }) {
-                                const match = /language-(\w+)/.exec(className || '')
-                                return !inline && match ? (
-                                    <pre className={styles.codeBlock}>
-                                        <code className={className} {...props}>
-                                            {children}
-                                        </code>
-                                    </pre>
-                                ) : (
-                                    <code className={styles.inlineCode} {...props}>
+                            }
+                            return (
+                                <img
+                                    src={src}
+                                    alt={alt}
+                                    className={styles.blogImage}
+                                />
+                            );
+                        },
+                        a: ({ href, children }) => {
+                            const youtubeMatch = href.match(
+                                /^https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+                            );
+
+                            if (youtubeMatch) {
+                                const videoId = youtubeMatch[1];
+                                return (
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        src={`https://www.youtube.com/embed/${videoId}`}
+                                        title="YouTube video player"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                        frameBorder="0"
+                                        style={{
+                                            maxWidth: '100%',
+                                            height: 'auto',
+                                            display: 'block',
+                                            margin: '16px auto',
+                                        }}
+                                    ></iframe>
+                                );
+                            }
+
+                            return (
+                                <a href={href} target="_blank" rel="noopener noreferrer">
+                                    {children}
+                                </a>
+                            );
+                        },
+                        code({ node, inline, className, children, ...props }) {
+                            const match = /language-(\w+)/.exec(className || '')
+                            return !inline && match ? (
+                                <pre className={styles.codeBlock}>
+                                    <code className={className} {...props}>
                                         {children}
                                     </code>
-                                )
-                            }
-                        }}
-                    >
-                        {content}
-                    </ReactMarkdown>
+                                </pre>
+                            ) : (
+                                <code className={styles.inlineCode} {...props}>
+                                    {children}
+                                </code>
+                            );
+                        }
+                    }}
+                >
+                    {content}
+                </ReactMarkdown>
+
                 </div>
                 <SpeedInsights/>
                 <Analytics/>
