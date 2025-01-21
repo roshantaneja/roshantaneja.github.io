@@ -1,7 +1,7 @@
 ---
 title: "America (Recycling Alan Ginsberg)"
 date: "3-22-2023"
-description: "Recycling Alan Ginsberg's "America""
+description: "Recycling Alan Ginsberg's America"
 ---
 America you lost everything and now you have nothing.
 

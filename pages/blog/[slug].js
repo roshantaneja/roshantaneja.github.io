@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
-import rehypeHighlight from 'rehype-highlight'; // Make sure this is imported
-import styles from '../../styles/blog.module.css';  // Adjust path if needed
-import styles2 from '../../styles/Home.module.css';  // Adjust path if needed
+import rehypeHighlight from 'rehype-highlight';
+import styles from '../../styles/blog.module.css';
+import styles2 from '../../styles/Home.module.css';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 
