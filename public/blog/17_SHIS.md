@@ -5,3 +5,5 @@ description: "Object Detection on Satellite Data For Placement of Water Harvesti
 ---
 
 [https://youtu.be/_t-wOKR0xpo](https://youtu.be/_t-wOKR0xpo)
+
+fullscreen for the best results!
