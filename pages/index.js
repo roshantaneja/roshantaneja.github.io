@@ -83,7 +83,7 @@ export default function Home() {
 
     <h2 className={styles.title}>Publications</h2>
     <div className={styles.grid}>
-    <a href="./publications/Remote_Sensing_Machine_Learning.pdf" className={styles.card}>
+    <a href="./publications/ML_EO_Paper.pdf" className={styles.card}>
         <h2>Remote Sensing and Machine Learning for Water Accessibility in Maasai Regions &rarr;</h2>
         <p>- Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track]</p>
         <p>- Presented at NeurIPS Convention 2024 in Vancouver</p>
@@ -92,7 +92,7 @@ export default function Home() {
         <p>- Published in National High School Journal of Science [Dec 2024]</p>
       </a>
 
-      <a href="./publications/Impact_of_Water_Harvesting_Unit.pdf" className={styles.card}>
+      <a href="./publications/RHU_Impact_Paper.pdf" className={styles.card}>
         <h2>Impact of Rainwater Harvesting Units On Maasai Regions in Northern Tanzania &rarr;</h2>
         <p>- Published in National High School Journal of Science [Oct 2024]</p>
         <p>- Presidential Volunteer Service Award - Gold Medal</p>
