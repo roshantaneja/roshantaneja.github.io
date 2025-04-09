@@ -6,9 +6,20 @@ description: A collage of 100 faces, impacted by rainwater harvesting
 
 # Before you scroll down...
 
-Before every rainwater harvesting unit lies a story of transformation. For the Maasai community of northern Tanzania, these units represent more than just access to clean water—they symbolize health, education, and hope. Women save hours each day previously spent walking miles for water, children return to classrooms, and families thrive with improved health and opportunities for economic growth. The faces in this collage reflect the resilience, gratitude, and potential of a community empowered by sustainable solutions. Each smile and gaze tells a part of the story—a testament to the profound impact of rainwater harvesting on daily life.
+Before every rainwater harvesting unit lies a story of transformation. For the Maasai community of Northern Tanzania, these units represent more than just access to clean water—they symbolize health, education, and hope. Women save hours each day previously spent walking miles for water, children return to classrooms, and families thrive with improved health and opportunities for economic growth. The faces in this collage reflect the resilience, gratitude, and potential of a community empowered by sustainable solutions. Each smile and gaze tells a part of the story—a testament to the profound impact of rainwater harvesting on daily life.
 
 108 rainwater harvesting units [77 pictures] are deployed across Losimingori, Tanzania to eliminate the need to walk 9 hrs/day to fetch water. This work is led by Roshan Taneja and Yuvraj Taneja from the [Maji Wells Foundation](https://majiwells.org/) who have helped with fund raising, deploying large community rainwater units and subsidized units, over the last 5 years.
+
+## Relevant coverage
+
+- [Paper covering the technology used](https://nhsjs.com/wp-content/uploads/2024/12/Image-Classification-on-Satellite-Imagery-for-Sustainable-Water-Harvesting-Placement-in-Indigenous-Communities-of-Northern-Tanzania.pdf)
+- [Previous Paper that served as backbone](https://nhsjs.com/wp-content/uploads/2024/10/Evaluating-the-Impact-of-Water-Harvesting.pdf)
+- [Harvard SDL Annoucement](https://sdl.gis.harvard.edu/news/roshan-taneja-and-yuvraj-taneja-won-neurips-high-school-award)
+- [NeurIPS High School Projects Announcement](https://blog.neurips.cc/2024/11/18/announcing-the-neurips-high-school-projects-results/)
+- [Changing Lives: Sacred Heart](https://www.shschools.org/z-2021-hpr-news-detail?pk=1328855)
+- [My Senior Honors Independent Study](https://www.youtube.com/watch?v=_t-wOKR0xpo)
+
+## Lets Begin!
 
 An interactive map to display all of the units in a spatial manner is in progress.
 
