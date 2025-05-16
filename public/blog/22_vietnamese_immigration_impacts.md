@@ -1,6 +1,6 @@
 ---
 title: "Effect of Legislation on Vietnamese Immigration"
-date: "13-05-2025"
+date: "05-13-2025"
 description: "From Saigon to Little Saigon: U.S. Policies and the Integration of Vietnamese Refugees (1970s–1980s)"
 ---
 
