@@ -1,8 +1,15 @@
 ---
 title: "Effect of Legislation on Vietnamese Immigration"
-date: "05-13-2025"
+date: "05-10-2025"
 description: "From Saigon to Little Saigon: U.S. Policies and the Integration of Vietnamese Refugees (1970s–1980s)"
 ---
+
+# Creator’s Statement
+
+The idea for this blog post emerged from examining the confluence of U.S. immigration policy and a major refugee wave – specifically how America’s laws and actions in the 1970s–80s affected Vietnamese refugees’ integration into society. The story I aimed to tell is one of refugee resilience aided by responsive policy: after the trauma of war and displacement, Vietnamese families found not only refuge in the United States but also pathways to socioeconomic success, largely thanks to deliberate government programs and legislative reforms.
+
+In crafting this narrative, I made three key choices to communicate the research effectively. First, I organized the post chronologically around major policy milestones (1965, 1975, 1980, 1987) with clear section headings. This structure helps a general reader follow the historical progression and see how each policy built on the previous one. Second, I blended factual analysis with human context – for example, pairing statistics about incomes and education ￼ ￼ with anecdotes about boat people and resettlement camps. This choice was meant to engage readers emotionally while still delivering an analytical punch. Third, I used strong, reputable sources and included them as inline citations to add credibility. Drawing on government archives, academic studies, and firsthand accounts allowed me to provide evidence for each claim (such as the $405 million refugee aid in 1975 ￼ or the dramatic improvement in Vietnamese Americans’ economic status by 1990 ￼). I also included a couple of relevant images – a refugee camp and a naval rescue – to give visual life to the story without overwhelming the text. These choices, I believe, make the complex interplay of policy and integration accessible and compelling, showing how enlightened policies can transform lives and enrich a nation.
+
 
 # Introduction
 

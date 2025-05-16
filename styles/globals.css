@@ -1,13 +1,23 @@
-/* Default Light Mode */
+/* Default Dark Mode */
+body {
+  background-color: #121212;
+  color: #ffffff;
+  --card-bg: #1e1e1e;
+  --text-color: #ffffff;
+  --border-color: #333333;
+  --icon-bg: #c4b5fd;
+  --icon-color: #ffffff;
+}
+
+/* Light Mode */
 body.light {
   background-color: #ffffff;
   color: #000000;
-}
-
-/* Dark Mode */
-body.dark {
-  background-color: #121212;
-  color: #ffffff;
+  --card-bg: #ffffff;
+  --text-color: #000000;
+  --border-color: #e0e0e0;
+  --icon-bg: #a78bfa;
+  --icon-color: #ffffff;
 }
 
 .vertical-timeline-element-content {
@@ -23,30 +33,14 @@ body.dark {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Define CSS variables for light and dark modes */
-body.light {
-  --card-bg: #ffffff;
-  --text-color: #000000;
-  --border-color: #e0e0e0;
-  --icon-bg: #0070f3;
-  --icon-color: #ffffff;
-}
-
-body.dark {
-  --card-bg: #1e1e1e;
-  --text-color: #ffffff;
-  --border-color: #333333;
-  --icon-bg: #bb86fc;
-  --icon-color: #ffffff;
-}
 
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'Inter', Roboto, 'Helvetica Neue', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: var(--card-bg);
+  color: var(--text-color);
 }
 
 a {
@@ -67,10 +61,10 @@ a:focus {
   padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   body {
-    color: #e5e5e5;
-    background: #181818;
+    color: var(--text-color);
+    background: var(--card-bg);
   }
 }
 
@@ -96,11 +90,11 @@ a:focus {
 @import 'highlight.js/styles/atom-one-dark.css';
 
 pre {
-  background-color: #282c34;
+  background-color: var(--card-bg);
   padding: 1rem;
   border-radius: 6px;
   overflow-x: auto;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 code {
@@ -134,13 +128,13 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
-  background-color: #f4f4f4; /* Light background for the footer */
-  color: #333; /* Footer text color */
-  border-top: 1px solid #ddd; /* Adds a subtle border at the top */
-  width: 100%; /* Ensures the footer spans the entire page width */
-  font-size: 1rem; /* Adjusts the font size for readability */
-  text-align: center; /* Ensures text is centered */
-  position: relative; /* Ensures proper placement */
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-top: 1px solid var(--border-color);
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  position: relative;
 }
 
 footer a {
