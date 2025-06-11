@@ -21,7 +21,7 @@ Before every rainwater harvesting unit lies a story of transformation. For the M
 
 ## Lets Begin!
 
-An interactive map to display all of the units in a spatial manner is in progress.
+An interactive map to display all of the units in a spatial manner is at [map.roshan.codes](https://map.roshan.codes)
 
 ![](./images/3/map.png "Landscape")
 
