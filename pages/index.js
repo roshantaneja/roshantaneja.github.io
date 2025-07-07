@@ -9,7 +9,7 @@ export default function Home() {
 <div className={styles.container}>
   <Head>
     <title>Roshan Taneja</title>
-    <meta name="description" content="High school student passionate about using AI, remote sensing, and technology to solve global problems." />
+    <meta name="description" content="Student passionate about using technology to solve global problems." />
     <link rel="icon" href="/favicon.ico" />
   </Head>
 
@@ -20,19 +20,12 @@ export default function Home() {
     </h1>
 
     <p className={styles.description}>
-      I'm a high school student, programmer, researcher, and writer. <br />
-      My work lies at the intersection of technology, machine learning, <br />
-      and environmental sciences, with a focus on solving global water challenges.
+      I'm a student, programmer, researcher, and writer. My work lies at the intersection of technology, machine learning, and environmental sciences, with a focus on solving global water challenges.
     </p>
 
     <p className={styles.description}>
-      I develop machine learning models, analyze satellite imagery, and lead humanitarian <br />
-      projects. My work is aimed at creating lasting solutions for water scarcity, <br />
-      particularly for the Maasai people of Northern Tanzania.
+      I develop machine learning models, analyze satellite imagery, and lead humanitarian projects. My work is aimed at creating lasting solutions for water scarcity, particularly for the Maasai people of Northern Tanzania.
     </p>
-
-    
-    
 
 
     <h2 className={styles.title}>Featured Projects</h2>
@@ -57,10 +50,10 @@ export default function Home() {
         <p>Come check out some of the projects I'm working on!</p>
       </a>
 
-      {/* <a href="https://github.com/roshantaneja/competitive-programming" target="_blank" rel="noopener noreferrer" className={styles.card}>
+      <a href="https://github.com/roshantaneja/competitive-programming" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>Competitive Programming &rarr;</h2>
         <p>Daily puzzle advent calendar and my solutions repository—join me in cracking algorithmic challenges!</p>
-      </a> */}
+      </a>
 
       <a href="https://github.com/roshantaneja/spaceinvaders-reinforcementlearning" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>Space Invaders &rarr;</h2>
@@ -72,6 +65,16 @@ export default function Home() {
         <p>I write fiction, publish stories, and share reflections on tech, life, and everything in between.</p>
       </a> */}
 
+      <a href="https://map.roshan.codes" target="_blank" rel="noopener noreferrer" className={styles.card}>
+        <h2>Map of Deployed Units &rarr;</h2>
+        <p>Interactive map of the deployed rainwater harvesting units in Northern Tanzania.</p>
+      </a>
+
+      <a href="https://github.com/roshantaneja/roshantaneja.github.io" target="_blank" rel="noopener noreferrer" className={styles.card}>
+        <h2>This Website &rarr;</h2>
+        <p>The Code for this website—built with Next.js, React, and Tailwind CSS.</p>
+      </a>
+
       <a href="/about" className={styles.card}>
         <h2>More About Me &rarr;</h2>
         <p>Learn more about me, my interests, experiences, and achievements.</p>
@@ -82,19 +85,33 @@ export default function Home() {
     <div className={styles.grid}>
     <a href="https://nhsjs.com/wp-content/uploads/2024/12/Image-Classification-on-Satellite-Imagery-for-Sustainable-Water-Harvesting-Placement-in-Indigenous-Communities-of-Northern-Tanzania.pdf" className={styles.card}>
         <h2>Remote Sensing and Machine Learning for Water Accessibility in Maasai Regions &rarr;</h2>
-        <p>- Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track]</p>
+        
+        <ul>
+          <li>Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track]</li>
+          <li>Presented at NeurIPS Convention 2024 in Vancouver</li>
+          <li>US Patent Pending Number 63/703,232 “Dwelling Detection in Satellite Image Data Using a Model”</li>
+          <li>Presented at ML4EO 2024 Conference at Univ. of Exeter UK</li>
+          <li>Published in National High School Journal of Science [Dec 2024]</li>
+        </ul>
+        {/* <p>- Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track]</p>
         <p>- Presented at NeurIPS Convention 2024 in Vancouver</p>
         <p>- US Patent Pending Number 63/703,232 “Dwelling Detection in Satellite Image Data Using a Model”</p>
         <p>- Presented at ML4EO 2024 Conference at Univ. of Exeter UK</p>
-        <p>- Published in National High School Journal of Science [Dec 2024]</p>
+        <p>- Published in National High School Journal of Science [Dec 2024]</p> */}
       </a>
 
       <a href="https://nhsjs.com/wp-content/uploads/2024/10/Evaluating-the-Impact-of-Water-Harvesting.pdf" className={styles.card}>
         <h2>Impact of Rainwater Harvesting Units On Maasai Regions in Northern Tanzania &rarr;</h2>
-        <p>- Published in National High School Journal of Science [Oct 2024]</p>
+        <ul>
+          <li>Published in National High School Journal of Science [Oct 2024]</li>
+          <li>Presidential Volunteer Service Award - Gold Medal [300+ Hours]</li>
+          <li>Presented at MDCON23 [Multi-District East-Africa Convention] Audience of 600+ delegates</li>
+          <li>Melvin Jones Humanitarian Service Award</li>
+        </ul>
+        {/* <p>- Published in National High School Journal of Science [Oct 2024]</p>
         <p>- Presidential Volunteer Service Award - Gold Medal [300+ Hours]</p>
         <p>- Presented at MDCON23 [Multi-District East-Africa Convention] Audience of 600+ delegates</p>
-        <p>- Melvin Jones Humanitarian Service Award</p>
+        <p>- Melvin Jones Humanitarian Service Award</p> */}
       </a>
     </div>
 
