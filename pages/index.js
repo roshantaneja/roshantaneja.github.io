@@ -1,130 +1,344 @@
 import Head from 'next/head'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from "@vercel/analytics/react"
+import DynamicExperience from '../components/DynamicExperience'
 
 export default function Home() {
+  const [userIntent, setUserIntent] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const [dynamicContent, setDynamicContent] = useState(null)
+  const [interactionMode, setInteractionMode] = useState('text') // text, voice, visual
+  const [showAdvancedAI, setShowAdvancedAI] = useState(false)
+  const [userContext, setUserContext] = useState({
+    isFirstVisit: true,
+    interests: [],
+    previousInteractions: []
+  })
+
+  // Simulate AI understanding of user intent
+  const understandIntent = async (input) => {
+    setIsLoading(true)
+    
+    // Simulate AI processing
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    
+    const intent = input.toLowerCase()
+    let response = null
+
+    if (intent.includes('resume') || intent.includes('cv') || intent.includes('experience')) {
+      response = {
+        type: 'resume',
+        title: "Here's my professional background",
+        content: {
+          education: "Stanford University - Computer Science",
+          experience: "ML Research, Water Projects, Competitive Programming",
+          skills: "Python, React, ML/AI, Satellite Imagery Analysis",
+          action: "Download my full resume"
+        }
+      }
+    } else if (intent.includes('project') || intent.includes('work') || intent.includes('research')) {
+      response = {
+        type: 'projects',
+        title: "My key projects and research",
+        content: {
+          waterProject: "Rainwater harvesting for Maasai communities",
+          mlResearch: "Satellite imagery analysis for water accessibility",
+          competitiveProgramming: "Algorithmic problem solving",
+          spaceInvaders: "Reinforcement learning game AI"
+        }
+      }
+    } else if (intent.includes('contact') || intent.includes('email') || intent.includes('reach')) {
+      response = {
+        type: 'contact',
+        title: "Let's connect!",
+        content: {
+          email: "roshan@stanford.edu",
+          github: "github.com/roshantaneja",
+          linkedin: "linkedin.com/in/roshantaneja"
+        }
+      }
+    } else if (intent.includes('publication') || intent.includes('paper') || intent.includes('research')) {
+      response = {
+        type: 'publications',
+        title: "My research publications",
+        content: {
+          neurips: "NeurIPS 2024 - ML for Social Impact",
+          nhsjs: "National High School Journal of Science",
+          patent: "US Patent Pending - Dwelling Detection"
+        }
+      }
+    } else {
+      // Default welcome experience
+      response = {
+        type: 'welcome',
+        title: "Hello! I'm Roshan Taneja",
+        content: {
+          intro: "I'm a student, programmer, researcher, and writer focused on using technology to solve global water challenges.",
+          ask: "What would you like to know about me? Try asking about my resume, projects, research, or just say hello!"
+        }
+      }
+    }
+
+    setDynamicContent(response)
+    setIsLoading(false)
+  }
+
+  const handleIntentSubmit = (e) => {
+    e.preventDefault()
+    if (userIntent.trim()) {
+      understandIntent(userIntent)
+      setUserContext(prev => ({
+        ...prev,
+        previousInteractions: [...prev.previousInteractions, userIntent],
+        isFirstVisit: false
+      }))
+    }
+  }
+
+  const quickActions = [
+    { label: "Show my resume", intent: "I want to see your resume and experience" },
+    { label: "Tell me about your projects", intent: "What projects and research have you worked on?" },
+    { label: "Your publications", intent: "Show me your research publications and papers" },
+    { label: "Contact info", intent: "How can I get in touch with you?" }
+  ]
+
+  // If advanced AI mode is enabled, show the DynamicExperience component
+  if (showAdvancedAI) {
+    return (
+      <div className={styles.container}>
+        <Head>
+          <title>Roshan Taneja - AI Experience</title>
+          <meta name="description" content="Advanced AI-powered dynamic personal website experience" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+
+        <main className={styles.main}>
+          <div className={styles.aiHeader}>
+            <h1 className={styles.title}>AI-Powered Experience</h1>
+            <p className={styles.description}>
+              Experience the future of web interaction with voice input and intelligent responses
+            </p>
+          </div>
+
+          <DynamicExperience />
+
+          <div className={styles.modeSwitch}>
+            <button 
+              onClick={() => setShowAdvancedAI(false)}
+              className={styles.switchButton}
+            >
+              ← Back to Simple Mode
+            </button>
+          </div>
+
+          <SpeedInsights/>
+          <Analytics/>
+        </main>
+
+        <footer className={styles.footer}>
+          Roshan Taneja &copy; all rights reserved. &nbsp; &nbsp;
+          <a href="https://www.github.com/roshantaneja/roshantaneja.github.io" target="_blank" rel="noopener noreferrer" style={{alignSelf: 'right'}}>
+            Wanna see how I built this site? Click me to check out the code on GitHub!
+          </a>
+        </footer>
+      </div>
+    )
+  }
+
   return (
-<div className={styles.container}>
-  <Head>
-    <title>Roshan Taneja</title>
-    <meta name="description" content="Student passionate about using technology to solve global problems." />
-    <link rel="icon" href="/favicon.ico" />
-  </Head>
+    <div className={styles.container}>
+      <Head>
+        <title>Roshan Taneja - Dynamic Experience</title>
+        <meta name="description" content="AI-powered dynamic personal website experience" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-  <main className={styles.main}>
-    <h1 className={styles.title}>
-      Hello, I'm <a href="./resume/Roshan Taneja Resume.pdf" className={styles.resumeLink}>Roshan!</a>
-      <span className={styles.tooltip}>Click my name for my resumé!</span>
-    </h1>
+      <main className={styles.main}>
+        {/* Dynamic Header */}
+        <div className={styles.dynamicHeader}>
+          <h1 className={styles.title}>
+            {dynamicContent ? dynamicContent.title : "Hello, I'm Roshan!"}
+          </h1>
+          
+          {!dynamicContent && (
+            <p className={styles.description}>
+              Welcome to my dynamic website experience. Instead of static pages, 
+              tell me what you're looking for and I'll adapt the experience just for you.
+            </p>
+          )}
+        </div>
 
-    <p className={styles.description}>
-      I'm a student, programmer, researcher, and writer. My work lies at the intersection of technology, machine learning, and environmental sciences, with a focus on solving global water challenges.
-    </p>
+        {/* Intent Input */}
+        <div className={styles.intentSection}>
+          <form onSubmit={handleIntentSubmit} className={styles.intentForm}>
+            <input
+              type="text"
+              value={userIntent}
+              onChange={(e) => setUserIntent(e.target.value)}
+              placeholder="What would you like to know about me? (e.g., 'Show me your resume', 'Tell me about your projects')"
+              className={styles.intentInput}
+              disabled={isLoading}
+            />
+            <button type="submit" className={styles.intentButton} disabled={isLoading}>
+              {isLoading ? 'Thinking...' : 'Ask'}
+            </button>
+          </form>
+        </div>
 
-    <p className={styles.description}>
-      I develop machine learning models, analyze satellite imagery, and lead humanitarian projects. My work is aimed at creating lasting solutions for water scarcity, particularly for the Maasai people of Northern Tanzania.
-    </p>
+        {/* Quick Actions */}
+        {!dynamicContent && (
+          <div className={styles.quickActions}>
+            <p>Or try one of these:</p>
+            <div className={styles.actionButtons}>
+              {quickActions.map((action, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    setUserIntent(action.intent)
+                    understandIntent(action.intent)
+                  }}
+                  className={styles.actionButton}
+                >
+                  {action.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
+        {/* Dynamic Content Display */}
+        {dynamicContent && (
+          <div className={styles.dynamicContent}>
+            {dynamicContent.type === 'resume' && (
+              <div className={styles.resumeSection}>
+                <h2>Professional Background</h2>
+                <div className={styles.resumeGrid}>
+                  <div className={styles.resumeCard}>
+                    <h3>Education</h3>
+                    <p>{dynamicContent.content.education}</p>
+                  </div>
+                  <div className={styles.resumeCard}>
+                    <h3>Experience</h3>
+                    <p>{dynamicContent.content.experience}</p>
+                  </div>
+                  <div className={styles.resumeCard}>
+                    <h3>Skills</h3>
+                    <p>{dynamicContent.content.skills}</p>
+                  </div>
+                </div>
+                <a href="./resume/Roshan Taneja Resume.pdf" className={styles.downloadButton}>
+                  Download Full Resume
+                </a>
+              </div>
+            )}
 
-    <h2 className={styles.title}>Featured Projects</h2>
-    <div className={styles.grid}>
-      <a href="/blog" className={styles.card}>
-        <h2>My Blog &rarr;</h2>
-        <p>I write fiction, publish stories, and share reflections on tech, life, and everything in between.</p>
-      </a>
+            {dynamicContent.type === 'projects' && (
+              <div className={styles.projectsSection}>
+                <h2>Featured Projects</h2>
+                <div className={styles.grid}>
+                  <a href="/tanzania" className={styles.card}>
+                    <h2>Water for Maasai &rarr;</h2>
+                    <p>{dynamicContent.content.waterProject}</p>
+                  </a>
+                  <a href="/blog/3_faces-of-rainwater-harvesting" className={styles.card}>
+                    <h2>ML Research &rarr;</h2>
+                    <p>{dynamicContent.content.mlResearch}</p>
+                  </a>
+                  <a href="https://github.com/roshantaneja/competitive-programming" className={styles.card}>
+                    <h2>Competitive Programming &rarr;</h2>
+                    <p>{dynamicContent.content.competitiveProgramming}</p>
+                  </a>
+                  <a href="https://github.com/roshantaneja/spaceinvaders-reinforcementlearning" className={styles.card}>
+                    <h2>Space Invaders AI &rarr;</h2>
+                    <p>{dynamicContent.content.spaceInvaders}</p>
+                  </a>
+                </div>
+              </div>
+            )}
 
-      <a href="/blog/3_faces-of-rainwater-harvesting" className={styles.card}>
-        <h2>Faces of Rainwater Harvesting &rarr;</h2>
-        <p>Using machine learning to identify indigenous dwellings and improve water accessibility in underserved regions.</p>
-      </a>
-      
-      <a href="/tanzania" className={styles.card}>
-        <h2>Bringing Water to the Maasai &rarr;</h2>
-        <p>Led the deployment of 100+ rainwater harvesting units, reducing water collection time for 4500+ Maasai people.</p>
-      </a>
+            {dynamicContent.type === 'contact' && (
+              <div className={styles.contactSection}>
+                <h2>Get in Touch</h2>
+                <div className={styles.contactGrid}>
+                  <div className={styles.contactCard}>
+                    <h3>Email</h3>
+                    <a href={`mailto:${dynamicContent.content.email}`}>{dynamicContent.content.email}</a>
+                  </div>
+                  <div className={styles.contactCard}>
+                    <h3>GitHub</h3>
+                    <a href={`https://${dynamicContent.content.github}`} target="_blank" rel="noopener noreferrer">
+                      {dynamicContent.content.github}
+                    </a>
+                  </div>
+                  <div className={styles.contactCard}>
+                    <h3>LinkedIn</h3>
+                    <a href={`https://${dynamicContent.content.linkedin}`} target="_blank" rel="noopener noreferrer">
+                      {dynamicContent.content.linkedin}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
 
-      <a href="https://github.com/roshantaneja" target="_blank" rel="noopener noreferrer" className={styles.card}>
-        <h2>My Github &rarr;</h2>
-        <p>Come check out some of the projects I'm working on!</p>
-      </a>
+            {dynamicContent.type === 'publications' && (
+              <div className={styles.publicationsSection}>
+                <h2>Research Publications</h2>
+                <div className={styles.grid}>
+                  <a href="https://nhsjs.com/wp-content/uploads/2024/12/Image-Classification-on-Satellite-Imagery-for-Sustainable-Water-Harvesting-Placement-in-Indigenous-Communities-of-Northern-Tanzania.pdf" className={styles.card}>
+                    <h2>NeurIPS 2024 &rarr;</h2>
+                    <p>{dynamicContent.content.neurips}</p>
+                  </a>
+                  <a href="https://nhsjs.com/wp-content/uploads/2024/10/Evaluating-the-Impact-of-Water-Harvesting.pdf" className={styles.card}>
+                    <h2>NHSJS Publication &rarr;</h2>
+                    <p>{dynamicContent.content.nhsjs}</p>
+                  </a>
+                  <div className={styles.card}>
+                    <h2>US Patent Pending &rarr;</h2>
+                    <p>{dynamicContent.content.patent}</p>
+                  </div>
+                </div>
+              </div>
+            )}
 
-      <a href="https://github.com/roshantaneja/competitive-programming" target="_blank" rel="noopener noreferrer" className={styles.card}>
-        <h2>Competitive Programming &rarr;</h2>
-        <p>Daily puzzle advent calendar and my solutions repository—join me in cracking algorithmic challenges!</p>
-      </a>
+            {dynamicContent.type === 'welcome' && (
+              <div className={styles.welcomeSection}>
+                <p className={styles.description}>{dynamicContent.content.intro}</p>
+                <p className={styles.description}>{dynamicContent.content.ask}</p>
+              </div>
+            )}
+          </div>
+        )}
 
-      <a href="https://github.com/roshantaneja/spaceinvaders-reinforcementlearning" target="_blank" rel="noopener noreferrer" className={styles.card}>
-        <h2>Space Invaders &rarr;</h2>
-        <p>Using reinforcement learning to beat the classic game—exploring AI for fun and learning.</p>
-      </a>
+        {/* Mode Selection */}
+        <div className={styles.modeSelection}>
+          <button 
+            onClick={() => setShowAdvancedAI(true)}
+            className={styles.advancedButton}
+          >
+            🚀 Try Advanced AI Experience
+          </button>
+          
+          <button 
+            onClick={() => setDynamicContent(null)}
+            className={styles.legacyButton}
+          >
+            Switch to Traditional View
+          </button>
+        </div>
 
-      {/* <a href="https://roshantaneja.stck.me/" target="_blank" rel="noopener noreferrer" className={styles.card}>
-        <h2>My STCK &rarr;</h2>
-        <p>I write fiction, publish stories, and share reflections on tech, life, and everything in between.</p>
-      </a> */}
+        <SpeedInsights/>
+        <Analytics/>
+      </main>
 
-      <a href="https://map.roshan.codes" target="_blank" rel="noopener noreferrer" className={styles.card}>
-        <h2>Map of Deployed Units &rarr;</h2>
-        <p>Interactive map of the deployed rainwater harvesting units in Northern Tanzania.</p>
-      </a>
-
-      <a href="https://github.com/roshantaneja/roshantaneja.github.io" target="_blank" rel="noopener noreferrer" className={styles.card}>
-        <h2>This Website &rarr;</h2>
-        <p>The Code for this website—built with Next.js, React, and Tailwind CSS.</p>
-      </a>
-
-      <a href="/about" className={styles.card}>
-        <h2>More About Me &rarr;</h2>
-        <p>Learn more about me, my interests, experiences, and achievements.</p>
-      </a>
+      <footer className={styles.footer}>
+        Roshan Taneja &copy; all rights reserved. &nbsp; &nbsp;
+        <a href="https://www.github.com/roshantaneja/roshantaneja.github.io" target="_blank" rel="noopener noreferrer" style={{alignSelf: 'right'}}>
+          Wanna see how I built this site? Click me to check out the code on GitHub!
+        </a>
+      </footer>
     </div>
-
-    <h2 className={styles.title}>Publications</h2>
-    <div className={styles.grid}>
-    <a href="https://nhsjs.com/wp-content/uploads/2024/12/Image-Classification-on-Satellite-Imagery-for-Sustainable-Water-Harvesting-Placement-in-Indigenous-Communities-of-Northern-Tanzania.pdf" className={styles.card}>
-        <h2>Remote Sensing and Machine Learning for Water Accessibility in Maasai Regions &rarr;</h2>
-        
-        <ul>
-          <li>Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track]</li>
-          <li>Presented at NeurIPS Convention 2024 in Vancouver</li>
-          <li>US Patent Pending Number 63/703,232 “Dwelling Detection in Satellite Image Data Using a Model”</li>
-          <li>Presented at ML4EO 2024 Conference at Univ. of Exeter UK</li>
-          <li>Published in National High School Journal of Science [Dec 2024]</li>
-        </ul>
-        {/* <p>- Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track]</p>
-        <p>- Presented at NeurIPS Convention 2024 in Vancouver</p>
-        <p>- US Patent Pending Number 63/703,232 “Dwelling Detection in Satellite Image Data Using a Model”</p>
-        <p>- Presented at ML4EO 2024 Conference at Univ. of Exeter UK</p>
-        <p>- Published in National High School Journal of Science [Dec 2024]</p> */}
-      </a>
-
-      <a href="https://nhsjs.com/wp-content/uploads/2024/10/Evaluating-the-Impact-of-Water-Harvesting.pdf" className={styles.card}>
-        <h2>Impact of Rainwater Harvesting Units On Maasai Regions in Northern Tanzania &rarr;</h2>
-        <ul>
-          <li>Published in National High School Journal of Science [Oct 2024]</li>
-          <li>Presidential Volunteer Service Award - Gold Medal [300+ Hours]</li>
-          <li>Presented at MDCON23 [Multi-District East-Africa Convention] Audience of 600+ delegates</li>
-          <li>Melvin Jones Humanitarian Service Award</li>
-        </ul>
-        {/* <p>- Published in National High School Journal of Science [Oct 2024]</p>
-        <p>- Presidential Volunteer Service Award - Gold Medal [300+ Hours]</p>
-        <p>- Presented at MDCON23 [Multi-District East-Africa Convention] Audience of 600+ delegates</p>
-        <p>- Melvin Jones Humanitarian Service Award</p> */}
-      </a>
-    </div>
-
-    <SpeedInsights/>
-    <Analytics/>
-  </main>
-
-  <footer className={styles.footer}>
-  Roshan Taneja &copy; all rights reserved. &nbsp; &nbsp;
-    <a href="https://www.github.com/roshantaneja/roshantaneja.github.io" target="_blank" rel="noopener noreferrer" style={{alignSelf: 'right'}}>
-    Wanna see how I built this site? Click me to check out the code on GitHub!
-    </a>
-  </footer>
-</div>
   )
 }
