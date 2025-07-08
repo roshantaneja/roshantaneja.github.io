@@ -1,10 +1,8 @@
-import { Configuration, OpenAIApi } from 'openai'
+import OpenAI from 'openai'
 
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 })
-
-const openai = new OpenAIApi(configuration)
 
 // Personal context about Roshan - you can expand this with your essays and more details
 const PERSONAL_CONTEXT = `
@@ -68,7 +66,7 @@ Please respond as Roshan Taneja, naturally and conversationally. If the user is 
 
 Response:`
 
-    const completion = await openai.createChatCompletion({
+    const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
         {
@@ -84,7 +82,7 @@ Response:`
       temperature: 0.7,
     })
 
-    const response = completion.data.choices[0].message.content
+    const response = completion.choices[0].message.content
 
     // Determine the type of response for frontend handling
     let responseType = 'general'
