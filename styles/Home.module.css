@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #1a1a1a;
 }
 
 .main {
@@ -31,19 +31,85 @@
   margin-bottom: 3rem;
 }
 
+.nameContainer {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.resumeLink {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.resumeLink:hover {
+  transform: translateY(-2px);
+}
+
+.resumeLink:hover .tooltip {
+  opacity: 1;
+}
+
+.tooltip {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2a2a2a;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  border: 1px solid #3a3a3a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #2a2a2a transparent transparent transparent;
+}
+
 .searchTitle {
   font-size: 3.5rem;
-  font-weight: 300;
+  font-weight: 700;
   color: white;
   margin: 0 0 1rem 0;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  letter-spacing: -0.02em;
+}
+
+.resumeLink {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.resumeLink:hover {
+  transform: translateY(-2px);
+  color: #8b5cf6;
 }
 
 .searchSubtitle {
   font-size: 1.2rem;
-  color: rgba(255,255,255,0.9);
+  color: #b0b0b0;
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .searchForm {
@@ -54,16 +120,17 @@
   display: flex;
   max-width: 600px;
   margin: 0 auto;
-  background: white;
+  background: #2a2a2a;
+  border: 2px solid #3a3a3a;
   border-radius: 50px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .searchBox:hover {
-  box-shadow: 0 6px 30px rgba(0,0,0,0.15);
-  transform: translateY(-2px);
+  border-color: #8b5cf6;
+  box-shadow: 0 6px 30px rgba(139, 92, 246, 0.2);
 }
 
 .searchInput {
@@ -73,29 +140,30 @@
   outline: none;
   font-size: 1.1rem;
   background: transparent;
+  color: white;
 }
 
 .searchInput::placeholder {
-  color: #999;
+  color: #888;
 }
 
 .searchButton {
   padding: 1rem 2rem;
-  background: #4285f4;
+  background: #8b5cf6;
   color: white;
   border: none;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .searchButton:hover:not(:disabled) {
-  background: #3367d6;
+  background: #7c3aed;
 }
 
 .searchButton:disabled {
-  background: #ccc;
+  background: #4a4a4a;
   cursor: not-allowed;
 }
 
@@ -105,9 +173,10 @@
 }
 
 .exampleQueries p {
-  color: rgba(255,255,255,0.8);
+  color: #888;
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .queryChips {
@@ -119,27 +188,30 @@
 
 .queryChip {
   padding: 0.5rem 1rem;
-  background: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.3);
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
   border-radius: 20px;
-  color: white;
+  color: #b0b0b0;
   cursor: pointer;
   font-size: 0.9rem;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .queryChip:hover {
-  background: rgba(255,255,255,0.3);
-  transform: translateY(-1px);
+  background: #8b5cf6;
+  color: white;
+  border-color: #8b5cf6;
 }
 
 /* Search Results */
 .searchResults {
   width: 100%;
   max-width: 900px;
-  background: white;
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
   border-radius: 12px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
   overflow: hidden;
   margin-top: 2rem;
 }
@@ -147,7 +219,7 @@
 /* AI Summary */
 .aiSummary {
   padding: 2rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #3a3a3a;
 }
 
 .summaryHeader {
@@ -159,22 +231,24 @@
 
 .summaryHeader h2 {
   margin: 0;
-  color: #333;
+  color: white;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .queryDisplay {
-  color: #666;
+  color: #8b5cf6;
   font-style: italic;
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .summaryText {
-  color: #333;
+  color: #e0e0e0;
   line-height: 1.6;
   font-size: 1rem;
   margin: 0;
+  font-weight: 400;
 }
 
 /* Relevant Cards */
@@ -184,9 +258,9 @@
 
 .relevantCards h3 {
   margin: 0 0 1.5rem 0;
-  color: #333;
+  color: white;
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .cardGroup {
@@ -195,9 +269,9 @@
 
 .cardGroupCaption {
   margin: 0 0 1rem 0;
-  color: #666;
+  color: #8b5cf6;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -211,78 +285,83 @@
 .relevantCard {
   display: block;
   padding: 1.5rem;
-  background: #f8f9fa;
+  background: #1a1a1a;
+  border: 1px solid #3a3a3a;
   border-radius: 8px;
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
-  border: 1px solid #e9ecef;
 }
 
 .relevantCard:hover {
-  background: #e9ecef;
+  background: #3a3a3a;
+  border-color: #8b5cf6;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
 }
 
 .relevantCard h5 {
   margin: 0 0 0.5rem 0;
-  color: #1a73e8;
+  color: #8b5cf6;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .relevantCard p {
   margin: 0;
-  color: #666;
+  color: #b0b0b0;
   font-size: 0.9rem;
   line-height: 1.4;
+  font-weight: 400;
 }
 
 /* New Search Button */
 .newSearch {
   padding: 1.5rem 2rem;
   text-align: center;
-  background: #f8f9fa;
-  border-top: 1px solid #eee;
+  background: #1a1a1a;
+  border-top: 1px solid #3a3a3a;
 }
 
 .newSearchButton {
   padding: 0.75rem 2rem;
-  background: #4285f4;
+  background: #8b5cf6;
   color: white;
   border: none;
   border-radius: 6px;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .newSearchButton:hover {
-  background: #3367d6;
+  background: #7c3aed;
 }
 
 /* Footer */
 .footer {
   width: 100%;
   height: 60px;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #3a3a3a;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.8);
+  background: #1a1a1a;
+  color: #888;
   font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .footer a {
-  color: rgba(255,255,255,0.9);
+  color: #8b5cf6;
   text-decoration: none;
   margin-left: 1rem;
+  font-weight: 500;
 }
 
 .footer a:hover {
+  color: #7c3aed;
   text-decoration: underline;
 }
 
@@ -316,5 +395,10 @@
   
   .searchResults {
     margin: 1rem;
+  }
+  
+  .tooltip {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
   }
 }

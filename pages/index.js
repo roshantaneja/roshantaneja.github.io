@@ -84,7 +84,20 @@ export default function Home() {
         {/* Google-like Search Interface */}
         <div className={styles.searchContainer}>
           <div className={styles.searchHeader}>
-            <h1 className={styles.searchTitle}>Learn about Roshan Taneja</h1>
+            <div className={styles.nameContainer}>
+              <h1 className={styles.searchTitle}>
+                Hi, I'm{' '}
+                <a 
+                  href="/resume/Roshan Taneja Resume.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.resumeLink}
+                >
+                  Roshan Taneja
+                  <div className={styles.tooltip}>Click my name to see my resume</div>
+                </a>
+              </h1>
+            </div>
             <p className={styles.searchSubtitle}>Ask me anything about my work, education, projects, or interests</p>
           </div>
 
