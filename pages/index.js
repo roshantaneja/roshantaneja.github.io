@@ -65,7 +65,7 @@ export default function Home() {
   }
 
   const exampleQueries = [
-    'What is your GPA?',
+    'What is your favourite ice cream flavour?',
     'Tell me about your water projects',
     'Show me your publications',
     'What school do you attend?',
@@ -94,7 +94,7 @@ export default function Home() {
                   className={styles.resumeLink}
                 >
                   Roshan Taneja
-                  <div className={styles.tooltip}>Click my name to see my resume</div>
+                  <div className={styles.tooltip}>Click my name to see my resume!</div>
                 </a>
               </h1>
             </div>
@@ -110,6 +110,7 @@ export default function Home() {
                 placeholder="What would you like to know about me?"
                 className={styles.searchInput}
                 disabled={isLoading}
+                onFocus={e => e.target.select()}
               />
               <button type="submit" className={styles.searchButton} disabled={isLoading}>
                 {isLoading ? 'Searching...' : 'Search'}

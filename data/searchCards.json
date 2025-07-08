@@ -1,0 +1,162 @@
+[
+  {
+    "key": "publications",
+    "caption": "Research & Publications",
+    "keywords": ["publication", "research", "writing", "paper", "journal", "neurips", "nhsjs", "patent", "academic", "study"],
+    "cards": [
+      {
+        "href": "https://nhsjs.com/wp-content/uploads/2024/12/Image-Classification-on-Satellite-Imagery-for-Sustainable-Water-Harvesting-Placement-in-Indigenous-Communities-of-Northern-Tanzania.pdf",
+        "title": "Remote Sensing and Machine Learning for Water Accessibility in Maasai Regions",
+        "description": "Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track] • Presented at NeurIPS Convention 2024 in Vancouver • US Patent Pending Number 63/703,232 • Presented at ML4EO 2024 Conference at Univ. of Exeter UK • Published in National High School Journal of Science [Dec 2024]"
+      },
+      {
+        "href": "https://nhsjs.com/wp-content/uploads/2024/10/Evaluating-the-Impact-of-Water-Harvesting.pdf",
+        "title": "Impact of Rainwater Harvesting Units On Maasai Regions in Northern Tanzania",
+        "description": "Published in National High School Journal of Science [Oct 2024] • Presidential Volunteer Service Award - Gold Medal [300+ Hours] • Presented at MDCON23 [Multi-District East-Africa Convention] Audience of 600+ delegates • Melvin Jones Humanitarian Service Award"
+      }
+    ]
+  },
+  {
+    "key": "water_projects",
+    "caption": "Water & Humanitarian Projects",
+    "keywords": ["tanzania", "water", "harvesting", "maasai", "losimingori", "monduli", "rainwater", "maji wells", "humanitarian", "development", "africa"],
+    "cards": [
+      {
+        "href": "/blog/3_faces-of-rainwater-harvesting",
+        "title": "Faces of Rainwater Harvesting",
+        "description": "A collage of 100 faces impacted by rainwater harvesting in Tanzania - the human stories behind the water projects."
+      },
+      {
+        "href": "/tanzania",
+        "title": "Bringing Water to the Maasai",
+        "description": "Timeline of leading the deployment of 100+ rainwater harvesting units, reducing water collection time for 4500+ Maasai people."
+      },
+      {
+        "href": "https://map.roshan.codes",
+        "title": "Map of Deployed Units",
+        "description": "Interactive map of the deployed rainwater harvesting units in Northern Tanzania.",
+        "external": true
+      }
+    ]
+  },
+  {
+    "key": "programming",
+    "caption": "Programming & Technical Projects",
+    "keywords": ["programming", "coding", "projects", "competitive", "github", "algorithm", "space invaders", "reinforcement learning", "technical", "software", "code"],
+    "cards": [
+      {
+        "href": "https://github.com/roshantaneja",
+        "title": "My Github",
+        "description": "Come check out some of the projects I'm working on!",
+        "external": true
+      },
+      {
+        "href": "https://github.com/roshantaneja/competitive-programming",
+        "title": "Competitive Programming",
+        "description": "Daily puzzle advent calendar and my solutions repository—join me in cracking algorithmic challenges!",
+        "external": true
+      },
+      {
+        "href": "https://github.com/roshantaneja/spaceinvaders-reinforcementlearning",
+        "title": "Space Invaders",
+        "description": "Using reinforcement learning to beat the classic game.",
+        "external": true
+      },
+      {
+        "href": "https://github.com/roshantaneja/roshantaneja.github.io",
+        "title": "This Website",
+        "description": "The Code for this website—built with Next.js, React, and Tailwind CSS.",
+        "external": true
+      }
+    ]
+  },
+  {
+    "key": "education",
+    "caption": "Education & Academic",
+    "keywords": ["school", "university", "college", "berkeley", "uc berkeley", "sacred heart", "gpa", "act", "academic", "education", "student"],
+    "cards": [
+      {
+        "href": "/resume/Roshan Taneja Resume.pdf",
+        "title": "My Resume",
+        "description": "Download my complete resume with all academic achievements, projects, and experience.",
+        "external": true
+      },
+      {
+        "href": "/about",
+        "title": "About Me",
+        "description": "Learn more about my background, education, and journey."
+      }
+    ]
+  },
+  {
+    "key": "contact",
+    "caption": "Contact & Connect",
+    "keywords": ["contact", "email", "reach", "connect", "linkedin", "github", "social", "communication"],
+    "cards": [
+      {
+        "href": "mailto:rtaneja@berkeley.edu",
+        "title": "Email Me",
+        "description": "rtaneja@berkeley.edu - I'd love to hear from you!",
+        "external": true
+      },
+      {
+        "href": "https://linkedin.com/in/roshan-taneja",
+        "title": "LinkedIn",
+        "description": "Connect with me professionally on LinkedIn.",
+        "external": true
+      },
+      {
+        "href": "https://github.com/roshantaneja",
+        "title": "GitHub",
+        "description": "Check out my code and projects on GitHub.",
+        "external": true
+      }
+    ]
+  },
+  {
+    "key": "hobbies",
+    "caption": "Hobbies & Interests",
+    "keywords": ["hobby", "interest", "like to do", "trophy", "improv", "comedy", "thrifting", "reading", "creative", "fun"],
+    "cards": [
+      {
+        "href": "/blog",
+        "title": "My Blog",
+        "description": "I write fiction, poetry, and creative pieces - check out my blog for some of my work."
+      },
+      {
+        "href": "/about",
+        "title": "More About Me",
+        "description": "Learn about my hobbies, interests, and what makes me tick."
+      }
+    ]
+  },
+  {
+    "key": "blog_posts",
+    "caption": "Blog Posts & Writing",
+    "keywords": ["writing", "blog", "post", "article", "story", "poetry", "fiction", "creative", "essay", "thoughts", "reflection", "gatsby", "vietnam", "immigration", "water", "harvesting", "tanzania", "maasai", "literature", "analysis", "research", "poem", "sonnet", "villanelle", "haiku", "limerick", "ballad", "ode", "college", "application", "timeline", "tutorial", "covid", "pandemic", "lockdown", "friendship", "classroom", "future", "self", "mold", "america", "love", "breakup", "dissolution", "senior", "honors", "study", "satellite", "detection"],
+    "cards": [
+      { "href": "/blog/3_faces-of-rainwater-harvesting", "title": "Faces of Rainwater Harvesting", "description": "A collage of 100 faces impacted by rainwater harvesting in Tanzania - the human stories behind the water projects." },
+      { "href": "/blog/22_vietnamese_immigration_impacts", "title": "Effect of Legislation on Vietnamese Immigration", "description": "From Saigon to Little Saigon: U.S. Policies and the Integration of Vietnamese Refugees (1970s–1980s)." },
+      { "href": "/blog/21_thoughts_on_great_gatsby", "title": "Really, Luhrmann?", "description": "My thoughts on The Great Gatsby by F. Scott Fitzgerald and the 2013 film adaptation by Baz Luhrmann." },
+      { "href": "/blog/2_water-vision-introduction", "title": "Water Vision Introduction", "description": "Introduction to my water projects and vision for addressing water scarcity through technology." },
+      { "href": "/blog/0_first-blog-post", "title": "First Blog Post", "description": "My first blog post - reflections on writing, technology, and personal growth." },
+      { "href": "/blog/1_college-applications", "title": "College Applications", "description": "Current update on the state of things - working on early college applications and senior year reflections." },
+      { "href": "/blog/4_timeline_tutorial", "title": "How to make a timeline in Next.js", "description": "A tutorial with codeblocks on how to build the interactive timeline you see on the homepage." },
+      { "href": "/blog/6_pandemonium_sonnet", "title": "Pandemonium - A Sonnet", "description": "My first attempt at poetry - a sonnet about isolation and the pandemic experience." },
+      { "href": "/blog/7_the_beginning_villanelle", "title": "The Beginning - A Villanelle", "description": "A villanelle about the beginning of lockdown and the challenges of social isolation." },
+      { "href": "/blog/8_envelopes", "title": "Envelopes - A Haiku", "description": "A haiku about friendship and the small details that can affect relationships." },
+      { "href": "/blog/9_quiet_classroom_limerick", "title": "Quiet Classroom - A Limerick", "description": "A limerick about digital classes and how the pandemic changed classroom dynamics." },
+      { "href": "/blog/10_letter_ballad", "title": "A letter from my Future Self - A Ballad", "description": "A letter from my graduated self from 2025 to me today - reflections on memories and growth." },
+      { "href": "/blog/11_haikus_about_self", "title": "Haikus About Myself", "description": "4 haikus that describe who I am - personal reflections in poetic form." },
+      { "href": "/blog/12_zoom_bedroom_limerick", "title": "Zoom Bedroom - A Limerick", "description": "A limerick about my poor living habits during remote learning and the need for better routines." },
+      { "href": "/blog/13_self_in_10_sentences", "title": "Myself in 10 Sentences", "description": "Writing about myself in 10 sentences - personal reflections and quirks." },
+      { "href": "/blog/14_walk_down_university", "title": "A Walk Down University Avenue", "description": "Just a quick school project I wanted to share - a video walk through campus." },
+      { "href": "/blog/15_mason_maywood", "title": "Chill Times with Mason Maywood", "description": "Kinda got lost on this one, but I love it - a video project with a friend." },
+      { "href": "/blog/16_the_misanthrope", "title": "The Misanthrope", "description": "A good poem about frustration, anger, and the cruelty of human nature." },
+      { "href": "/blog/17_SHIS", "title": "Senior Honors Independent Study Recording", "description": "Object Detection on Satellite Data For Placement of Water Harvesting Units in East Africa - full presentation." },
+      { "href": "/blog/18_ode_to_mold", "title": "An Ode to Mold", "description": "An ode to fungi, bacteria and everything else moldy - finding beauty in the unwanted." },
+      { "href": "/blog/19_america", "title": "America (Recycling Alan Ginsberg)", "description": "Recycling Alan Ginsberg's America - a modern take on social and political issues." },
+      { "href": "/blog/20_nightmare_of_dissolution", "title": "The Nightmare of Dissolution", "description": "Originally a love story - reflections on relationships, breakups, and the pain of drifting apart." }
+    ]
+  }
+] 

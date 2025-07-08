@@ -8,78 +8,109 @@ export default function About() {
         <title>About Me - Roshan Taneja</title>
         <meta
           name="description"
-          content="Learn more about Roshan Taneja."
+          content="Detailed profile of Roshan Taneja, student passionate about technology, environmental science, and creative community-building."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <a href="/" className={styles.backLink}> &larr; Back to Home</a>
-        <h1 className={styles.title}>About Me</h1>
+        <h1 className={styles.title}>About Me - Roshan Taneja</h1>
 
         <section className={styles.section}>
           <p>
-            Hi, I’m Roshan Taneja! I’m a student at UC Berkeley majoring in Electrical Engineering and Computer Science (EECS), driven by a deep commitment to leveraging technology for global social impact. My work blends AI, environmental science, satellite imagery, policy, and human-centered design to solve pressing problems—especially water scarcity in underserved regions.
+            Hi, I’m Roshan Taneja, currently pursuing Electrical Engineering & Computer Science at UC Berkeley. My passion lies in harnessing technology—especially AI, machine learning, and remote sensing—to tackle global environmental challenges, with a deep focus on addressing water scarcity.
           </p>
           <p>
-            For the past five years, I’ve worked with the Maasai community in Losimingori, Tanzania. What started as a weekend fundraiser evolved into a multi-year, multi-disciplinary project deploying 100+ rainwater harvesting units, reducing daily water collection time from 9 hours to 2 for over 10,000 people. I've collaborated with Maasai elders, organized ideation workshops across language barriers, and used machine learning models and satellite data to optimize water unit placement across 500+ square miles.
+            My academic journey is complemented by real-world experiences, from hands-on humanitarian projects to research collaborations with top institutions.
           </p>
         </section>
 
         <section className={styles.section}>
-          <h2>Key Stats</h2>
+          <h2>Academic Achievements & Credentials</h2>
           <ul className={styles.statsList}>
-            <li><strong>GPA:</strong> 3.97 (Senior Year GPA: 4.22)</li>
-            <li><strong>ACT:</strong> 36 (Math: 36, Science: 36, Reading: 36, English: 34)</li>
-            <li><strong>AP Scores:</strong> 5s in Calculus BC, Physics 1, Physics C: Mechanics, Computer Science A; 4s in English Literature, Macro, Micro; 3s in English Language, Spanish; Patent pending</li>
-            <li><strong>Awards:</strong> NeurIPS 2024 Winner (ML for Social Impact), UN SDG Youth Voices Award (#6 - Water), Melvin Jones International Humanitarian Award, President’s Volunteer Service Gold Medal, International Children’s Peace Prize Nominee</li>
-            <li><strong>Publications:</strong> 2 peer-reviewed papers in NHSJS, featured in Harvard’s Spatial Data Lab blog and Sacred Heart Magazine</li>
-            <li><strong>Technical Skills:</strong> Python, JavaScript/TypeScript, Java, Google Earth Engine, TensorFlow, ArcGIS, Fusion360</li>
-            <li><strong>Creative Tools:</strong> CAD, 3D Printing, Laser Cutting, Adobe Illustrator</li>
+            <li><strong>GPA:</strong> 3.97 (Senior GPA: 4.22)</li>
+            <li><strong>ACT:</strong> Perfect 36 (Math: 36, Science: 36, Reading: 36, English: 34)</li>
+            <li><strong>AP Exams:</strong> Calculus BC (5), Physics 1 (5), Physics C Mechanics (5), Computer Science A (5), English Literature (4), Macroeconomics (4), Microeconomics (4), English Language (3), Spanish Language (3), Physics C E&M (2)</li>
+            <li><strong>Specialized Coursework:</strong> Advanced Mathematics, Machine Learning, Data Structures & Algorithms, Climate Science, Remote Sensing, Global Mathematics</li>
           </ul>
         </section>
 
         <section className={styles.section}>
-          <h2>Research & Academic Work</h2>
-          <p>
-            I’m currently a research intern at Harvard’s Spatial Data Lab, working with Prof. Siqin Wang on modeling flood runoff and topographical analysis to plan reservoir locations for rural East African communities. I’ve taken courses in Remote Sensing (MIT Beaver Works), Climate Science (UC Berkeley), and Data Science (UCLA), which have helped me integrate technical knowledge with field applications.
-          </p>
-          <p>
-            I’ve presented my work at major conferences like NeurIPS 2024 (selected 1 of 4 from 330+ global entries), ML4EO at University of Exeter, and the Lions East Africa MDCON24 conference. My patented object detection model uses satellite data to identify bomas (Maasai dwellings), achieving 93% accuracy and enabling data-informed placement of water units. These tools are now being extended to model runoff and inform sustainable reservoir planning.
-          </p>
-        </section>
-
-        <section className={styles.section}>
-          <h2>Leadership & Initiatives</h2>
+          <h2>Awards & Honors</h2>
           <ul className={styles.statsList}>
-            <li>Youth President, Water Programs at Maji Wells – Led international student teams in deploying water units, policy co-creation, and cross-cultural collaboration with Maasai leaders</li>
-            <li>Class Officer at Sacred Heart Preparatory – Organized 25+ school-wide events, created lasting school traditions across 500+ students</li>
-            <li>Founder & President of Improv Club – Revived and expanded to 35+ active members, led workshops, open mics, and performances</li>
-            <li>Hardware Lead for Robotics – Built 3 state-qualifying robots; developed a CAD parts library; mentored freshmen via hands-on crash courses</li>
+            <li>NeurIPS 2024 Winner: ML for Social Impact (1 of 4 winners among 330 global entries)</li>
+            <li>President’s Volunteer Service Award, Gold Medal 2024</li>
+            <li>Melvin Jones International Humanitarian Award 2024</li>
+            <li>Nominee, International Children’s Peace Prize 2024</li>
+            <li>Next Generation Foresight Practitioner UN SDG #6 Award 2023</li>
+            <li>Computer Science Department Honor 2025</li>
+            <li>Rotary Computer Science Award 2023</li>
+            <li>AP Scholar with Distinction 2024</li>
           </ul>
         </section>
 
         <section className={styles.section}>
-          <h2>Personal Projects & Hobbies</h2>
-          <p>I’m constantly exploring intersections of tech, creativity, and fun. My hobbies include:</p>
-          <ul className={styles.interestsList}>
-            <li>Creating custom trophies like the “Dumpster Fire Award” – a blowtorched, scrap-metal tribute to resilience in robotics competitions</li>
-            <li>Improv comedy – I love the spontaneity and laughter of performing, especially organizing “surprise improv” events at school</li>
-            <li>Writing – My short story "Pomegranates" was published in three literary journals and included in my school’s AP English curriculum</li>
-            <li>Thrifting and upcycling furniture – From skateboards on my wall to reupholstered chairs, I love giving old things new life</li>
-            <li>Spontaneous side projects – I’ve built a Space Invaders AI, simulated water-sharing policies, and played with What3Words datasets</li>
+          <h2>Research, Publications & Patents</h2>
+          <ul className={styles.statsList}>
+            <li><strong>Patent Pending:</strong> Object Detection in Satellite Imagery for Rainwater Harvesting Unit Placement (US Patent Pending 63/703,232)</li>
+            <li><strong>Publications:</strong>
+              <ul>
+                <li>"Assessing the Impact of Rainwater Harvesting on 4500+ Maasai," NHSJS, 2024</li>
+                <li>"Object Detection in Satellite Imagery for Rainwater Units Placement," NHSJS, 2024</li>
+              </ul>
+            </li>
+            <li><strong>Conference Presentations:</strong>
+              <ul>
+                <li>NeurIPS High School Presenter, Vancouver, 2024</li>
+                <li>ML4EO Conference, University of Exeter, UK, 2024</li>
+                <li>MDCON23 Lions International Conference, Tanzania, 2023</li>
+              </ul>
+            </li>
           </ul>
         </section>
 
         <section className={styles.section}>
-          <h2>What Drives Me</h2>
+          <h2>Leadership & Community Contributions</h2>
+          <ul className={styles.statsList}>
+            <li><strong>Youth President at Maji Wells:</strong> Led fundraising of over $100K and deployed 200 rainwater harvesting units, significantly reducing water collection time for 10,000 Maasai in Tanzania</li>
+            <li><strong>Class Officer at Sacred Heart Prep:</strong> Organized and introduced three annual community-building events for 500+ students</li>
+            <li><strong>Co-Founder of Improv Club:</strong> Fostered creative expression and built strong community bonds through improv performances and workshops</li>
+          </ul>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Technical Expertise & Skills</h2>
+          <ul className={styles.statsList}>
+            <li><strong>Languages:</strong> Python, Java, JavaScript, TypeScript</li>
+            <li><strong>Frameworks & Tools:</strong> TensorFlow, Google Earth Engine, 3D Printing, Laser Cutting, CAD software, Machine Learning Algorithms</li>
+          </ul>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Creative Projects & Interests</h2>
           <p>
-            My work is animated by a belief that technological solutions should always be grounded in the needs, cultures, and ideas of the communities they serve. Whether I’m mentoring younger students, debugging a ML model, or sharing water policy ideas in Swahili using hand-drawn sketches, I care deeply about inclusion, accessibility, and making an impact that lasts.
-          </p>
-          <p>
-            I’ve learned to work with everyone—from venture capitalists and scientists to village elders and middle schoolers. Each person brings unique insights, and I see my role as connecting the dots, building bridges, and creating real-world tools that matter.
+            I specialize in creating custom trophies, including the beloved "Dumpster Fire Award," and have contributed creatively to numerous school events and traditions. My passion for storytelling extends to short stories, published in literary magazines such as The Ravens Perch and Beyond Words.
           </p>
         </section>
+
+        <section className={styles.section}>
+          <h2>Family & Personal Background</h2>
+          <p>
+            Raised in a supportive multigenerational household alongside my parents, younger brother Yuvraj, and grandparents, my family has deeply shaped my academic and personal growth.
+          </p>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Connect With Me</h2>
+          <ul className={styles.statsList}>
+            <li><a href="https://roshan.codes">Personal Website</a></li>
+            <li><a href="https://github.com/roshantaneja">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/roshan-taneja">LinkedIn</a></li>
+            <li>Email: rytaneja@gmail.com | rtaneja@berkeley.edu</li>
+          </ul>
+        </section>
+
       </main>
 
       <footer className={styles.footer}>
