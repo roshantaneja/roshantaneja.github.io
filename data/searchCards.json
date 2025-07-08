@@ -135,13 +135,27 @@
     "caption": "Blog Posts & Writing",
     "keywords": ["writing", "blog", "post", "article", "story", "poetry", "fiction", "creative", "essay", "thoughts", "reflection", "gatsby", "vietnam", "immigration", "water", "harvesting", "tanzania", "maasai", "literature", "analysis", "research", "poem", "sonnet", "villanelle", "haiku", "limerick", "ballad", "ode", "college", "application", "timeline", "tutorial", "covid", "pandemic", "lockdown", "friendship", "classroom", "future", "self", "mold", "america", "love", "breakup", "dissolution", "senior", "honors", "study", "satellite", "detection"],
     "cards": [
-      { "href": "/blog/3_faces-of-rainwater-harvesting", "title": "Faces of Rainwater Harvesting", "description": "A collage of 100 faces impacted by rainwater harvesting in Tanzania - the human stories behind the water projects." },
-      { "href": "/blog/22_vietnamese_immigration_impacts", "title": "Effect of Legislation on Vietnamese Immigration", "description": "From Saigon to Little Saigon: U.S. Policies and the Integration of Vietnamese Refugees (1970s–1980s)." },
-      { "href": "/blog/21_thoughts_on_great_gatsby", "title": "Really, Luhrmann?", "description": "My thoughts on The Great Gatsby by F. Scott Fitzgerald and the 2013 film adaptation by Baz Luhrmann." },
-      { "href": "/blog/2_water-vision-introduction", "title": "Water Vision Introduction", "description": "Introduction to my water projects and vision for addressing water scarcity through technology." },
-      { "href": "/blog/0_first-blog-post", "title": "First Blog Post", "description": "My first blog post - reflections on writing, technology, and personal growth." },
-      { "href": "/blog/1_college-applications", "title": "College Applications", "description": "Current update on the state of things - working on early college applications and senior year reflections." },
-      { "href": "/blog/4_timeline_tutorial", "title": "How to make a timeline in Next.js", "description": "A tutorial with codeblocks on how to build the interactive timeline you see on the homepage." },
+      {
+        "href": "/blog/3_faces-of-rainwater-harvesting", "title": "Faces of Rainwater Harvesting", "description": "A collage of 100 faces impacted by rainwater harvesting in Tanzania - the human stories behind the water projects."
+      },
+      {
+        "href": "/blog/22_vietnamese_immigration_impacts", "title": "Effect of Legislation on Vietnamese Immigration", "description": "From Saigon to Little Saigon: U.S. Policies and the Integration of Vietnamese Refugees (1970s–1980s)."
+      },
+      {
+        "href": "/blog/21_thoughts_on_great_gatsby", "title": "Really, Luhrmann?", "description": "My thoughts on The Great Gatsby by F. Scott Fitzgerald and the 2013 film adaptation by Baz Luhrmann."
+      },
+      {
+        "href": "/blog/2_water-vision-introduction", "title": "Water Vision Introduction", "description": "Introduction to my water projects and vision for addressing water scarcity through technology."
+      },
+      {
+        "href": "/blog/0_first-blog-post", "title": "First Blog Post", "description": "My first blog post - reflections on writing, technology, and personal growth."
+      },
+      { 
+        "href": "/blog/1_college-applications", "title": "College Applications", "description": "Current update on the state of things - working on early college applications and senior year reflections." 
+      },
+      { 
+        "href": "/blog/4_timeline_tutorial", "title": "How to make a timeline in Next.js", "description": "A tutorial with codeblocks on how to build the interactive timeline you see on the homepage."
+      },
       { "href": "/blog/6_pandemonium_sonnet", "title": "Pandemonium - A Sonnet", "description": "My first attempt at poetry - a sonnet about isolation and the pandemic experience." },
       { "href": "/blog/7_the_beginning_villanelle", "title": "The Beginning - A Villanelle", "description": "A villanelle about the beginning of lockdown and the challenges of social isolation." },
       { "href": "/blog/8_envelopes", "title": "Envelopes - A Haiku", "description": "A haiku about friendship and the small details that can affect relationships." },

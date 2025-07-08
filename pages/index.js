@@ -156,25 +156,38 @@ export default function Home() {
             {searchResults.relevantCards && searchResults.relevantCards.length > 0 && (
               <div className={styles.relevantCards}>
                 <h3>Relevant Links</h3>
-                {searchResults.relevantCards.map((cardGroup, groupIndex) => (
-                  <div key={groupIndex} className={styles.cardGroup}>
-                    <h4 className={styles.cardGroupCaption}>{cardGroup.caption}</h4>
-                    <div className={styles.cardGrid}>
-                      {cardGroup.cards.slice(0, 5).map((card, index) => (
-                        <a 
-                          key={index}
-                          href={card.href} 
-                          className={styles.relevantCard}
-                          target={card.external ? "_blank" : undefined}
-                          rel={card.external ? "noopener noreferrer" : undefined}
-                        >
-                          <h5>{card.title}</h5>
-                          <p>{card.description}</p>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+                <div className={styles.cardGrid}>
+                  {searchResults.relevantCards.map((card, index) => (
+                    <a 
+                      key={index}
+                      href={card.href} 
+                      className={styles.relevantCard}
+                      target={card.external ? "_blank" : undefined}
+                      rel={card.external ? "noopener noreferrer" : undefined}
+                    >
+                      {card.image && (
+                        <div className={styles.cardImage}>
+                          <Image 
+                            src={card.image} 
+                            alt={card.title}
+                            width={200}
+                            height={120}
+                            objectFit="cover"
+                            loading="lazy"
+                            onError={(e) => {
+                              // Hide the image container if image fails to load
+                              e.target.style.display = 'none';
+                            }}
+                          />
+                        </div>
+                      )}
+                      <div className={styles.cardContent}>
+                        <h5>{card.title}</h5>
+                        <p>{card.description}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
               </div>
             )}
 

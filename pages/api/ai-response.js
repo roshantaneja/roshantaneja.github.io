@@ -13,7 +13,9 @@ EDUCATION:
 - UC Berkeley, B.S. in Electrical Engineering & Computer Science, Class of 2029
 - ACT: 36
 - Sacred Heart Preparatory, Atherton (GPA: 3.97, 2022–25)
-- Key Courses: Calc BC (5), Phys C: Mech (5), E&M (2), CompSci A (5), Phys 1 (5), Macro (4), Micro (4), Eng Lit (4), Eng Lang (3), Spanish (3), Post-AP Math, ML, Climate Sci (Berkeley), Remote Sensing (MIT), Data Science (UCLA), Spatial GIS (Harvard)
+- AP Courses: Calc BC (5), Phys C: Mech (5), E&M (2), CompSci A (5), Phys 1 (5), Macro (4), Micro (4), Eng Lit (4), Eng Lang (3), Spanish (3)
+- Other Courses: Post-AP Math, Multivariable, Linear Algebra, Advanced CS, ML
+- Summer Courses: Climate Sci (Berkeley), Remote Sensing (MIT), Data Science (UCLA), Spatial GIS (Harvard)
 
 PROJECTS & RESEARCH:
 - *Rainwater Harvesting Lead* (Maji Wells): Raised $100K+, deployed 100+ units reducing water collection time from 9 to 2 hrs/day for 10K+ Maasai in Monduli, Tanzania
@@ -171,6 +173,66 @@ function selectRelevantCards(cards, userQuery, aiResponse) {
   return scoredCards.slice(0, 2)
 }
 
+// Function to select most relevant cards across all sections
+function selectAllRelevantCards(searchCards, userQuery, aiResponse) {
+  const query = userQuery.toLowerCase()
+  const response = aiResponse.toLowerCase()
+  
+  // Collect all cards from all sections
+  let allCards = []
+  searchCards.forEach(section => {
+    section.cards.forEach(card => {
+      allCards.push({ ...card, section: section.caption })
+    })
+  })
+  
+  // Score each card based on relevance
+  const scoredCards = allCards.map(card => {
+    let score = 0
+    const cardText = (card.title + ' ' + card.description).toLowerCase()
+    
+    // Check if query keywords appear in card
+    const queryWords = query.split(' ').filter(word => word.length > 2)
+    queryWords.forEach(word => {
+      if (cardText.includes(word)) score += 2
+    })
+    
+    // Check if response keywords appear in card
+    const responseWords = response.split(' ').filter(word => word.length > 3)
+    responseWords.forEach(word => {
+      if (cardText.includes(word)) score += 1
+    })
+    
+    // Bonus for exact matches
+    if (query.includes('resume') && card.title.toLowerCase().includes('resume')) score += 5
+    if (query.includes('github') && card.title.toLowerCase().includes('github')) score += 5
+    if (query.includes('blog') && card.title.toLowerCase().includes('blog')) score += 5
+
+    // Use helper for other keywords
+    score += addKeywordScore(query, card.title.toLowerCase(), [
+      'water', 'tanzania', 'hobby', 'interest', 'contact', 'email', 'linkedin',
+      'instagram', 'twitter', 'youtube', 'tiktok', 'reddit',
+      'improv', 'comedy', 'thrifting', 'reading', 'creative', 'fun', 'poem', 'sonnet', 'villanelle', 'haiku', 'limerick', 'ballad', 'ode', 'college', 'application', 'timeline', 'tutorial', 'covid', 'pandemic', 'lockdown', 'friendship', 'classroom', 'future', 'self', 'mold', 'america', 'love', 'breakup', 'dissolution', 'senior', 'honors', 'study', 'satellite', 'detection'
+    ], 5)
+    
+    // Bonus for cards with images when query mentions visual content
+    if (card.image && (query.includes('photo') || query.includes('image') || query.includes('picture') || query.includes('visual') || query.includes('see') || query.includes('look'))) {
+      score += 3
+    }
+    
+    // Small bonus for any card with an image (makes results more visually appealing)
+    if (card.image) {
+      score += 1
+    }
+    
+    return { ...card, score }
+  })
+  
+  // Sort by score and take top 4
+  scoredCards.sort((a, b) => b.score - a.score)
+  return scoredCards.slice(0, 4)
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' })
@@ -209,31 +271,13 @@ Response:`
 
     const response = completion.choices[0].message.content
 
-    // Calculate relevance scores for all sections from JSON
-    const scoredSections = searchCards.map((section) => {
-      const score = calculateRelevanceScore(section, userInput, response)
-      return { key: section.key, section, score }
-    })
-    
-    // Sort sections by relevance score and filter out low-scoring ones
-    scoredSections.sort((a, b) => b.score - a.score)
-    const relevantSections = scoredSections.filter(item => item.score > 0)
-    
-    // Select the most relevant sections (max 2) and their most relevant cards
-    const suggestedCards = relevantSections.slice(0, 2).map(({ section }) => {
-      const relevantCards = selectRelevantCards(section.cards, userInput, response)
-      
-      return {
-        category: section.caption.toLowerCase().replace(/[^a-z0-9]/g, '_'),
-        caption: section.caption,
-        cards: relevantCards
-      }
-    })
+    // Select the most relevant cards across all sections (max 4)
+    const relevantCards = selectAllRelevantCards(searchCards, userInput, response)
 
     res.status(200).json({
       response,
       originalQuery: userInput,
-      suggestedCards
+      suggestedCards: relevantCards
     })
 
   } catch (error) {
