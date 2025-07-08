@@ -442,6 +442,58 @@
   }
 }
 
+/* AI Response Styles */
+.aiResponseSection {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.aiResponseCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aiResponse {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.originalQuery {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  color: #666;
+  font-style: italic;
+}
+
+/* Dark mode support for AI responses */
+@media (prefers-color-scheme: dark) {
+  .aiResponseCard {
+    background: #333;
+    color: #e5e5e5;
+    border-color: #555;
+  }
+  
+  .aiResponse {
+    color: #e5e5e5;
+  }
+  
+  .originalQuery {
+    color: #aaa;
+    border-top-color: #555;
+  }
+}
+
 
 @media (max-width: 600px) {
     .main {

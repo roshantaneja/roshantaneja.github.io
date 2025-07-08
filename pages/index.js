@@ -18,71 +18,168 @@ export default function Home() {
     previousInteractions: []
   })
 
-  // Simulate AI understanding of user intent
+  // AI-powered intent understanding
   const understandIntent = async (input) => {
     setIsLoading(true)
     
-    // Simulate AI processing
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    const intent = input.toLowerCase()
-    let response = null
+    try {
+      const response = await fetch('/api/ai-response', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userInput: input }),
+      })
 
-    if (intent.includes('resume') || intent.includes('cv') || intent.includes('experience')) {
-      response = {
-        type: 'resume',
-        title: "Here's my professional background",
-        content: {
-          education: "Stanford University - Computer Science",
-          experience: "ML Research, Water Projects, Competitive Programming",
-          skills: "Python, React, ML/AI, Satellite Imagery Analysis",
-          action: "Download my full resume"
+      if (!response.ok) {
+        throw new Error('Failed to get AI response')
+      }
+
+      const data = await response.json()
+      
+      // Create dynamic content based on AI response type
+      let dynamicResponse = null
+      
+      switch (data.type) {
+        case 'academic':
+          dynamicResponse = {
+            type: 'academic',
+            title: "Academic Information",
+            content: {
+              response: data.response,
+              originalQuery: data.originalQuery
+            }
+          }
+          break
+          
+        case 'education':
+          dynamicResponse = {
+            type: 'education',
+            title: "Educational Background",
+            content: {
+              response: data.response,
+              originalQuery: data.originalQuery
+            }
+          }
+          break
+          
+        case 'personal':
+          dynamicResponse = {
+            type: 'personal',
+            title: "Personal Interests",
+            content: {
+              response: data.response,
+              originalQuery: data.originalQuery
+            }
+          }
+          break
+          
+        case 'resume':
+          dynamicResponse = {
+            type: 'resume',
+            title: "Professional Background",
+            content: {
+              response: data.response,
+              education: "UC Berkeley - Electrical Engineering & Computer Science",
+              experience: "ML Research, Water Projects, Competitive Programming",
+              skills: "Python, React, ML/AI, Satellite Imagery Analysis",
+              action: "Download my full resume"
+            }
+          }
+          break
+          
+        case 'projects':
+          dynamicResponse = {
+            type: 'projects',
+            title: "My Projects & Research",
+            content: {
+              response: data.response,
+              waterProject: "Rainwater harvesting for Maasai communities",
+              mlResearch: "Satellite imagery analysis for water accessibility",
+              competitiveProgramming: "Algorithmic problem solving",
+              spaceInvaders: "Reinforcement learning game AI"
+            }
+          }
+          break
+          
+        case 'contact':
+          dynamicResponse = {
+            type: 'contact',
+            title: "Get in Touch",
+            content: {
+              response: data.response,
+              email: "roshan@stanford.edu",
+              github: "github.com/roshantaneja",
+              linkedin: "linkedin.com/in/roshantaneja"
+            }
+          }
+          break
+          
+        default:
+          dynamicResponse = {
+            type: 'general',
+            title: "Response",
+            content: {
+              response: data.response,
+              originalQuery: data.originalQuery
+            }
+          }
+      }
+
+      setDynamicContent(dynamicResponse)
+      
+    } catch (error) {
+      console.error('Error getting AI response:', error)
+      // Fallback to original hardcoded responses
+      const intent = input.toLowerCase()
+      let response = null
+
+      if (intent.includes('resume') || intent.includes('cv') || intent.includes('experience')) {
+        response = {
+          type: 'resume',
+          title: "Here's my professional background",
+          content: {
+            education: "UC Berkeley - Electrical Engineering & Computer Science",
+            experience: "ML Research, Water Projects, Competitive Programming",
+            skills: "Python, React, ML/AI, Satellite Imagery Analysis",
+            action: "Download my full resume"
+          }
+        }
+      } else if (intent.includes('project') || intent.includes('work') || intent.includes('research')) {
+        response = {
+          type: 'projects',
+          title: "My key projects and research",
+          content: {
+            waterProject: "Rainwater harvesting for Maasai communities",
+            mlResearch: "Satellite imagery analysis for water accessibility",
+            competitiveProgramming: "Algorithmic problem solving",
+            spaceInvaders: "Reinforcement learning game AI"
+          }
+        }
+      } else if (intent.includes('contact') || intent.includes('email') || intent.includes('reach')) {
+        response = {
+          type: 'contact',
+          title: "Let's connect!",
+          content: {
+            email: "roshan@stanford.edu",
+            github: "github.com/roshantaneja",
+            linkedin: "linkedin.com/in/roshantaneja"
+          }
+        }
+      } else {
+        response = {
+          type: 'welcome',
+          title: "Hello! I'm Roshan Taneja",
+          content: {
+            intro: "I'm a student, programmer, researcher, and writer focused on using technology to solve global water challenges.",
+            ask: "What would you like to know about me? Try asking about my resume, projects, research, or just say hello!"
+          }
         }
       }
-    } else if (intent.includes('project') || intent.includes('work') || intent.includes('research')) {
-      response = {
-        type: 'projects',
-        title: "My key projects and research",
-        content: {
-          waterProject: "Rainwater harvesting for Maasai communities",
-          mlResearch: "Satellite imagery analysis for water accessibility",
-          competitiveProgramming: "Algorithmic problem solving",
-          spaceInvaders: "Reinforcement learning game AI"
-        }
-      }
-    } else if (intent.includes('contact') || intent.includes('email') || intent.includes('reach')) {
-      response = {
-        type: 'contact',
-        title: "Let's connect!",
-        content: {
-          email: "roshan@stanford.edu",
-          github: "github.com/roshantaneja",
-          linkedin: "linkedin.com/in/roshantaneja"
-        }
-      }
-    } else if (intent.includes('publication') || intent.includes('paper') || intent.includes('research')) {
-      response = {
-        type: 'publications',
-        title: "My research publications",
-        content: {
-          neurips: "NeurIPS 2024 - ML for Social Impact",
-          nhsjs: "National High School Journal of Science",
-          patent: "US Patent Pending - Dwelling Detection"
-        }
-      }
-    } else {
-      // Default welcome experience
-      response = {
-        type: 'welcome',
-        title: "Hello! I'm Roshan Taneja",
-        content: {
-          intro: "I'm a student, programmer, researcher, and writer focused on using technology to solve global water challenges.",
-          ask: "What would you like to know about me? Try asking about my resume, projects, research, or just say hello!"
-        }
-      }
+      
+      setDynamicContent(response)
     }
-
-    setDynamicContent(response)
+    
     setIsLoading(false)
   }
 
@@ -278,6 +375,54 @@ export default function Home() {
                     <a href={`https://${dynamicContent.content.linkedin}`} target="_blank" rel="noopener noreferrer">
                       {dynamicContent.content.linkedin}
                     </a>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {dynamicContent.type === 'academic' && (
+              <div className={styles.aiResponseSection}>
+                <h2>Academic Information</h2>
+                <div className={styles.aiResponseCard}>
+                  <p className={styles.aiResponse}>{dynamicContent.content.response}</p>
+                  <div className={styles.originalQuery}>
+                    <small>You asked: "{dynamicContent.content.originalQuery}"</small>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {dynamicContent.type === 'education' && (
+              <div className={styles.aiResponseSection}>
+                <h2>Educational Background</h2>
+                <div className={styles.aiResponseCard}>
+                  <p className={styles.aiResponse}>{dynamicContent.content.response}</p>
+                  <div className={styles.originalQuery}>
+                    <small>You asked: "{dynamicContent.content.originalQuery}"</small>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {dynamicContent.type === 'personal' && (
+              <div className={styles.aiResponseSection}>
+                <h2>Personal Interests</h2>
+                <div className={styles.aiResponseCard}>
+                  <p className={styles.aiResponse}>{dynamicContent.content.response}</p>
+                  <div className={styles.originalQuery}>
+                    <small>You asked: "{dynamicContent.content.originalQuery}"</small>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {dynamicContent.type === 'general' && (
+              <div className={styles.aiResponseSection}>
+                <h2>Response</h2>
+                <div className={styles.aiResponseCard}>
+                  <p className={styles.aiResponse}>{dynamicContent.content.response}</p>
+                  <div className={styles.originalQuery}>
+                    <small>You asked: "{dynamicContent.content.originalQuery}"</small>
                   </div>
                 </div>
               </div>

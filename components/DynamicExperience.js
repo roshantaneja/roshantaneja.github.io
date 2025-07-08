@@ -77,83 +77,131 @@ export default function DynamicExperience() {
   }
 
   const processIntent = async (input) => {
-    const intent = input.toLowerCase()
-    
-    // More sophisticated intent understanding
-    if (intent.includes('resume') || intent.includes('cv') || intent.includes('experience') || intent.includes('background')) {
-      return {
-        type: 'resume',
-        title: "Here's my professional background",
-        content: {
-          education: "Stanford University - Computer Science",
-          experience: "ML Research, Water Projects, Competitive Programming",
-          skills: "Python, React, ML/AI, Satellite Imagery Analysis",
-          action: "Download my full resume"
+    try {
+      const response = await fetch('/api/ai-response', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        message: "I'd be happy to share my professional background! I'm currently studying Computer Science at Stanford University, with experience in machine learning research, humanitarian water projects, and competitive programming. Would you like me to show you my detailed resume?"
+        body: JSON.stringify({ userInput: input }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to get AI response')
+      }
+
+      const data = await response.json()
+      
+      return {
+        type: data.type,
+        title: getTitleForType(data.type),
+        content: {
+          response: data.response,
+          originalQuery: data.originalQuery
+        },
+        message: data.response
+      }
+    } catch (error) {
+      console.error('Error getting AI response:', error)
+      // Fallback to original hardcoded responses
+      const intent = input.toLowerCase()
+      
+      if (intent.includes('resume') || intent.includes('cv') || intent.includes('experience') || intent.includes('background')) {
+        return {
+          type: 'resume',
+          title: "Here's my professional background",
+          content: {
+            education: "UC Berkeley - Electrical Engineering & Computer Science",
+            experience: "ML Research, Water Projects, Competitive Programming",
+            skills: "Python, React, ML/AI, Satellite Imagery Analysis",
+            action: "Download my full resume"
+          },
+          message: "I'd be happy to share my professional background! I'm currently studying Computer Science at UC Berkeley, with experience in machine learning research, humanitarian water projects, and competitive programming. Would you like me to show you my detailed resume?"
+        }
+      }
+      
+      if (intent.includes('project') || intent.includes('work') || intent.includes('research') || intent.includes('what do you do')) {
+        return {
+          type: 'projects',
+          title: "My key projects and research",
+          content: {
+            waterProject: "Rainwater harvesting for Maasai communities",
+            mlResearch: "Satellite imagery analysis for water accessibility",
+            competitiveProgramming: "Algorithmic problem solving",
+            spaceInvaders: "Reinforcement learning game AI"
+          },
+          message: "I work on several exciting projects! My main focus is using machine learning to solve water accessibility challenges in Tanzania. I've also worked on competitive programming and AI game development. Which area interests you most?"
+        }
+      }
+      
+      if (intent.includes('contact') || intent.includes('email') || intent.includes('reach') || intent.includes('get in touch')) {
+        return {
+          type: 'contact',
+          title: "Let's connect!",
+          content: {
+            email: "rtaneja@berkeley.edu",
+            github: "github.com/roshantaneja",
+            linkedin: "linkedin.com/in/roshantaneja"
+          },
+          message: "I'd love to connect! You can reach me at roshan@stanford.edu, or find me on GitHub and LinkedIn. What's the best way for you to get in touch?"
+        }
+      }
+      
+      if (intent.includes('publication') || intent.includes('paper') || intent.includes('research') || intent.includes('published')) {
+        return {
+          type: 'publications',
+          title: "My research publications",
+          content: {
+            neurips: "NeurIPS 2024 - ML for Social Impact",
+            nhsjs: "National High School Journal of Science",
+            patent: "US Patent Pending - Dwelling Detection"
+          },
+          message: "I've published research on using machine learning for water accessibility in Tanzania. My work won the NeurIPS 2024 ML for Social Impact award and is published in the National High School Journal of Science. Would you like to learn more about any specific publication?"
+        }
+      }
+      
+      if (intent.includes('hello') || intent.includes('hi') || intent.includes('hey')) {
+        return {
+          type: 'greeting',
+          title: "Hello! I'm Roshan Taneja",
+          content: {
+            intro: "I'm a student, programmer, researcher, and writer focused on using technology to solve global water challenges.",
+            ask: "What would you like to know about me? Try asking about my resume, projects, research, or just say hello!"
+          },
+          message: "Hello! I'm Roshan, a student and researcher passionate about using technology to solve global challenges. I'm particularly focused on water accessibility and machine learning. What would you like to know about me?"
+        }
+      }
+      
+      // Default response for unrecognized intent
+      return {
+        type: 'unknown',
+        title: "I'm not sure I understood that",
+        content: {
+          suggestions: ["Try asking about my resume", "Ask about my projects", "Learn about my research", "Get my contact info"]
+        },
+        message: "I'm not quite sure what you're looking for. You can ask me about my resume, projects, research publications, or how to get in touch. What interests you most?"
       }
     }
-    
-    if (intent.includes('project') || intent.includes('work') || intent.includes('research') || intent.includes('what do you do')) {
-      return {
-        type: 'projects',
-        title: "My key projects and research",
-        content: {
-          waterProject: "Rainwater harvesting for Maasai communities",
-          mlResearch: "Satellite imagery analysis for water accessibility",
-          competitiveProgramming: "Algorithmic problem solving",
-          spaceInvaders: "Reinforcement learning game AI"
-        },
-        message: "I work on several exciting projects! My main focus is using machine learning to solve water accessibility challenges in Tanzania. I've also worked on competitive programming and AI game development. Which area interests you most?"
-      }
-    }
-    
-    if (intent.includes('contact') || intent.includes('email') || intent.includes('reach') || intent.includes('get in touch')) {
-      return {
-        type: 'contact',
-        title: "Let's connect!",
-        content: {
-          email: "roshan@stanford.edu",
-          github: "github.com/roshantaneja",
-          linkedin: "linkedin.com/in/roshantaneja"
-        },
-        message: "I'd love to connect! You can reach me at roshan@stanford.edu, or find me on GitHub and LinkedIn. What's the best way for you to get in touch?"
-      }
-    }
-    
-    if (intent.includes('publication') || intent.includes('paper') || intent.includes('research') || intent.includes('published')) {
-      return {
-        type: 'publications',
-        title: "My research publications",
-        content: {
-          neurips: "NeurIPS 2024 - ML for Social Impact",
-          nhsjs: "National High School Journal of Science",
-          patent: "US Patent Pending - Dwelling Detection"
-        },
-        message: "I've published research on using machine learning for water accessibility in Tanzania. My work won the NeurIPS 2024 ML for Social Impact award and is published in the National High School Journal of Science. Would you like to learn more about any specific publication?"
-      }
-    }
-    
-    if (intent.includes('hello') || intent.includes('hi') || intent.includes('hey')) {
-      return {
-        type: 'greeting',
-        title: "Hello! I'm Roshan Taneja",
-        content: {
-          intro: "I'm a student, programmer, researcher, and writer focused on using technology to solve global water challenges.",
-          ask: "What would you like to know about me? Try asking about my resume, projects, research, or just say hello!"
-        },
-        message: "Hello! I'm Roshan, a student and researcher passionate about using technology to solve global challenges. I'm particularly focused on water accessibility and machine learning. What would you like to know about me?"
-      }
-    }
-    
-    // Default response for unrecognized intent
-    return {
-      type: 'unknown',
-      title: "I'm not sure I understood that",
-      content: {
-        suggestions: ["Try asking about my resume", "Ask about my projects", "Learn about my research", "Get my contact info"]
-      },
-      message: "I'm not quite sure what you're looking for. You can ask me about my resume, projects, research publications, or how to get in touch. What interests you most?"
+  }
+
+  const getTitleForType = (type) => {
+    switch (type) {
+      case 'academic':
+        return 'Academic Information'
+      case 'education':
+        return 'Educational Background'
+      case 'personal':
+        return 'Personal Interests'
+      case 'resume':
+        return 'Professional Background'
+      case 'projects':
+        return 'My Projects & Research'
+      case 'contact':
+        return 'Get in Touch'
+      case 'publications':
+        return 'Research Publications'
+      default:
+        return 'Response'
     }
   }
 
