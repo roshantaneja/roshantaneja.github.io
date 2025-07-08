@@ -1,6 +1,6 @@
 import OpenAI from 'openai'
 
-const openai = new OpenAI({
+const openai = OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 })
 
@@ -23,7 +23,7 @@ PROJECTS & RESEARCH:
 PUBLICATIONS & IP:
 - 2 NHSJS Papers: (1) Rainwater Impact, (2) Object Detection Model
 - US Patent Pending: Dwelling detection using satellite imagery (#63/703,232)
-- Short Story “Pomegranates” published in 3 journals; used in school curriculum
+- Short Story "Pomegranates" published in 3 journals; used in school curriculum
 
 LEADERSHIP:
 - Youth President, Maji Wells Water Programs (2021–)
@@ -32,7 +32,7 @@ LEADERSHIP:
 - Hardware Lead, Robotics (2022–25): Built 3 state-qualifying bots; created CAD library; crash courses to support new members
 
 AWARDS:
-- NeurIPS ’24 Winner: ML for Social Impact
+- NeurIPS '24 Winner: ML for Social Impact
 - Presidential Volunteer Service Gold Medal (300+ hours)
 - Melvin Jones Humanitarian Award
 - UN SDG Youth Voices Winner (#6 – Water)
@@ -49,7 +49,7 @@ SKILLS & TOOLS:
 - CAD: Fusion360, SolidWorks; ML/AI, GIS, Remote Sensing, Creative Fabrication
 
 HOBBIES:
-- Custom trophy making: Designed whimsical, meaningful awards like the “Dumpster Fire Award”
+- Custom trophy making: Designed whimsical, meaningful awards like the "Dumpster Fire Award"
 - Improv comedy: Founder & president of your school's improv club, organizing shows and workshops
 - Thrifting and upcycling: Refurbish furniture, decorate spaces with flair
 - Reading: Frequently juggling multiple books—literature, history, tech, poetry
@@ -62,8 +62,223 @@ CONTACT:
 - Site: roshan.codes | Blog: roshantaneja.stck.me
 
 COMMUNICATION INSTRUCTIONS:
-Speak as Roshan. Use “I” statements. Be personal, curious, and specific. If asked about something outside this profile, guide the conversation toward your research, leadership, or contact info. Keep the response short and concise but dont leave out any details. Do not ask response questions or go off topic.
+Speak as Roshan. Use "I" statements. Be personal, curious, and specific. If asked about something outside this profile, guide the conversation toward your research, leadership, or contact info. Keep the response short and concise but dont leave out any details. Do not ask response questions or go off topic.
 `
+
+// Define all possible card sections with relevance keywords
+const CARD_SECTIONS = {
+  publications: {
+    caption: 'Research & Publications',
+    keywords: ['publication', 'research', 'writing', 'paper', 'journal', 'neurips', 'nhsjs', 'patent', 'academic', 'study'],
+    cards: [
+      {
+        href: "/blog",
+        title: "My Blog",
+        description: "I write fiction, publish stories, and share reflections on tech, life, and everything in between."
+      },
+      {
+        href: "https://nhsjs.com/wp-content/uploads/2024/12/Image-Classification-on-Satellite-Imagery-for-Sustainable-Water-Harvesting-Placement-in-Indigenous-Communities-of-Northern-Tanzania.pdf",
+        title: "Remote Sensing and Machine Learning for Water Accessibility in Maasai Regions",
+        description: "Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track] • Presented at NeurIPS Convention 2024 in Vancouver • US Patent Pending Number 63/703,232 • Presented at ML4EO 2024 Conference at Univ. of Exeter UK • Published in National High School Journal of Science [Dec 2024]"
+      },
+      {
+        href: "https://nhsjs.com/wp-content/uploads/2024/10/Evaluating-the-Impact-of-Water-Harvesting.pdf",
+        title: "Impact of Rainwater Harvesting Units On Maasai Regions in Northern Tanzania",
+        description: "Published in National High School Journal of Science [Oct 2024] • Presidential Volunteer Service Award - Gold Medal [300+ Hours] • Presented at MDCON23 [Multi-District East-Africa Convention] Audience of 600+ delegates • Melvin Jones Humanitarian Service Award"
+      }
+    ]
+  },
+  water_projects: {
+    caption: 'Water & Humanitarian Projects',
+    keywords: ['tanzania', 'water', 'harvesting', 'maasai', 'losimingori', 'monduli', 'rainwater', 'maji wells', 'humanitarian', 'development', 'africa'],
+    cards: [
+      {
+        href: "/blog/3_faces-of-rainwater-harvesting",
+        title: "Faces of Rainwater Harvesting",
+        description: "Using machine learning to identify indigenous dwellings and improve water accessibility in underserved regions."
+      },
+      {
+        href: "/tanzania",
+        title: "Bringing Water to the Maasai",
+        description: "Led the deployment of 100+ rainwater harvesting units, reducing water collection time for 4500+ Maasai people."
+      },
+      {
+        href: "https://map.roshan.codes",
+        title: "Map of Deployed Units",
+        description: "Interactive map of the deployed rainwater harvesting units in Northern Tanzania.",
+        external: true
+      }
+    ]
+  },
+  programming: {
+    caption: 'Programming & Technical Projects',
+    keywords: ['programming', 'coding', 'projects', 'competitive', 'github', 'algorithm', 'space invaders', 'reinforcement learning', 'technical', 'software', 'code'],
+    cards: [
+      {
+        href: "https://github.com/roshantaneja",
+        title: "My Github",
+        description: "Come check out some of the projects I'm working on!",
+        external: true
+      },
+      {
+        href: "https://github.com/roshantaneja/competitive-programming",
+        title: "Competitive Programming",
+        description: "Daily puzzle advent calendar and my solutions repository—join me in cracking algorithmic challenges!",
+        external: true
+      },
+      {
+        href: "https://github.com/roshantaneja/spaceinvaders-reinforcementlearning",
+        title: "Space Invaders",
+        description: "Using reinforcement learning to beat the classic game—exploring AI for fun and learning.",
+        external: true
+      },
+      {
+        href: "https://github.com/roshantaneja/roshantaneja.github.io",
+        title: "This Website",
+        description: "The Code for this website—built with Next.js, React, and Tailwind CSS.",
+        external: true
+      }
+    ]
+  },
+  education: {
+    caption: 'Education & Academic',
+    keywords: ['school', 'university', 'college', 'berkeley', 'uc berkeley', 'sacred heart', 'gpa', 'act', 'academic', 'education', 'student'],
+    cards: [
+      {
+        href: "/resume/Roshan Taneja Resume.pdf",
+        title: "My Resume",
+        description: "Download my complete resume with all academic achievements, projects, and experience.",
+        external: true
+      },
+      {
+        href: "/about",
+        title: "About Me",
+        description: "Learn more about my background, education, and journey."
+      }
+    ]
+  },
+  contact: {
+    caption: 'Contact & Connect',
+    keywords: ['contact', 'email', 'reach', 'connect', 'linkedin', 'github', 'social', 'communication'],
+    cards: [
+      {
+        href: "mailto:rtaneja@berkeley.edu",
+        title: "Email Me",
+        description: "rtaneja@berkeley.edu - I'd love to hear from you!",
+        external: true
+      },
+      {
+        href: "https://linkedin.com/in/roshantaneja",
+        title: "LinkedIn",
+        description: "Connect with me professionally on LinkedIn.",
+        external: true
+      },
+      {
+        href: "https://github.com/roshantaneja",
+        title: "GitHub",
+        description: "Check out my code and projects on GitHub.",
+        external: true
+      }
+    ]
+  },
+  hobbies: {
+    caption: 'Hobbies & Interests',
+    keywords: ['hobby', 'interest', 'like to do', 'trophy', 'improv', 'comedy', 'thrifting', 'reading', 'creative', 'fun'],
+    cards: [
+      {
+        href: "/blog",
+        title: "My Writing",
+        description: "I write fiction, poetry, and creative pieces - check out my blog for some of my work."
+      },
+      {
+        href: "/about",
+        title: "More About Me",
+        description: "Learn about my hobbies, interests, and what makes me tick."
+      }
+    ]
+  }
+}
+
+// Function to calculate relevance score for a section based on query and response
+function calculateRelevanceScore(section, userQuery, aiResponse) {
+  const query = userQuery.toLowerCase()
+  const response = aiResponse.toLowerCase()
+  const sectionKeywords = section.keywords
+  
+  let score = 0
+  
+  // Check query keywords
+  sectionKeywords.forEach(keyword => {
+    if (query.includes(keyword)) {
+      score += 3 // High weight for query matches
+    }
+  })
+  
+  // Check response keywords
+  sectionKeywords.forEach(keyword => {
+    if (response.includes(keyword)) {
+      score += 2 // Medium weight for response matches
+    }
+  })
+  
+  // Special handling for specific query types
+  if (query.includes('resume') || query.includes('cv')) {
+    if (section.caption.includes('Education')) score += 5
+  }
+  
+  if (query.includes('publication') || query.includes('research')) {
+    if (section.caption.includes('Research')) score += 5
+  }
+  
+  if (query.includes('water') || query.includes('tanzania')) {
+    if (section.caption.includes('Water')) score += 5
+  }
+  
+  if (query.includes('hobby') || query.includes('interest')) {
+    if (section.caption.includes('Hobbies')) score += 5
+  }
+  
+  if (query.includes('contact') || query.includes('email')) {
+    if (section.caption.includes('Contact')) score += 5
+  }
+  
+  return score
+}
+
+// Function to select most relevant cards (3-5 max)
+function selectRelevantCards(cards, userQuery, aiResponse) {
+  const query = userQuery.toLowerCase()
+  const response = aiResponse.toLowerCase()
+  
+  // Score each card based on relevance
+  const scoredCards = cards.map(card => {
+    let score = 0
+    const cardText = (card.title + ' ' + card.description).toLowerCase()
+    
+    // Check if query keywords appear in card
+    const queryWords = query.split(' ').filter(word => word.length > 2)
+    queryWords.forEach(word => {
+      if (cardText.includes(word)) score += 2
+    })
+    
+    // Check if response keywords appear in card
+    const responseWords = response.split(' ').filter(word => word.length > 3)
+    responseWords.forEach(word => {
+      if (cardText.includes(word)) score += 1
+    })
+    
+    // Bonus for exact matches
+    if (query.includes('resume') && card.title.toLowerCase().includes('resume')) score += 5
+    if (query.includes('github') && card.title.toLowerCase().includes('github')) score += 5
+    if (query.includes('blog') && card.title.toLowerCase().includes('blog')) score += 5
+    
+    return { ...card, score }
+  })
+  
+  // Sort by score and take top 3-5
+  scoredCards.sort((a, b) => b.score - a.score)
+  return scoredCards.slice(0, Math.min(5, Math.max(3, scoredCards.length)))
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -103,135 +318,29 @@ Response:`
 
     const response = completion.choices[0].message.content
 
-    // Determine the type of response for frontend handling
-    let responseType = 'general'
-    const lowerInput = userInput.toLowerCase()
+    // Calculate relevance scores for all sections
+    const scoredSections = Object.entries(CARD_SECTIONS).map(([key, section]) => {
+      const score = calculateRelevanceScore(section, userInput, response)
+      return { key, section, score }
+    })
     
-    if (lowerInput.includes('gpa') || lowerInput.includes('grade') || lowerInput.includes('academic')) {
-      responseType = 'academic'
-    } else if (lowerInput.includes('school') || lowerInput.includes('university') || lowerInput.includes('college')) {
-      responseType = 'education'
-    } else if (lowerInput.includes('hobby') || lowerInput.includes('interest') || lowerInput.includes('like to do')) {
-      responseType = 'personal'
-    } else if (lowerInput.includes('resume') || lowerInput.includes('cv') || lowerInput.includes('experience')) {
-      responseType = 'resume'
-    } else if (lowerInput.includes('project') || lowerInput.includes('work') || lowerInput.includes('research')) {
-      responseType = 'projects'
-    } else if (lowerInput.includes('contact') || lowerInput.includes('email') || lowerInput.includes('reach')) {
-      responseType = 'contact'
-    }
-
-    // Detect keywords in the response to suggest relevant cards
-    const lowerResponse = response.toLowerCase()
-    const suggestedCards = []
-
-    // Publications/Research/Writing keywords
-    if (lowerResponse.includes('publication') || lowerResponse.includes('research') || lowerResponse.includes('writing') || 
-        lowerResponse.includes('paper') || lowerResponse.includes('journal') || lowerResponse.includes('neurips') ||
-        lowerResponse.includes('nhsjs') || lowerResponse.includes('patent')) {
-      suggestedCards.push({
-        category: 'publications',
-        caption: 'Research & Publications',
-        cards: [
-          {
-            href: "/blog",
-            title: "My Blog",
-            description: "I write fiction, publish stories, and share reflections on tech, life, and everything in between."
-          },
-          {
-            href: "https://nhsjs.com/wp-content/uploads/2024/12/Image-Classification-on-Satellite-Imagery-for-Sustainable-Water-Harvesting-Placement-in-Indigenous-Communities-of-Northern-Tanzania.pdf",
-            title: "Remote Sensing and Machine Learning for Water Accessibility in Maasai Regions",
-            description: "Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track] • Presented at NeurIPS Convention 2024 in Vancouver • US Patent Pending Number 63/703,232 • Presented at ML4EO 2024 Conference at Univ. of Exeter UK • Published in National High School Journal of Science [Dec 2024]"
-          },
-          {
-            href: "https://nhsjs.com/wp-content/uploads/2024/10/Evaluating-the-Impact-of-Water-Harvesting.pdf",
-            title: "Impact of Rainwater Harvesting Units On Maasai Regions in Northern Tanzania",
-            description: "Published in National High School Journal of Science [Oct 2024] • Presidential Volunteer Service Award - Gold Medal [300+ Hours] • Presented at MDCON23 [Multi-District East-Africa Convention] Audience of 600+ delegates • Melvin Jones Humanitarian Service Award"
-          }
-        ]
-      })
-    }
-
-    // Tanzania/Water/Harvesting/Maasai keywords
-    if (lowerResponse.includes('tanzania') || lowerResponse.includes('water') || lowerResponse.includes('harvesting') || 
-        lowerResponse.includes('maasai') || lowerResponse.includes('losimingori') || lowerResponse.includes('monduli') ||
-        lowerResponse.includes('rainwater') || lowerResponse.includes('maji wells')) {
-      suggestedCards.push({
-        category: 'water_projects',
-        caption: 'Water & Humanitarian Projects',
-        cards: [
-          {
-            href: "/blog/3_faces-of-rainwater-harvesting",
-            title: "Faces of Rainwater Harvesting",
-            description: "Using machine learning to identify indigenous dwellings and improve water accessibility in underserved regions."
-          },
-          {
-            href: "/tanzania",
-            title: "Bringing Water to the Maasai",
-            description: "Led the deployment of 100+ rainwater harvesting units, reducing water collection time for 4500+ Maasai people."
-          },
-          {
-            href: "https://map.roshan.codes",
-            title: "Map of Deployed Units",
-            description: "Interactive map of the deployed rainwater harvesting units in Northern Tanzania.",
-            external: true
-          }
-        ]
-      })
-    }
-
-    // Programming/Coding/Projects keywords
-    if (lowerResponse.includes('programming') || lowerResponse.includes('coding') || lowerResponse.includes('projects') || 
-        lowerResponse.includes('competitive') || lowerResponse.includes('github') || lowerResponse.includes('algorithm') ||
-        lowerResponse.includes('space invaders') || lowerResponse.includes('reinforcement learning')) {
-      suggestedCards.push({
-        category: 'programming',
-        caption: 'Programming & Technical Projects',
-        cards: [
-          {
-            href: "https://github.com/roshantaneja",
-            title: "My Github",
-            description: "Come check out some of the projects I'm working on!",
-            external: true
-          },
-          {
-            href: "https://github.com/roshantaneja/competitive-programming",
-            title: "Competitive Programming",
-            description: "Daily puzzle advent calendar and my solutions repository—join me in cracking algorithmic challenges!",
-            external: true
-          },
-          {
-            href: "https://github.com/roshantaneja/spaceinvaders-reinforcementlearning",
-            title: "Space Invaders",
-            description: "Using reinforcement learning to beat the classic game—exploring AI for fun and learning.",
-            external: true
-          },
-          {
-            href: "https://github.com/roshantaneja/roshantaneja.github.io",
-            title: "This Website",
-            description: "The Code for this website—built with Next.js, React, and Tailwind CSS.",
-            external: true
-          }
-        ]
-      })
-    }
-
-    // Always include "More About Me" card
-    suggestedCards.push({
-      category: 'about',
-      caption: 'Learn More About Me',
-      cards: [
-        {
-          href: "/about",
-          title: "More About Me",
-          description: "Learn more about me, my interests, experiences, and achievements."
-        }
-      ]
+    // Sort sections by relevance score and filter out low-scoring ones
+    scoredSections.sort((a, b) => b.score - a.score)
+    const relevantSections = scoredSections.filter(item => item.score > 0)
+    
+    // Select the most relevant sections (max 3) and their most relevant cards
+    const suggestedCards = relevantSections.slice(0, 3).map(({ section }) => {
+      const relevantCards = selectRelevantCards(section.cards, userInput, response)
+      
+      return {
+        category: section.caption.toLowerCase().replace(/[^a-z0-9]/g, '_'),
+        caption: section.caption,
+        cards: relevantCards
+      }
     })
 
     res.status(200).json({
       response,
-      type: responseType,
       originalQuery: userInput,
       suggestedCards
     })
