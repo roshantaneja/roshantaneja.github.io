@@ -60,7 +60,7 @@ PERSONAL INFORMATION:
 - One younger brother, just under 2 years younger than me.
 - I'm a big fan of the show "Voltron" and "Beyblade: Metal Fusion"
 - I love to read and write poetry, fiction, and SWE guides in my blog.
-- Im a sucker for Hazelnut Ice Cream and I love to play Strategy games
+- Im a sucker for Hazelnut Ice Cream and I love to play Strategy games (Balatro, GPRO, Super Auto Pets)
 
 CONTACT:
 - Email: rtaneja@berkeley.edu
@@ -159,7 +159,7 @@ function selectRelevantCards(cards, userQuery, aiResponse) {
     // Use helper for other keywords
     score += addKeywordScore(query, card.title.toLowerCase(), [
       'water', 'tanzania', 'hobby', 'interest', 'contact', 'email', 'linkedin',
-      'facebook', 'instagram', 'twitter', 'youtube', 'tiktok', 'reddit',
+      'instagram', 'twitter', 'youtube', 'tiktok', 'reddit',
       'improv', 'comedy', 'thrifting', 'reading', 'creative', 'fun', 'poem', 'sonnet', 'villanelle', 'haiku', 'limerick', 'ballad', 'ode', 'college', 'application', 'timeline', 'tutorial', 'covid', 'pandemic', 'lockdown', 'friendship', 'classroom', 'future', 'self', 'mold', 'america', 'love', 'breakup', 'dissolution', 'senior', 'honors', 'study', 'satellite', 'detection'
     ], 5)
     
@@ -204,7 +204,7 @@ Response:`
         }
       ],
       max_tokens: 300,
-      temperature: 0.7,
+      temperature: 0.8,
     })
 
     const response = completion.choices[0].message.content
