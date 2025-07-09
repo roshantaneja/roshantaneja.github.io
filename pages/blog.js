@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';  // Adjust based on your folder structure
+import styles from '../styles/blog.module.css'; // Use blog styles
 import ReactMarkdown from 'react-markdown';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
@@ -45,11 +45,11 @@ export const getStaticProps = async () => {
 
 export default function Blog({ posts }) {
     return (
-        <div className={styles.container}>
-            <main className={styles.main}>
+        <div className={styles.contentWrapper}>
+            <main>
                 <a href="/" className={styles.backLink}> &larr; Back to Home</a>
-                <h1 className={styles.title}>My Blog</h1>
-                <p className={styles.description}>
+                <h1>My Blog</h1>
+                <p>
                     Welcome to my blog! Here, I share my thoughts on literally everything. <br />
                     From tech to life to everything in between, you'll find it all here. <br />
                     Enjoy reading! 📚
@@ -64,7 +64,6 @@ export default function Blog({ posts }) {
                                         <h2>{post.title} &rarr;</h2>
                                         <p>{post.description}</p>
                                         <p><small><strong>{Math.ceil(Math.abs(new Date() - new Date(post.date)) / (1000 * 60 * 60 * 24))} days ago</strong></small></p>
-                                        {/* <p><small>{new Date(post.date).toLocaleDateString()}</small></p> */}
                                     </div>
                                 </a>
                             </Link>
@@ -75,7 +74,7 @@ export default function Blog({ posts }) {
                 <Analytics/>
             </main>
 
-            <footer className={styles.footer}>
+            <footer style={{marginTop: '2rem', color: '#888', textAlign: 'center'}}>
                 Roshan Taneja &copy; all rights reserved.
             </footer>
         </div>

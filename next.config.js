@@ -30,8 +30,5 @@ module.exports = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  images: {
-    loader: 'imgix',
-    path: 'https://daroshi11260.imgix.net',
-  },
+  // Removed custom images loader to use default for local images
 }

@@ -95,3 +95,50 @@
     display: block;
     margin: 1.5rem 0;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: #23232b;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  padding: 2rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.18s, box-shadow 0.18s, border 0.18s;
+  border: 1px solid #2a2a2a;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.18);
+  border-color: #8b5cf6;
+}
+
+.card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.card p {
+  margin: 0 0 0.5rem 0;
+  color: #cccccc;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.card small {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+}

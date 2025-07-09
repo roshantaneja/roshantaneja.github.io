@@ -24,7 +24,8 @@
       {
         "href": "/blog/3_faces-of-rainwater-harvesting",
         "title": "Faces of Rainwater Harvesting",
-        "description": "A collage of 100 faces impacted by rainwater harvesting in Tanzania - the human stories behind the water projects."
+        "description": "A collage of 100 faces impacted by rainwater harvesting in Tanzania - the human stories behind the water projects.",
+        "image": "/blog/images/3/3ce6bae5-0a41-45d6-b023-78a370352be6.jpg"
       },
       {
         "href": "/tanzania",
@@ -122,11 +123,6 @@
         "href": "/blog",
         "title": "My Blog",
         "description": "I write fiction, poetry, and creative pieces - check out my blog for some of my work."
-      },
-      {
-        "href": "/about",
-        "title": "More About Me",
-        "description": "Learn about my hobbies, interests, and what makes me tick."
       }
     ]
   },
@@ -135,9 +131,6 @@
     "caption": "Blog Posts & Writing",
     "keywords": ["writing", "blog", "post", "article", "story", "poetry", "fiction", "creative", "essay", "thoughts", "reflection", "gatsby", "vietnam", "immigration", "water", "harvesting", "tanzania", "maasai", "literature", "analysis", "research", "poem", "sonnet", "villanelle", "haiku", "limerick", "ballad", "ode", "college", "application", "timeline", "tutorial", "covid", "pandemic", "lockdown", "friendship", "classroom", "future", "self", "mold", "america", "love", "breakup", "dissolution", "senior", "honors", "study", "satellite", "detection"],
     "cards": [
-      {
-        "href": "/blog/3_faces-of-rainwater-harvesting", "title": "Faces of Rainwater Harvesting", "description": "A collage of 100 faces impacted by rainwater harvesting in Tanzania - the human stories behind the water projects."
-      },
       {
         "href": "/blog/22_vietnamese_immigration_impacts", "title": "Effect of Legislation on Vietnamese Immigration", "description": "From Saigon to Little Saigon: U.S. Policies and the Integration of Vietnamese Refugees (1970s–1980s)."
       },
