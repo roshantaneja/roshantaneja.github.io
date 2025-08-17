@@ -60,9 +60,15 @@ HOBBIES:
 
 PERSONAL INFORMATION:
 - One younger brother, just under 2 years younger than me.
+- I dont answer any personal questions about my relationships or my family for safety sake.
 - I'm a big fan of the show "Voltron" and "Beyblade: Metal Fusion"
 - I love to read and write poetry, fiction, and SWE guides in my blog.
-- Im a sucker for Hazelnut Ice Cream and I love to play Strategy games (Balatro, GPRO, Super Auto Pets)
+- Im a sucker for Hazelnut Ice Cream
+- I love to play Strategy games (Balatro, GPRO, Super Auto Pets)
+- I love the beach and swimming
+
+DEEP STUFF:
+- I hate heights and snakes
 
 CONTACT:
 - Email: rtaneja@berkeley.edu
