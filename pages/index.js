@@ -27,6 +27,16 @@ export default function Home() {
       I develop machine learning models, analyze satellite imagery, and lead humanitarian projects. My work is aimed at creating lasting solutions for water scarcity, particularly for the Maasai people of Northern Tanzania.
     </p>
 
+    <p className={styles.description}>
+      I'm currently a student at the University of California, Berkeley, where I'm pursuing a degree in Computer Science and Electrical Engineering.
+    </p>
+
+    {/* add a link to the new AI search feature at https://roshantaneja-github-io-git-development-roshantanejas-projects.vercel.app/ */}
+
+    <p className={styles.description}>
+      Try out the experimental portfolio website <a href="https://roshantaneja-github-io-git-development-roshantanejas-projects.vercel.app/" target="_blank" rel="noopener noreferrer" style={{color: '#b200f3'}}> here!</a>
+    </p>
+
 
     <h2 className={styles.title}>Featured Projects</h2>
     <div className={styles.grid}>
@@ -45,20 +55,20 @@ export default function Home() {
         <p>Led the deployment of 100+ rainwater harvesting units, reducing water collection time for 4500+ Maasai people.</p>
       </a>
 
-      <a href="https://github.com/roshantaneja" target="_blank" rel="noopener noreferrer" className={styles.card}>
+      {/* <a href="https://github.com/roshantaneja" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>My Github &rarr;</h2>
         <p>Come check out some of the projects I'm working on!</p>
-      </a>
+      </a> */}
 
       <a href="https://github.com/roshantaneja/competitive-programming" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>Competitive Programming &rarr;</h2>
         <p>Daily puzzle advent calendar and my solutions repository—join me in cracking algorithmic challenges!</p>
       </a>
 
-      <a href="https://github.com/roshantaneja/spaceinvaders-reinforcementlearning" target="_blank" rel="noopener noreferrer" className={styles.card}>
+      {/* <a href="https://github.com/roshantaneja/spaceinvaders-reinforcementlearning" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>Space Invaders &rarr;</h2>
         <p>Using reinforcement learning to beat the classic game—exploring AI for fun and learning.</p>
-      </a>
+      </a> */}
 
       {/* <a href="https://roshantaneja.stck.me/" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>My STCK &rarr;</h2>
@@ -70,10 +80,10 @@ export default function Home() {
         <p>Interactive map of the deployed rainwater harvesting units in Northern Tanzania.</p>
       </a>
 
-      <a href="https://github.com/roshantaneja/roshantaneja.github.io" target="_blank" rel="noopener noreferrer" className={styles.card}>
+      {/* <a href="https://github.com/roshantaneja/roshantaneja.github.io" target="_blank" rel="noopener noreferrer" className={styles.card}>
         <h2>This Website &rarr;</h2>
         <p>The Code for this website—built with Next.js, React, and Tailwind CSS.</p>
-      </a>
+      </a> */}
 
       <a href="/about" className={styles.card}>
         <h2>More About Me &rarr;</h2>

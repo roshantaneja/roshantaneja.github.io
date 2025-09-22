@@ -194,6 +194,7 @@
 
     .description {
         color: #aaa;
+        padding: 0 2rem;
     }
 
     .listContainer ul, .listContainer ol {
