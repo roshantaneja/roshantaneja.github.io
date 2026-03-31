@@ -7,6 +7,7 @@ import styles from '../../styles/blog.module.css';
 import styles2 from '../../styles/Home.module.css';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
+import Footer from '../../components/Footer';
 
 const blogDirectory = path.join(process.cwd(), 'public', 'blog');
 
@@ -149,9 +150,7 @@ export default function BlogPost({ title, date, content }) {
                 <Analytics/>
             </main>
 
-            <footer className={styles2.footer}>
-                Roshan Taneja &copy; all rights reserved.
-            </footer>
+            <Footer />
         </div>
     );
 }

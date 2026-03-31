@@ -1,23 +1,19 @@
-/* Default Dark Mode */
-body {
-  background-color: #121212;
-  color: #ffffff;
-  --card-bg: #1e1e1e;
-  --text-color: #ffffff;
-  --border-color: #333333;
-  --icon-bg: #c4b5fd;
+:root {
+  color-scheme: dark;
+  --page-bg: #0b0c10;
+  --card-bg: #16171d;
+  --card-hover: #1f2027;
+  --text-color: #f5f5f7;
+  --muted-text: #b6bac9;
+  --border-color: #2c2f3a;
+  --icon-bg: #b200f3;
   --icon-color: #ffffff;
 }
 
-/* Light Mode */
-body.light {
-  background-color: #ffffff;
-  color: #000000;
-  --card-bg: #ffffff;
-  --text-color: #000000;
-  --border-color: #e0e0e0;
-  --icon-bg: #a78bfa;
-  --icon-color: #ffffff;
+body {
+  background-color: var(--page-bg);
+  color: var(--text-color);
+  font-family: 'Inter', Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .vertical-timeline-element-content {
@@ -39,19 +35,19 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Inter', Roboto, 'Helvetica Neue', sans-serif;
-  background-color: var(--card-bg);
+  background-color: var(--page-bg);
   color: var(--text-color);
 }
 
 a {
-  color: --icon-bg;
+  color: var(--icon-bg);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 a:hover,
 a:focus {
-  color: --icon-bg;
+  color: var(--icon-bg);
   text-decoration: underline;
 }
 
@@ -59,13 +55,6 @@ a:focus {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    color: var(--text-color);
-    background: var(--card-bg);
-  }
 }
 
 .divTable {

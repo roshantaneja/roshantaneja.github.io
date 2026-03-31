@@ -4,6 +4,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css'; // Import the default styles
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
+import Footer from '../components/Footer';
 
 import {
     FaHandsHelping,
@@ -66,9 +67,7 @@ export default function Tanzania() {
                 <Analytics/>
             </main>
 
-            <footer style={{ textAlign: 'center', padding: '2rem 0' }}>
-                Roshan Taneja &copy; all rights reserved.
-            </footer>
+            <Footer />
         </div>
     );
 }

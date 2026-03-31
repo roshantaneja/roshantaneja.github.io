@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from "@vercel/analytics/react"
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -10,6 +11,8 @@ export default function Home() {
   <Head>
     <title>Roshan Taneja</title>
     <meta name="description" content="Student passionate about using technology to solve global problems." />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0b0c10" />
     <link rel="icon" href="/favicon.ico" />
   </Head>
 
@@ -129,12 +132,7 @@ export default function Home() {
     <Analytics/>
   </main>
 
-  <footer className={styles.footer}>
-  Roshan Taneja &copy; all rights reserved. &nbsp; &nbsp;
-    <a href="https://www.github.com/roshantaneja/roshantaneja.github.io" target="_blank" rel="noopener noreferrer" style={{alignSelf: 'right'}}>
-    Wanna see how I built this site? Click me to check out the code on GitHub!
-    </a>
-  </footer>
+  <Footer />
 </div>
   )
 }

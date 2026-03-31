@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/About.module.css';
+import Footer from '../components/Footer';
 
 export default function About() {
   return (
@@ -62,9 +63,7 @@ export default function About() {
         </section>
       </main>
 
-      <footer className={styles.footer}>
-        <p>&copy; 2024 Roshan Taneja. All Rights Reserved.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
