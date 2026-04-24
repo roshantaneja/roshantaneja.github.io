@@ -36,9 +36,9 @@ export default function Home() {
 
     {/* add a link to the new AI search feature at https://roshantaneja-github-io-git-development-roshantanejas-projects.vercel.app/ */}
 
-    <p className={styles.description}>
+    {/* <p className={styles.description}>
       Try out the experimental portfolio website <a href="https://roshantaneja-github-io-git-development-roshantanejas-projects.vercel.app/" target="_blank" rel="noopener noreferrer" style={{color: '#b200f3'}}> here!</a>
-    </p>
+    </p> */}
 
 
     <h2 className={styles.title}>Featured Projects</h2>
