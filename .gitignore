@@ -43,3 +43,6 @@ next-env.d.ts
 #markdown writers
 .obsidian
 *.obsidian/
+
+# sibling subprojects — local reference only, never committed
+interactive-rainwater-harvesting-map-website/
