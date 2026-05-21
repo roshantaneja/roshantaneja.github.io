@@ -1,0 +1,44 @@
+{
+  "map": {
+    "style": "https://demotiles.maplibre.org/style.json",
+    "initialView": {
+      "center": [-50, 57],
+      "zoom": 4
+    },
+    "trackColor": "#4da6ff",
+    "trackWidth": 2.5,
+    "trackOpacity": 0.9,
+    "dayOpacity": {
+      "1": 0.35,
+      "7": 0.22,
+      "14": 0.14,
+      "30": 0.08
+    },
+    "dayStrokeOpacity": {
+      "1": 0.55,
+      "7": 0.40,
+      "14": 0.28,
+      "30": 0.18
+    }
+  },
+  "hero": {
+    "pageTitle": "ICESat-2 Iceberg Tracker — Roshan Taneja",
+    "metaDescription": "Real-time ICESat-2 iceberg tracking pipeline with Kalman filter drift forecasting in the Labrador Sea.",
+    "eyebrow": "ICESat-2 · Labrador Sea · 55–65°N",
+    "title": "Iceberg Drift Forecasting",
+    "sub": "Automated calving-front detection using ICESat-2 photon-counting lidar, paired with a Kalman filter to project 30-day drift corridors and covariance growth. Data refreshes weekly via GitHub Actions.",
+    "statLabels": {
+      "km2Tracked": "km² tracked total",
+      "activeTracks": "active tracks",
+      "meanDrift": "mean drift km/day",
+      "lastRefreshed": "last refreshed"
+    }
+  },
+  "legend": [
+    { "key": "track", "label": "ICESat-2 track" },
+    { "key": "ellipse1", "label": "+1d forecast" },
+    { "key": "ellipse7", "label": "+7d forecast" },
+    { "key": "ellipse14", "label": "+14d forecast" },
+    { "key": "ellipse30", "label": "+30d forecast" }
+  ]
+}

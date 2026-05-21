@@ -1,0 +1,20 @@
+{
+  "map": {
+    "style": "https://demotiles.maplibre.org/style.json",
+    "initialView": {
+      "center": [36.20, -3.38],
+      "zoom": 12
+    },
+    "clusterColor": "#0070f3",
+    "pointColor": "#ff7849"
+  },
+  "layers": [
+    { "id": "photos", "label": "Photos", "defaultOn": true },
+    { "id": "nanja-rings", "label": "Nanja Rings", "defaultOn": true }
+  ],
+  "nanja": {
+    "center": [36.2832, -3.3815],
+    "ringRadiiKm": [1, 2, 5, 10, 20],
+    "ringColors": ["#7dd3fc", "#38bdf8", "#0ea5e9", "#0284c7", "#0070f3"]
+  }
+}
