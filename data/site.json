@@ -1,0 +1,46 @@
+{
+  "owner": {
+    "name": "Roshan Taneja",
+    "github": "roshantaneja",
+    "linkedin": "roshantaneja"
+  },
+  "urls": {
+    "site": "https://roshan.codes",
+    "resume": "/resume/Roshan Taneja Resume.pdf",
+    "sourceRepo": "https://github.com/roshantaneja/roshantaneja.github.io"
+  },
+  "meta": {
+    "title": "Roshan Taneja",
+    "description": "Geospatial & ML researcher at UC Berkeley.",
+    "themeColor": "#0b0c10",
+    "favicon": "/favicon.ico"
+  },
+  "routes": [
+    { "label": "Home", "href": "/", "group": "Pages" },
+    { "label": "Tanzania Map", "href": "/tanzania", "group": "Pages" },
+    { "label": "Icebergs", "href": "/icebergs", "group": "Pages" },
+    { "label": "Bench", "href": "/bench", "group": "Pages" },
+    { "label": "Projects", "href": "/projects", "group": "Pages" },
+    { "label": "Blog", "href": "/blog", "group": "Pages" },
+    { "label": "About", "href": "/about", "group": "Pages" },
+    { "label": "FAQ", "href": "/faq", "group": "Pages" },
+    { "label": "Privacy", "href": "/privacy", "group": "Pages" },
+    { "label": "Resumé", "href": "/resume/Roshan Taneja Resume.pdf", "group": "Pages" }
+  ],
+  "footerLinks": [
+    { "label": "GitHub", "href": "https://github.com/roshantaneja", "external": true },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/roshantaneja/", "external": true },
+    { "label": "Blog", "href": "/blog", "external": false },
+    { "label": "Tanzania", "href": "/tanzania", "external": false },
+    { "label": "Icebergs", "href": "/icebergs", "external": false },
+    { "label": "Resumé", "href": "/resume/Roshan Taneja Resume.pdf", "external": true },
+    { "label": "Source", "href": "https://github.com/roshantaneja/roshantaneja.github.io", "external": true },
+    { "label": "Privacy", "href": "/privacy", "external": false }
+  ],
+  "console": {
+    "name": "roshan taneja",
+    "role": "eecs @ uc berkeley",
+    "coords": "37.8724° N, 122.2595° W",
+    "greeting": "karibu sana"
+  }
+}
