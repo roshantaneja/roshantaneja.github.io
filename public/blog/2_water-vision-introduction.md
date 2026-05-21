@@ -2,6 +2,12 @@
 title: An update on WaTER Vision
 date: 10-29-2024
 description: My progress up to date and why its so important
+category: Tech
+tags:
+  - tech
+  - water-vision
+series: water-vision
+seriesLabel: WaTER Vision Series
 ---
 
 # Unveiling the Maasai Water Project: Mapping Homes from Space!

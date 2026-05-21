@@ -1,7 +1,11 @@
 ---
-title: "Effect of Legislation on Vietnamese Immigration"
-date: "05-10-2025"
-description: "From Saigon to Little Saigon: U.S. Policies and the Integration of Vietnamese Refugees (1970s–1980s)"
+title: Effect of Legislation on Vietnamese Immigration
+date: 05-10-2025
+description: 'From Saigon to Little Saigon: U.S. Policies and the Integration of Vietnamese Refugees (1970s–1980s)'
+category: Essay
+tags:
+  - essay
+  - history
 ---
 
 # Creator’s Statement

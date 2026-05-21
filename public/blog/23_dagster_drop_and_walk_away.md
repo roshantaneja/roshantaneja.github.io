@@ -1,7 +1,12 @@
 ---
-title: "Using Sensors to implement \"drop and walk away\" on Dagster Pipelines"
-date: "04-24-2026"
-description: "Drop a File. Walk Away. Let the Pipeline Figure It Out."
+title: Using Sensors to implement "drop and walk away" on Dagster Pipelines
+date: 04-24-2026
+description: Drop a File. Walk Away. Let the Pipeline Figure It Out.
+category: Tech
+tags:
+  - tech
+  - data-engineering
+  - nature
 ---
 
 ## The Problem
@@ -433,6 +438,6 @@ Drop a file into `data/`. That's it.
 
 ---
 
-*The full source for this project, including the detailed architecture reference doc, is in the [dagster-testing repo](#). Questions, corrections, and improvements welcome.*
+*The full source for this project, including the detailed architecture reference doc, is in the [dagster-testing repo](https://github.com/roshantaneja/dagster-testing). Questions, corrections, and improvements welcome.*
 
 *— Roshan*

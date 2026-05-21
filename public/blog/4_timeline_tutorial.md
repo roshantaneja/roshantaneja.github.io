@@ -2,6 +2,10 @@
 title: How to make a timeline in Next.js
 date: 11-29-2024
 description: a tutorial (with codeblocks!) on how to build the timeline you see on the homepage
+category: Tech
+tags:
+  - tech
+  - tutorial
 ---
 
 # Building an Interactive Timeline for My Tanzania Project

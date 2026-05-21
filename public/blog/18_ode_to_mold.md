@@ -1,7 +1,13 @@
 ---
-title: "An Ode to Mold"
-date: "2-5-2023"
-description: "An Ode to Fungi, bacteria and everything else moldy"
+title: An Ode to Mold
+date: 2-5-2023
+description: 'An Ode to Fungi, bacteria and everything else moldy'
+category: Poetry
+tags:
+  - poetry
+  - nature
+series: poetry-collection
+seriesLabel: Poetry Collection
 ---
 I open the fridge
 

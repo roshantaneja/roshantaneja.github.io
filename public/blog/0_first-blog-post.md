@@ -1,7 +1,11 @@
 ---
-title: "How I made this Blogging Platform"
-date: "10-19-2024"
-description: "This is the first post in my updated blog."
+title: How I made this Blogging Platform
+date: 10-19-2024
+description: This is the first post in my updated blog.
+category: Essay
+tags:
+  - essay
+  - tech
 ---
 
 # Welcome to My New Blog

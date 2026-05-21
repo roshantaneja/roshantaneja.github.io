@@ -1,7 +1,11 @@
 ---
-title: "America (Recycling Alan Ginsberg)"
-date: "3-22-2023"
-description: "Recycling Alan Ginsberg's America"
+title: America (Recycling Alan Ginsberg)
+date: 3-22-2023
+description: Recycling Alan Ginsberg's America
+category: Essay
+tags:
+  - essay
+  - culture
 ---
 America you lost everything and now you have nothing.
 

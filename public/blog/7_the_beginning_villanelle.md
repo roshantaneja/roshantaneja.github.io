@@ -1,7 +1,12 @@
 ---
-title: "The Beginning - A Villanelle"
-date: "4-29-2022"
-description: "A villanelle about the beginning of lockdown"
+title: The Beginning - A Villanelle
+date: 4-29-2022
+description: A villanelle about the beginning of lockdown
+category: Poetry
+tags:
+  - poetry
+series: poetry-collection
+seriesLabel: Poetry Collection
 ---
 Shelter in Place! Shelter in Place!
 

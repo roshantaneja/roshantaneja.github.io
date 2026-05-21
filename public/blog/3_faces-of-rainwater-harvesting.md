@@ -1,7 +1,13 @@
 ---
 title: Faces of Rainwater Harvesting
 date: 11-19-2024
-description: A collage of 100 faces, impacted by rainwater harvesting
+description: 'A collage of 100 faces, impacted by rainwater harvesting'
+category: Tech
+tags:
+  - tech
+  - water-vision
+series: water-vision
+seriesLabel: WaTER Vision Series
 ---
 
 # Before you scroll down...

@@ -1,7 +1,11 @@
 ---
-title: "College Applications"
-date: "10-22-2024"
-description: "Current update on the state of things"
+title: College Applications
+date: 10-22-2024
+description: Current update on the state of things
+category: Essay
+tags:
+  - essay
+  - education
 ---
 
 

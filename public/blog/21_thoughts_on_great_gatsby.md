@@ -1,7 +1,11 @@
 ---
-title: "Really, Luhrmann?"
-date: "7-22-2023"
-description: "My thoughts on The Great Gatsby by F. Scott Fitzgerald and the 2013 film adaptation by Baz Luhrmann"
+title: 'Really, Luhrmann?'
+date: 7-22-2023
+description: My thoughts on The Great Gatsby by F. Scott Fitzgerald and the 2013 film adaptation by Baz Luhrmann
+category: Essay
+tags:
+  - essay
+  - literature
 ---
 While reading “The Great Gatsby” by F. Scott Fitzgerald, the reader often wonders what decisions went into the production of the novel. The vague and poetic language seems almost intentional in how it weaves throughout the book. In contrast, when watching the film, however, the audience finds itself with a transparent and connected cast of characters, and the intentional mist of nuance is lost in translation. The Great Gatsby is great because of its poetic and elusive characterisation and detailed exploration of the extremities of the human condition, although lacking in Baz Luhrmann’s 2013 film adaptation of the book.
 

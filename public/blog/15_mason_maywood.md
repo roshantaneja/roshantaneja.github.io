@@ -1,6 +1,9 @@
 ---
-title: "Chill Times with Mason Maywood"
-date: "1-22-2023"
-description: "Kinda got lost on this one, but i love it."
+title: Chill Times with Mason Maywood
+date: 1-22-2023
+description: 'Kinda got lost on this one, but i love it.'
+category: Video Essay
+tags:
+  - essay
 ---
 ![](images/15/clxnyzxrky1658453570.mp4)

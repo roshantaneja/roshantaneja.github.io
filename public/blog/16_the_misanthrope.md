@@ -1,7 +1,10 @@
 ---
-title: "The Misanthrope"
-date: "2-2-2023"
-description: "A good Poem, I think"
+title: The Misanthrope
+date: 2-2-2023
+description: 'A good Poem, I think'
+category: Fiction
+tags:
+  - fiction
 ---
 frustration lives within me,
 

@@ -2,6 +2,11 @@
 title: Pandemonium - A Sonnet
 date: 4-24-2022
 description: My first attempt at poetry
+category: Poetry
+tags:
+  - poetry
+series: poetry-collection
+seriesLabel: Poetry Collection
 ---
 I’m spending my days in isolation,
 

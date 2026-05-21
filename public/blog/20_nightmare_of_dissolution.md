@@ -1,7 +1,10 @@
 ---
-title: "The Nightmare of Dissolution"
-date: "5-13-2023"
-description: "Originally a love story"
+title: The Nightmare of Dissolution
+date: 5-13-2023
+description: Originally a love story
+category: Fiction
+tags:
+  - fiction
 ---
 They felt themselves drifting apart,
 
