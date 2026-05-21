@@ -1,0 +1,7 @@
+[
+  {"href": "/blog/3_faces-of-rainwater-harvesting", "title": "Faces of Rainwater Harvesting", "blurb": "Using machine learning to identify indigenous dwellings and improve water accessibility in underserved regions.", "external": false},
+  {"href": "https://github.com/roshantaneja/competitive-programming", "title": "Competitive Programming", "blurb": "Daily puzzle advent calendar and my solutions repository.", "external": true},
+  {"href": "/tanzania", "title": "Bringing Water to the Maasai", "blurb": "Deployed 500 rainwater harvesting units, reducing water collection time for 30,000 Maasai people. $300K raised.", "external": false},
+  {"href": "/icebergs", "title": "ICESat-2 Iceberg Tracker", "blurb": "Kalman-filter drift forecasting on calved icebergs using ICESat-2 photon returns. Live covariance ellipses.", "external": false},
+  {"href": "/blog", "title": "My Blog", "blurb": "Poetry, short fiction, and essays on tech and life.", "external": false}
+]

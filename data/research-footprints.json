@@ -1,0 +1,25 @@
+[
+  {
+    "slug": "tanzania",
+    "label": "Tanzania",
+    "lat": -2.0,
+    "lng": 35.5,
+    "color": "#ff7849",
+    "href": "/tanzania",
+    "bridgeLabel": "Tropical Scarcity",
+    "bridgeTitle": "Rainwater for the Maasai",
+    "bridgeSub": "Sentinel-2 · Northern Tanzania"
+  },
+  {
+    "slug": "icebergs",
+    "label": "Labrador Sea",
+    "lat": 55,
+    "lng": -52,
+    "color": "#7dd3fc",
+    "href": "/icebergs",
+    "pulseDelay": true,
+    "bridgeLabel": "Polar Excess",
+    "bridgeTitle": "Calving in the Labrador Sea",
+    "bridgeSub": "ICESat-2 · 55–65°N"
+  }
+]

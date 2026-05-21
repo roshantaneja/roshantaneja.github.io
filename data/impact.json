@@ -1,0 +1,11 @@
+{
+  "units": 550,
+  "people": 30000,
+  "raised_usd": 300000,
+  "counters": [
+    { "key": "raised_usd", "label": "raised", "format": "usd-compact" },
+    { "key": "units",      "label": "units deployed", "format": "int" },
+    { "key": "people",     "label": "people served",  "format": "int" }
+  ],
+  "href": "/blog/3_faces-of-rainwater-harvesting"
+}

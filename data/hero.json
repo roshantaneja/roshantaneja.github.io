@@ -1,0 +1,8 @@
+{
+  "clock":    { "label": "Berkeley, CA", "timezone": "America/Los_Angeles", "tzFallback": "PT", "sprintPrefix": "sprint:" },
+  "github":   { "label": "GH Activity", "windowDays": 14 },
+  "globe":    { "label": "Research Footprint" },
+  "ledger":   { "label": "Research Ledger" },
+  "dispatch": { "label": "Latest Blog Post", "urlPrefix": "/blog/" },
+  "impact":   { "label": "Humanitarian Impact", "href": "/blog/3_faces-of-rainwater-harvesting" }
+}

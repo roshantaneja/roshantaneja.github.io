@@ -1,0 +1,34 @@
+[
+  {
+    "award": "NeurIPS 2024",
+    "category": "ML for Social Impact",
+    "href": "https://nhsjs.com/wp-content/uploads/2024/12/Image-Classification-on-Satellite-Imagery-for-Sustainable-Water-Harvesting-Placement-in-Indigenous-Communities-of-Northern-Tanzania.pdf",
+    "title": "Remote Sensing and Machine Learning for Water Accessibility in Maasai Regions",
+    "bullets": [
+      "Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track]",
+      "Presented at NeurIPS Convention 2024 in Vancouver",
+      "US Patent Pending 63/703,232 \"Dwelling Detection in Satellite Image Data Using a Model\"",
+      "Presented at ML4EO 2024 Conference at Univ. of Exeter UK",
+      "Published in National High School Journal of Science [Dec 2024]"
+    ]
+  },
+  {
+    "award": "US Patent Pending",
+    "category": "63/703,232 Dwelling Detection",
+    "href": null,
+    "title": null,
+    "bullets": []
+  },
+  {
+    "award": "NHSJS Dec 2024",
+    "category": "Satellite ML Paper",
+    "href": "https://nhsjs.com/wp-content/uploads/2024/10/Evaluating-the-Impact-of-Water-Harvesting.pdf",
+    "title": "Impact of Rainwater Harvesting Units On Maasai Regions in Northern Tanzania",
+    "bullets": [
+      "Published in National High School Journal of Science [Oct 2024]",
+      "Presidential Volunteer Service Award — Gold Medal [300+ Hours]",
+      "Presented at MDCON23 [Multi-District East-Africa Convention] Audience of 600+ delegates",
+      "Melvin Jones Humanitarian Service Award"
+    ]
+  }
+]
