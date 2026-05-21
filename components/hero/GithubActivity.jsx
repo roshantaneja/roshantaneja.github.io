@@ -31,7 +31,7 @@ export default function GithubActivity({ activity }) {
         <div
           className={styles.ghChart}
           role="img"
-          aria-label="GitHub activity over the last 14 days"
+          aria-label="GitHub activity over the last 6 weeks"
         >
           {displayBuckets.map((count, i) => {
             const heightPct = max > 0 ? (count / max) * 100 : 0;

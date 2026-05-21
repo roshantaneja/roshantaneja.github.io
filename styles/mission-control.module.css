@@ -239,7 +239,7 @@ a.tile {
 .ghChart {
   display: flex;
   align-items: flex-end;
-  gap: 3px;
+  gap: 1px;
   height: 60px;
   flex: 1;
 }
@@ -247,7 +247,7 @@ a.tile {
 .ghBar {
   flex: 1;
   background: var(--accent);
-  border-radius: 2px 2px 0 0;
+  border-radius: 1px 1px 0 0;
   min-height: 2px;
   opacity: 0.7;
   transition: opacity var(--motion-fast) var(--ease-out);
