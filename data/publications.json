@@ -1,22 +1,32 @@
 [
   {
+    "award": "AICC @ NeurIPS 2025",
+    "category": "Poster Presentation",
+    "href": null,
+    "title": "AICC @ NeurIPS — Copenhagen, Denmark",
+    "bullets": [
+      "Poster presentation at AICC Workshop, NeurIPS 2025",
+      "Copenhagen, Denmark"
+    ]
+  },
+  {
     "award": "NeurIPS 2024",
     "category": "ML for Social Impact",
     "href": "https://nhsjs.com/wp-content/uploads/2024/12/Image-Classification-on-Satellite-Imagery-for-Sustainable-Water-Harvesting-Placement-in-Indigenous-Communities-of-Northern-Tanzania.pdf",
     "title": "Remote Sensing and Machine Learning for Water Accessibility in Maasai Regions",
     "bullets": [
-      "Winner NeurIPS 2024 [Machine Learning for Social Impact High School Track]",
+      "1 of 4 Winners — NeurIPS 2024 Machine Learning for Social Impact High School Track",
       "Presented at NeurIPS Convention 2024 in Vancouver",
-      "US Patent Pending 63/703,232 \"Dwelling Detection in Satellite Image Data Using a Model\"",
-      "Presented at ML4EO 2024 Conference at Univ. of Exeter UK",
+      "US Patent Pending 63/703,232 \"Object Detection in Satellite Imagery for Optimising Rainwater Unit Placement\"",
+      "Sole High-school Keynote Presenter at ML4EO 2024, Univ. of Exeter, UK",
       "Published in National High School Journal of Science [Dec 2024]"
     ]
   },
   {
     "award": "US Patent Pending",
-    "category": "63/703,232 Dwelling Detection",
+    "category": "63/703,232",
     "href": null,
-    "title": null,
+    "title": "Object Detection in Satellite Imagery for Optimising Rainwater Unit Placement",
     "bullets": []
   },
   {

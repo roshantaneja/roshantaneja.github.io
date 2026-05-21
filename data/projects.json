@@ -1,5 +1,27 @@
 [
   {
+    "slug": "statewide-database",
+    "name": "Statewide Database",
+    "pitch": "Voter-registration ingestion pipeline in Dagster + DuckDB with Pydantic schema validation.",
+    "role": "backend engineer",
+    "stack": ["python", "dagster", "duckdb", "pydantic"],
+    "tags": ["data"],
+    "github": null,
+    "stars": null,
+    "lastPush": null
+  },
+  {
+    "slug": "coco",
+    "name": "Cost of Colonialism (COCO)",
+    "pitch": "OCR + NLP semantic search over 1600s–1800s Dutch East India Company shipping manifests with embedding-based retrieval.",
+    "role": "data science researcher",
+    "stack": ["python", "ocr", "nlp", "embeddings"],
+    "tags": ["research", "nlp"],
+    "github": null,
+    "stars": null,
+    "lastPush": null
+  },
+  {
     "slug": "icespy",
     "name": "icespy",
     "pitch": "ICESat-2 photon → Kalman drift forecast pipeline. Powers /icebergs.",
@@ -68,7 +90,7 @@
   {
     "slug": "this-site",
     "name": "roshan.codes",
-    "pitch": "This site. Built with Next.js, MapLibre, and too many late nights.",
+    "pitch": "This site. Built with Next.js, MapLibre",
     "role": "built solo",
     "stack": ["nextjs", "react", "maplibre"],
     "tags": ["web"],
