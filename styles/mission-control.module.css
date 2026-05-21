@@ -1,0 +1,297 @@
+/* ─── Mission Control telemetry deck ─────────────────────────────────────── */
+
+.deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 600px) {
+  .tile {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+/* ─── Tile base ──────────────────────────────────────────────────────────── */
+
+.tile {
+  flex: 1 1 260px;
+  max-width: 400px;
+  background: var(--bg-1);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition:
+    border-color var(--motion-fast) var(--ease-out),
+    transform var(--motion-fast) var(--ease-out);
+  min-height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+a.tile {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tile:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ─── Tile label ─────────────────────────────────────────────────────────── */
+
+.tileLabel {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--fg-2);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* ─── Tile body ──────────────────────────────────────────────────────────── */
+
+.tileBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ─── DualGlobe ──────────────────────────────────────────────────────────── */
+
+.globeWrap {
+  position: relative;
+  width: 100%;
+  flex: 1;
+}
+
+.globeSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dotLabel {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  color: var(--fg-1);
+  text-decoration: none;
+  transition: color var(--motion-fast) var(--ease-out);
+}
+
+.dotLabel:hover {
+  color: var(--fg-0);
+  text-decoration: underline;
+}
+
+.dotLinks {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Pulse animation */
+@keyframes pulse-ring {
+  0% {
+    r: 4;
+    opacity: 0.8;
+  }
+  100% {
+    r: 12;
+    opacity: 0;
+  }
+}
+
+.pulseRing {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+.pulseRingDelayed {
+  animation: pulse-ring 2s ease-out infinite;
+  animation-delay: 1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulseRing,
+  .pulseRingDelayed {
+    animation: none;
+  }
+}
+
+/* ─── ImpactCounters ─────────────────────────────────────────────────────── */
+
+.countersGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.counterRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.counterValue {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--fg-0);
+  line-height: 1.1;
+}
+
+.counterDesc {
+  font-size: 0.75rem;
+  color: var(--fg-2);
+  letter-spacing: 0.5px;
+}
+
+/* ─── BerkeleyClock ──────────────────────────────────────────────────────── */
+
+.clockDisplay {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--fg-0);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.clockTz {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: var(--accent-cool);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+.sprintLine {
+  margin-top: 0.75rem;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: var(--fg-2);
+  letter-spacing: 0.5px;
+}
+
+.sprintLine span {
+  color: var(--accent-warm);
+}
+
+/* ─── ResearchLedger ─────────────────────────────────────────────────────── */
+
+.ledgerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ledgerRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.ledgerRow:last-child {
+  border-bottom: none;
+}
+
+.ledgerAward {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-cool);
+  letter-spacing: 0.5px;
+}
+
+.ledgerCategory {
+  font-size: 0.75rem;
+  color: var(--fg-1);
+}
+
+.ledgerLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ledgerLink:hover .ledgerAward {
+  text-decoration: underline;
+}
+
+/* ─── GithubActivity ─────────────────────────────────────────────────────── */
+
+.ghChart {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 60px;
+  flex: 1;
+}
+
+.ghBar {
+  flex: 1;
+  background: var(--accent);
+  border-radius: 2px 2px 0 0;
+  min-height: 2px;
+  opacity: 0.7;
+  transition: opacity var(--motion-fast) var(--ease-out);
+}
+
+.ghBar:hover {
+  opacity: 1;
+}
+
+.ghMeta {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.7rem;
+  color: var(--fg-2);
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+}
+
+/* ─── LatestDispatch ─────────────────────────────────────────────────────── */
+
+.dispatchTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--fg-0);
+  line-height: 1.3;
+  text-decoration: none;
+  transition: color var(--motion-fast) var(--ease-out);
+}
+
+.dispatchTitle:hover {
+  color: var(--accent-cool);
+  text-decoration: none;
+}
+
+.dispatchDate {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.7rem;
+  color: var(--fg-2);
+  letter-spacing: 0.5px;
+  margin-top: 0.25rem;
+}
+
+.dispatchExcerpt {
+  font-size: 0.8rem;
+  color: var(--fg-1);
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}

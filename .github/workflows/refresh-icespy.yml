@@ -1,0 +1,16 @@
+name: Refresh icespy data
+
+on:
+  repository_dispatch:
+    types: [icespy-update]
+  schedule:
+    - cron: '0 4 * * 0'  # Weekly Sunday fallback at 04:00 UTC
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trigger Vercel redeploy
+        run: curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"

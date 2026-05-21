@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "track_id": "LB-2024-001", "area_km2": 8.3, "freeboard_m": 12.1, "confidence": 0.91 },
+      "geometry": { "type": "LineString", "coordinates": [[-52.1, 57.2], [-51.8, 56.9], [-51.4, 56.6], [-51.0, 56.4], [-50.7, 56.1]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "track_id": "LB-2024-002", "area_km2": 3.1, "freeboard_m": 8.4, "confidence": 0.84 },
+      "geometry": { "type": "LineString", "coordinates": [[-48.3, 62.1], [-48.0, 61.8], [-47.6, 61.5], [-47.2, 61.3]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "track_id": "LB-2024-003", "area_km2": 15.7, "freeboard_m": 18.2, "confidence": 0.96 },
+      "geometry": { "type": "LineString", "coordinates": [[-54.8, 55.4], [-54.3, 55.1], [-53.9, 54.8], [-53.5, 54.6], [-53.1, 54.3], [-52.7, 54.1]] }
+    }
+  ]
+}

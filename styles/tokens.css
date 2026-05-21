@@ -1,0 +1,33 @@
+:root {
+  /* Backgrounds */
+  --bg-0: #0b0c10;
+  --bg-1: #11141b;
+  --bg-2: #1a1f29;
+
+  /* Text */
+  --fg-0: #e9edf5;
+  --fg-1: #a0a8b8;
+  --fg-2: #6b7280;
+
+  /* Borders */
+  --rule: rgba(255, 255, 255, 0.08);
+
+  /* Accents */
+  --accent: #0070f3;
+  --accent-warm: #ff7849;
+  --accent-cool: #7dd3fc;
+
+  /* Semantic */
+  --ok: #4ade80;
+  --warn: #fbbf24;
+  --err: #f87171;
+
+  /* Motion */
+  --motion-fast: 120ms;
+  --motion-base: 240ms;
+  --motion-slow: 480ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 2px var(--accent);
+}

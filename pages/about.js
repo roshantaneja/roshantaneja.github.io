@@ -6,60 +6,69 @@ export default function About() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>About Me - Roshan Taneja</title>
+        <title>About — Roshan Taneja</title>
         <meta
           name="description"
-          content="Learn more about Roshan Taneja, a student passionate about leveraging technology for global impact."
+          content="Roshan Taneja — UC Berkeley EECS student, geospatial ML researcher, humanitarian engineer."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <a href="/" className={styles.backLink}> &larr; Back to Home</a>
+        <a href="/" className={styles.backLink}>&larr; Back to Home</a>
         <h1 className={styles.title}>About Me</h1>
+
         <section className={styles.section}>
           <p>
-            Hi, I’m Roshan Taneja! I’m a high school student with a passion for technology, environmental science, and
-            creativity. My work focuses on using AI and remote sensing to solve global challenges like water scarcity.
+            I&apos;m a third-year EECS student at UC Berkeley working on geospatial machine
+            learning — using satellite data to answer questions about water. My research
+            splits across two hemispheres: Sentinel-2 imagery over the Maasai regions of
+            Northern Tanzania, where I helped deploy 500 rainwater harvesting units serving
+            30,000 people, and ICESat-2 altimetry over the polar oceans, where I&apos;m
+            building a Kalman-filter pipeline to track calved icebergs.
           </p>
           <p>
-            Whether I’m building machine learning models, designing custom trophies, or writing stories, I strive to
-            combine technical expertise with a touch of imagination to create meaningful impact.
+            The Tanzania work produced a NeurIPS 2024 paper (Machine Learning for Social
+            Impact track) and a pending US patent for dwelling detection in satellite
+            imagery. The iceberg tracker is in active development — you can explore it
+            at <a href="/icebergs">/icebergs</a>.
+          </p>
+          <p>
+            Outside of research, I write poetry and essays at <a href="/blog">/blog</a>.
+            I contribute to Cal STAR&apos;s avionics subteam on the Diablo static-fire engine.
+            I build small hardware projects at <a href="/bench">/bench</a>.
           </p>
         </section>
 
         <section className={styles.section}>
-          <h2>Key Stats</h2>
+          <h2>Research</h2>
           <ul className={styles.statsList}>
-            <li><strong>GPA:</strong> 3.94 (Senior GPA: 4.22)</li>
-            <li><strong>ACT:</strong> 36 (Math: 36, Science: 36, Reading: 36, English: 34)</li>
-            <li><strong>Recognition:</strong> 12+ International Awards</li>
-            <li><strong>Research:</strong> 4 Papers Published, 1 Patent Pending</li>
-            <li><strong>Languages:</strong> Python, Java, JavaScript, Typescript</li>
-          </ul>
-        </section>
-
-        <section className={styles.section}>
-          <h2>My Interests</h2>
-          <p>
-            I enjoy exploring how technology can intersect with creativity and social good. Some of my favorite hobbies
-            include:
-          </p>
-          <ul className={styles.interestsList}>
-            <li>Building custom trophies using 3D printing and laser cutting</li>
-            <li>Solving algorithmic challenges through competitive programming</li>
-            <li>Writing short stories and essays on tech and life</li>
-            <li>Performing improv comedy and organizing spontaneous events</li>
+            <li><strong>NeurIPS 2024</strong> — Machine Learning for Social Impact, High School Track winner</li>
+            <li><strong>US Patent Pending</strong> 63/703,232 — Dwelling Detection in Satellite Image Data Using a Model</li>
+            <li><strong>ML4EO 2024</strong> — Presented at University of Exeter, UK</li>
+            <li><strong>NHSJS</strong> — Two papers published (Oct 2024, Dec 2024)</li>
           </ul>
         </section>
 
         <section className={styles.section}>
           <h2>Humanitarian Work</h2>
           <p>
-            One of my most rewarding projects is working with the Maasai community in Northern Tanzania. Over the past
-            few years, I’ve helped deploy over 100 rainwater harvesting units, reducing daily water collection time from
-            9 hours to just 2 hours for over 10,000 people.
+            Over the past five years I&apos;ve raised $300K and deployed 500 rainwater
+            harvesting units in the Maasai community of Northern Tanzania, reducing daily
+            water collection time from 9 hours to under 2 hours for 30,000 people. The
+            NeurIPS satellite-ML work grew directly out of this — I needed to know where
+            to put the next 100 units.
           </p>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Interests</h2>
+          <ul className={styles.interestsList}>
+            <li>Writing poetry and short fiction</li>
+            <li>Competitive programming and algorithmic challenges</li>
+            <li>Hardware prototyping — PCB design, embedded systems</li>
+            <li>Improv comedy</li>
+          </ul>
         </section>
       </main>
 

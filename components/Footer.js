@@ -1,21 +1,35 @@
+import { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
+import siteData from '../data/site.json';
+import FOOTER_LINES from '../data/footerPoems.json';
 
-const footerLinks = [
-  { label: 'GitHub', href: 'https://github.com/roshantaneja', external: true },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/roshantaneja/', external: true },
-  { label: 'Blog', href: '/blog', external: false },
-  { label: 'Tanzania Project', href: '/tanzania', external: false },
-  { label: 'Map of Units', href: 'https://map.roshan.codes', external: true },
-  { label: 'Resumé', href: '/resume/Roshan Taneja Resume.pdf', external: true },
-  { label: 'Source Code', href: 'https://github.com/roshantaneja/roshantaneja.github.io', external: true },
-];
+const footerLinks = siteData.footerLinks;
 
 const currentYear = new Date().getFullYear();
 
+// Deterministic per page-load — same session sees the same line.
+function pickLine() {
+  const idx = Math.floor(Math.random() * FOOTER_LINES.length);
+  return FOOTER_LINES[idx];
+}
+
 export default function Footer() {
+  const [poem, setPoem] = useState(null);
+
+  useEffect(() => {
+    setPoem(pickLine());
+  }, []);
+
   return (
     <footer className={styles.footer}>
-      <p>© {currentYear} Roshan Taneja. All rights reserved.</p>
+      {poem && (
+        <p className={styles.footerPoem}>
+          &ldquo;{poem.line}&rdquo;&nbsp;
+          <a href={`/blog/${poem.slug}`} className={styles.footerPoemLink} aria-label="Read this post">
+            &mdash; r
+          </a>
+        </p>
+      )}
       <nav className={styles.footerLinks} aria-label="Footer links">
         {footerLinks.map(({ label, href, external }) => (
           <a
@@ -29,7 +43,7 @@ export default function Footer() {
           </a>
         ))}
       </nav>
+      <p>&copy; {currentYear} {siteData.owner.name}. All rights reserved.</p>
     </footer>
   );
 }
-

@@ -1,81 +1,124 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import styles from '../styles/Home.module.css';  // Adjust based on your folder structure
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/react"
-import Footer from '../components/Footer';
+import { useState, useMemo } from 'react'
+import Link from 'next/link'
+import Footer from '../components/Footer'
+import CoverGlyph from '../components/blog/CoverGlyph'
+import { getAllPosts, getCategoryUniverse } from '../lib/posts-index'
+import styles from '../styles/blog-v2.module.css'
 
-// Define the blog directory
-const blogDirectory = path.join(process.cwd(), 'public', 'blog');
-
-// Helper function to get blog posts
 export const getStaticProps = async () => {
-    // Get all entries in the blog directory
-    const entries = fs.readdirSync(blogDirectory, { withFileTypes: true });
+  const posts = getAllPosts()
+  const categories = ['All', ...getCategoryUniverse()]
+  return { props: { posts, categories } }
+}
 
-    // Filter out directories and process only files
-    const files = entries.filter((entry) => entry.isFile());
+function formatDate(raw) {
+  if (!raw) return ''
+  const d = new Date(raw)
+  if (isNaN(d.getTime())) return raw
+  return d.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  })
+}
 
-    const posts = files.map((file) => {
-        const filePath = path.join(blogDirectory, file.name);
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
-        const { data, content } = matter(fileContent);
+export default function Blog({ posts, categories }) {
+  const [activeCategory, setActiveCategory] = useState('All')
+  const [sort, setSort] = useState('newest')
 
-        return {
-            slug: file.name.replace('.md', ''), // Remove .md extension for slug
-            title: data.title,
-            date: data.date,
-            description: data.description,
-            content,
-        };
-    });
+  const filtered = useMemo(() => {
+    let list =
+      activeCategory === 'All'
+        ? posts
+        : posts.filter((p) => p.category === activeCategory)
+    if (sort === 'oldest') {
+      list = [...list].sort(
+        (a, b) => new Date(a.date || 0) - new Date(b.date || 0)
+      )
+    }
+    return list
+  }, [posts, activeCategory, sort])
 
-    // Sort posts by date (newest first)
-    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  return (
+    <>
+      <div className={styles.page}>
+        <a href="/" className={styles.backLink}>
+          &larr; Back to Home
+        </a>
 
-    return {
-        props: {
-            posts,
-        },
-    };
-};
+        <h1 className={styles.pageTitle}>Blog</h1>
+        <p className={styles.pageDesc}>
+          Thoughts on tech, poetry, and everything in between.
+          {' '}<a href="/feed.xml" style={{ fontSize: '0.85em' }}>RSS</a>
+        </p>
 
-export default function Blog({ posts }) {
-    return (
-        <div className={styles.container}>
-            <main className={styles.main}>
-                <a href="/" className={styles.backLink}> &larr; Back to Home</a>
-                <h1 className={styles.title}>My Blog</h1>
-                <p className={styles.description}>
-                    Welcome to my blog! Here, I share my thoughts on literally everything. <br />
-                    From tech to life to everything in between, you'll find it all here. <br />
-                    Enjoy reading! 📚
-                </p>
-
-                <div className={styles.grid}>
-                    {posts.map((post) => (
-                        <div key={post.slug} className={styles.card}>
-                            <Link href={`/blog/${post.slug}`} legacyBehavior>
-                                <a>
-                                    <div>
-                                        <h2>{post.title} &rarr;</h2>
-                                        <p>{post.description}</p>
-                                        <p><small><strong>{Math.ceil(Math.abs(new Date() - new Date(post.date)) / (1000 * 60 * 60 * 24))} days ago</strong></small></p>
-                                        {/* <p><small>{new Date(post.date).toLocaleDateString()}</small></p> */}
-                                    </div>
-                                </a>
-                            </Link>
-                        </div>
-                    ))}
-                </div>
-                <SpeedInsights/>
-                <Analytics/>
-            </main>
-
-            <Footer />
+        <div className={styles.toolbar}>
+          <div className={styles.chipGroup} role="group" aria-label="Filter by category">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                className={`${styles.chip} ${activeCategory === cat ? styles.chipActive : ''}`}
+                onClick={() => setActiveCategory(cat)}
+                aria-pressed={activeCategory === cat}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+          <label htmlFor="blog-sort" className={styles.srOnly}>
+            Sort posts
+          </label>
+          <select
+            id="blog-sort"
+            className={styles.sortSelect}
+            value={sort}
+            onChange={(e) => setSort(e.target.value)}
+          >
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
         </div>
-    );
+
+        <div className={styles.postList} role="list">
+          {filtered.length === 0 && (
+            <p className={styles.emptyState}>No posts in this category yet.</p>
+          )}
+          {filtered.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className={styles.postRow}
+              role="listitem"
+            >
+              <CoverGlyph
+                title={post.title || post.slug}
+                size={48}
+                className={styles.postGlyph}
+              />
+              <div className={styles.postMeta}>
+                <div className={styles.postTitle}>
+                  {post.title || post.slug}
+                </div>
+                {post.description && (
+                  <div className={styles.postDescription}>
+                    {post.description}
+                  </div>
+                )}
+                <div className={styles.postFooter}>
+                  <span className={styles.postDate}>{formatDate(post.date)}</span>
+                  <span className={styles.postReadTime}>{post.readingTime}</span>
+                  <span className={styles.postCategoryBadge}>{post.category}</span>
+                </div>
+              </div>
+              <span className={styles.postArrow} aria-hidden="true">
+                &rsaquo;
+              </span>
+            </Link>
+          ))}
+        </div>
+
+      </div>
+      <Footer />
+    </>
+  )
 }

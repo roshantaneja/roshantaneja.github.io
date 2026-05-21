@@ -24,51 +24,100 @@
     margin-top: 1rem;
 }
 
-.resumeLink {
-    color: #b200f3;
-    text-decoration: none;
-    cursor: pointer;
+/* ── Greeting: "Hi! I'm Roshan Taneja" ───────────────────────── */
+.greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem 0.5rem;
+    width: 100%;
+}
+
+.greetingText {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    color: var(--fg-0);
+    margin: 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.nameWrap {
     position: relative;
     display: inline-block;
 }
 
-.resumeLink:hover + .tooltip, .resumeLink:focus + .tooltip {
-    opacity: 1;
-}
-
-.backlink {
-    color: #b200f3;
+.greetingName {
+    color: var(--fg-0);
     text-decoration: none;
     cursor: pointer;
-    position: relative;
-    display: inline-block;
 }
 
-/* Tooltip styling */
-.tooltip {
+.greetingName:hover,
+.greetingName:focus {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: var(--fg-0);
+}
+
+/* Positions the bubble above the name and centres it horizontally via flexbox —
+   no transform needed here, so the float animation owns transform entirely */
+.greetingBubbleWrap {
     position: absolute;
-    left: 77%;
-    top: -40%;
-    transform: translateX(-50%);
-    background-color: #1f1f25;
-    color: var(--text-color);
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    white-space: nowrap;
-    opacity: 0.3;
-    transition: all 0.3s ease;
+    bottom: calc(100% + 16px);
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
 }
 
-.tooltip::after {
+/* The bubble itself — only vertical float, no centering transform */
+.greetingBubble {
+    background: var(--bg-1);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--fg-1);
+    white-space: nowrap;
+    opacity: 0.4;
+    transition: opacity 0.25s ease;
+    position: relative;
+}
+
+/* Outer arrow border */
+.greetingBubble::before {
     content: '';
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    border-width: 5px;
-    border-style: solid;
-    border-color: #333 transparent transparent transparent;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--rule);
+}
+
+/* Inner arrow fill */
+.greetingBubble::after {
+    content: '';
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid var(--bg-1);
+}
+
+/* Hover: just brighten — float animation continues underneath */
+.greetingBubbleActive {
+    opacity: 1;
 }
 
 @media (max-width: 600px) {
@@ -76,8 +125,9 @@
         font-size: 2.5rem;
     }
 
-    .tooltip {
-        font-size: 0.75rem;
+    .greetingBubble {
+        font-size: 0.72rem;
+        padding: 5px 11px;
     }
 }
 
@@ -93,13 +143,17 @@
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
     margin-top: 1rem;
+    width: 100%;
 }
 
 .card {
+    flex: 1 1 300px;
+    max-width: 420px;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
@@ -192,6 +246,44 @@
     text-decoration: none;
 }
 
+.footerPoem {
+    font-size: 0.875rem;
+    color: var(--fg-2, var(--muted-text));
+    font-style: italic;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.footerPoemLink {
+    color: inherit;
+    font-style: normal;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.footerPoemLink:hover,
+.footerPoemLink:focus {
+    opacity: 1;
+    border-color: currentColor;
+    text-decoration: none;
+}
+
+.backLink {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    align-self: flex-start;
+}
+
+.backLink:hover,
+.backLink:focus {
+    text-decoration: underline;
+}
+
 @media (max-width: 600px) {
     .main {
         padding: 2rem 1rem;
@@ -206,7 +298,10 @@
     }
 
     .grid {
-        grid-template-columns: 1fr;
         gap: 1rem;
+    }
+
+    .card {
+        max-width: 100%;
     }
 }

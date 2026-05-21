@@ -1,0 +1,414 @@
+/* =====================================================================
+   tanzania.module.css
+   Tanzania rainwater harvesting map page styles
+   ===================================================================== */
+
+/* Page layout */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-0);
+  color: var(--fg-0);
+}
+
+.header {
+  padding: 1.25rem 1.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--bg-1);
+  border-bottom: 1px solid var(--rule);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.backLink {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.backLink:hover,
+.backLink:focus {
+  text-decoration: underline;
+}
+
+.headerTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fg-0);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.headerSubtitle {
+  font-size: 0.8rem;
+  color: var(--fg-2);
+  flex-shrink: 0;
+}
+
+/* Main workspace — scrolly rail + map */
+.workspace {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Scrolly Rail (left column on desktop) ── */
+.scrollyRail {
+  width: 320px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  background-color: var(--bg-1);
+  border-right: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+}
+
+.railHeader {
+  padding: 1rem 1.25rem 0.5rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg-2);
+  border-bottom: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+
+.railList {
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+.railItem {
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: background-color var(--motion-fast), border-color var(--motion-fast);
+}
+
+.railItem:hover {
+  background-color: var(--bg-2);
+  border-left-color: var(--accent-cool);
+}
+
+.railItemActive {
+  background-color: var(--bg-2);
+  border-left-color: var(--accent);
+}
+
+.railItemDate {
+  font-size: 0.72rem;
+  color: var(--fg-2);
+  margin-bottom: 0.2rem;
+}
+
+.railItemTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--fg-0);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.railItemDesc {
+  font-size: 0.78rem;
+  color: var(--fg-1);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Map container ── */
+.mapArea {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+}
+
+.mapContainer {
+  position: absolute;
+  inset: 0;
+}
+
+/* Layer chips bar — sits above the map */
+.chipsBar {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ── Unit Drawer (right panel / bottom sheet) ── */
+.drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: var(--bg-1);
+  border-left: 1px solid var(--rule);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--motion-base) var(--ease-out);
+  overflow-y: auto;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem 0.75rem;
+  border-bottom: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+
+.drawerTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--fg-0);
+}
+
+.drawerClose {
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  color: var(--fg-1);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  transition: color var(--motion-fast), border-color var(--motion-fast);
+}
+
+.drawerClose:hover,
+.drawerClose:focus {
+  color: var(--fg-0);
+  border-color: var(--fg-1);
+}
+
+.drawerBody {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.drawerPhoto {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: var(--bg-2);
+}
+
+.drawerPhotoFallback {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 6px;
+  background-color: var(--bg-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg-2);
+  font-size: 0.8rem;
+}
+
+.drawerMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.drawerMetaRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.drawerMetaLabel {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-2);
+  flex-shrink: 0;
+  width: 90px;
+}
+
+.drawerMetaValue {
+  font-size: 0.85rem;
+  color: var(--fg-0);
+}
+
+.drawerPending {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--fg-2);
+}
+
+/* ── Layer chips ── */
+.chip {
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--rule);
+  background-color: var(--bg-1);
+  color: var(--fg-1);
+  transition:
+    background-color var(--motion-fast),
+    border-color var(--motion-fast),
+    color var(--motion-fast);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  background-color: var(--bg-2);
+  color: var(--fg-0);
+}
+
+.chipActive {
+  border-color: var(--accent);
+  color: var(--fg-0);
+  background-color: rgba(0, 112, 243, 0.12);
+}
+
+/* ── NanjaRings legend pill (inside map) ── */
+.ringsLegend {
+  position: absolute;
+  bottom: 2rem;
+  left: 0.75rem;
+  z-index: 10;
+  background-color: rgba(11, 12, 16, 0.8);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  backdrop-filter: blur(4px);
+}
+
+.ringsLegendTitle {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-2);
+  margin-bottom: 0.15rem;
+}
+
+.ringsLegendRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--fg-1);
+}
+
+.ringsLegendSwatch {
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+/* ── Loading / error states ── */
+.mapPlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-0);
+  color: var(--fg-2);
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .workspace {
+    flex-direction: column;
+  }
+
+  /* Rail becomes a horizontal scrollable strip at top */
+  .scrollyRail {
+    width: 100%;
+    height: 140px;
+    flex-shrink: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+
+  .railList {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    height: 100%;
+  }
+
+  .railItem {
+    min-width: 180px;
+    padding: 0.6rem 0.9rem;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    flex-shrink: 0;
+  }
+
+  .railItem:hover {
+    border-left-color: transparent;
+    border-bottom-color: var(--accent-cool);
+  }
+
+  .railItemActive {
+    border-left-color: transparent;
+    border-bottom-color: var(--accent);
+  }
+
+  .railItemDesc {
+    display: none;
+  }
+
+  /* Drawer becomes bottom sheet */
+  .drawer {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    border-left: none;
+    border-top: 1px solid var(--rule);
+    transform: translateY(100%);
+    border-radius: 12px 12px 0 0;
+  }
+
+  .drawerOpen {
+    transform: translateY(0);
+  }
+
+  .headerSubtitle {
+    display: none;
+  }
+}

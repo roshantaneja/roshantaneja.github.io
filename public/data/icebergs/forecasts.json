@@ -1,0 +1,32 @@
+[
+  {
+    "track_id": "LB-2024-001",
+    "t0_position": [-50.7, 56.1],
+    "horizon": [
+      {"day": 1, "mean": [-50.4, 55.9], "sigma_major_km": 8, "sigma_minor_km": 5, "theta_deg": 45},
+      {"day": 7, "mean": [-49.1, 55.3], "sigma_major_km": 22, "sigma_minor_km": 14, "theta_deg": 48},
+      {"day": 14, "mean": [-47.8, 54.8], "sigma_major_km": 41, "sigma_minor_km": 26, "theta_deg": 51},
+      {"day": 30, "mean": [-45.2, 53.9], "sigma_major_km": 78, "sigma_minor_km": 49, "theta_deg": 55}
+    ]
+  },
+  {
+    "track_id": "LB-2024-002",
+    "t0_position": [-47.2, 61.3],
+    "horizon": [
+      {"day": 1, "mean": [-46.9, 61.1], "sigma_major_km": 6, "sigma_minor_km": 4, "theta_deg": 30},
+      {"day": 7, "mean": [-45.9, 60.6], "sigma_major_km": 18, "sigma_minor_km": 11, "theta_deg": 33},
+      {"day": 14, "mean": [-44.8, 60.1], "sigma_major_km": 34, "sigma_minor_km": 21, "theta_deg": 35},
+      {"day": 30, "mean": [-42.5, 59.2], "sigma_major_km": 65, "sigma_minor_km": 40, "theta_deg": 38}
+    ]
+  },
+  {
+    "track_id": "LB-2024-003",
+    "t0_position": [-52.7, 54.1],
+    "horizon": [
+      {"day": 1, "mean": [-52.3, 53.9], "sigma_major_km": 11, "sigma_minor_km": 7, "theta_deg": 60},
+      {"day": 7, "mean": [-51.0, 53.3], "sigma_major_km": 29, "sigma_minor_km": 18, "theta_deg": 63},
+      {"day": 14, "mean": [-49.6, 52.8], "sigma_major_km": 54, "sigma_minor_km": 34, "theta_deg": 66},
+      {"day": 30, "mean": [-46.9, 51.9], "sigma_major_km": 103, "sigma_minor_km": 65, "theta_deg": 70}
+    ]
+  }
+]

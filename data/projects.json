@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "icespy",
+    "name": "icespy",
+    "pitch": "ICESat-2 photon → Kalman drift forecast pipeline. Powers /icebergs.",
+    "role": "built solo",
+    "stack": ["python", "numpy", "scikit-learn", "leaflet"],
+    "tags": ["research"],
+    "github": "roshantaneja/icespy",
+    "stars": null,
+    "lastPush": null
+  },
+  {
+    "slug": "executive-triage",
+    "name": "executive-triage",
+    "pitch": "LLM-ranked executive decision PWA. Structured prioritization under uncertainty.",
+    "role": "built solo",
+    "stack": ["nextjs", "openai", "typescript"],
+    "tags": ["agents"],
+    "github": "roshantaneja/executive-triage",
+    "stars": null,
+    "lastPush": null
+  },
+  {
+    "slug": "ed-api",
+    "name": "ed-api",
+    "pitch": "MCP server for Ed Discussion. Deployed and used by Berkeley students.",
+    "role": "built solo",
+    "stack": ["python", "fastapi", "mcp"],
+    "tags": ["agents"],
+    "github": "roshantaneja/ed-api",
+    "stars": null,
+    "lastPush": null
+  },
+  {
+    "slug": "competitive-programming",
+    "name": "competitive-programming",
+    "pitch": "Daily algorithmic puzzles and advent calendar solutions.",
+    "role": "built solo",
+    "stack": ["python", "java", "c++"],
+    "tags": ["fun"],
+    "github": "roshantaneja/competitive-programming",
+    "stars": null,
+    "lastPush": null
+  },
+  {
+    "slug": "rpi-f1-hud",
+    "name": "rpi_f1_terminal_hud",
+    "pitch": "F1 live telemetry HUD rendered in the terminal on a Raspberry Pi.",
+    "role": "built solo",
+    "stack": ["python", "fastf1", "rich"],
+    "tags": ["fun", "hardware"],
+    "github": "roshantaneja/rpi_f1_terminal_hud",
+    "stars": null,
+    "lastPush": null
+  },
+  {
+    "slug": "diablo-star",
+    "name": "Diablo (Cal STAR)",
+    "pitch": "Static-fire ground control stack for a liquid bipropellant engine.",
+    "role": "contributor (4 commits)",
+    "stack": ["c", "cmake", "stm32"],
+    "tags": ["hardware"],
+    "github": "calstar/Diablo-FSW",
+    "stars": null,
+    "lastPush": null
+  },
+  {
+    "slug": "this-site",
+    "name": "roshan.codes",
+    "pitch": "This site. Built with Next.js, MapLibre, and too many late nights.",
+    "role": "built solo",
+    "stack": ["nextjs", "react", "maplibre"],
+    "tags": ["web"],
+    "github": "roshantaneja/roshantaneja.github.io",
+    "stars": null,
+    "lastPush": null
+  }
+]

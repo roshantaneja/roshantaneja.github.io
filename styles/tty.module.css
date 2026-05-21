@@ -1,0 +1,160 @@
+.container {
+  min-height: 100vh;
+  background: var(--bg-0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.hint {
+  width: 100%;
+  max-width: 760px;
+  font-size: 0.78rem;
+  color: var(--fg-2);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  margin-bottom: 1rem;
+  user-select: none;
+}
+
+.terminal {
+  background: #0a0e13;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 760px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+
+/* Title bar */
+
+.titlebar {
+  background: var(--bg-2);
+  padding: 0.55rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dotRed {
+  background: #ff5f57;
+}
+
+.dotYellow {
+  background: #febc2e;
+}
+
+.dotGreen {
+  background: #28c840;
+}
+
+.titlebarText {
+  font-size: 0.75rem;
+  color: var(--fg-2);
+  margin-left: 0.5rem;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  user-select: none;
+}
+
+/* Output area */
+
+.output {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.875rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.line {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.linePrompt {
+  color: #4ade80;
+}
+
+.lineOutput {
+  color: #e2e8f0;
+}
+
+.lineError {
+  color: #f87171;
+}
+
+.lineGap {
+  height: 0.4rem;
+}
+
+/* Input row */
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1.25rem 1rem;
+  border-top: 1px solid var(--rule);
+  gap: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.875rem;
+}
+
+.promptLabel {
+  color: #4ade80;
+  white-space: nowrap;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.inputField {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: inherit;
+  flex: 1;
+  caret-color: #4ade80;
+  padding: 0;
+  margin: 0;
+}
+
+.inputField::selection {
+  background: rgba(74, 222, 128, 0.25);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem 0.75rem 3rem;
+  }
+
+  .terminal {
+    border-radius: 6px;
+    min-height: 400px;
+  }
+
+  .output {
+    font-size: 0.8rem;
+  }
+
+  .inputRow {
+    font-size: 0.8rem;
+  }
+}

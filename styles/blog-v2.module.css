@@ -1,0 +1,542 @@
+/* ============================================================
+   Blog V2 — styles/blog-v2.module.css
+   All class names scoped to this module.
+   ============================================================ */
+
+/* ---- Accessibility utility --------------------------------- */
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Blog index page ---------------------------------------- */
+
+.page {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.backLink {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-bottom: 2.5rem;
+  text-decoration: none;
+}
+.backLink:hover,
+.backLink:focus {
+  text-decoration: underline;
+}
+
+.pageTitle {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--fg-0);
+}
+
+.pageDesc {
+  font-size: 1.1rem;
+  color: var(--fg-1);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* ---- Toolbar: filter chips + sort ----  */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.chipGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.chip {
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  color: var(--fg-1);
+  cursor: pointer;
+  transition: background var(--motion-fast) var(--ease-out),
+    color var(--motion-fast) var(--ease-out),
+    border-color var(--motion-fast) var(--ease-out);
+}
+.chip:hover {
+  background: var(--bg-1);
+  color: var(--fg-0);
+}
+.chipActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+.chipActive:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.sortSelect {
+  appearance: none;
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  color: var(--fg-1);
+  padding: 0.3rem 2rem 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a0a8b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  transition: border-color var(--motion-fast) var(--ease-out);
+}
+.sortSelect:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ---- Post list ---------------------------------------------- */
+
+.postList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.postRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--motion-fast) var(--ease-out);
+  border-radius: 4px;
+}
+.postRow:hover,
+.postRow:focus-visible {
+  background: var(--bg-1);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  outline: none;
+}
+.postRow:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.postGlyph {
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.postMeta {
+  flex: 1;
+  min-width: 0;
+}
+
+.postTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--fg-0);
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.postRow:hover .postTitle,
+.postRow:focus-visible .postTitle {
+  color: var(--accent);
+}
+
+.postDescription {
+  font-size: 0.875rem;
+  color: var(--fg-1);
+  margin-bottom: 0.35rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.postFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.postDate {
+  font-size: 0.78rem;
+  color: var(--fg-2);
+}
+
+.postReadTime {
+  font-size: 0.78rem;
+  color: var(--fg-2);
+}
+
+.postCategoryBadge {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  color: var(--fg-1);
+}
+
+.postArrow {
+  font-size: 1.1rem;
+  color: var(--fg-2);
+  flex-shrink: 0;
+}
+
+.emptyState {
+  padding: 3rem 0;
+  text-align: center;
+  color: var(--fg-2);
+  font-size: 0.95rem;
+}
+
+/* ---- Article (slug) page ------------------------------------ */
+
+.article {
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+.articleHeader {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--rule);
+  /* min height so the glyph texture is visible even with short titles */
+  min-height: 220px;
+}
+
+.coverGlyphFull {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  pointer-events: none;
+  display: flex;
+  align-items: stretch;
+}
+/* Force the inner SVG to cover the entire banner area */
+.coverGlyphFull > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.coverGlyphFull svg {
+  width: 100% !important;
+  height: 100% !important;
+  /* Tile the lattice pattern across the full banner without letterboxing */
+  preserveAspectRatio: xMidYMid slice;
+}
+
+.headerContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2.5rem;
+}
+
+.articleBackLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--fg-1);
+  font-size: 0.875rem;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition: color var(--motion-fast) var(--ease-out);
+}
+.articleBackLink:hover,
+.articleBackLink:focus {
+  color: var(--fg-0);
+  text-decoration: none;
+}
+
+.categoryBadge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  margin-bottom: 0.85rem;
+}
+
+.articleTitle {
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--fg-0);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.articleMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: var(--fg-1);
+}
+
+.articleMetaDot {
+  color: var(--fg-2);
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.tagLink {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  color: var(--fg-1);
+  text-decoration: none;
+  transition: border-color var(--motion-fast) var(--ease-out),
+    color var(--motion-fast) var(--ease-out);
+}
+.tagLink:hover,
+.tagLink:focus {
+  border-color: var(--accent);
+  color: var(--fg-0);
+  text-decoration: none;
+}
+
+/* ---- Prose content ----------------------------------------- */
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: var(--fg-0);
+}
+
+.content p {
+  margin-bottom: 1.5rem;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.85rem;
+  color: var(--fg-0);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.content h1 { font-size: 1.7rem; }
+.content h2 { font-size: 1.35rem; }
+.content h3 { font-size: 1.1rem; }
+
+.content ul,
+.content ol {
+  margin: 0 0 1.5rem 1.5rem;
+}
+
+.content li {
+  margin-bottom: 0.4rem;
+}
+
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--fg-1);
+  font-style: italic;
+}
+
+.content code {
+  background: var(--bg-2);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.content pre {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  display: block;
+}
+
+.content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.content a:hover {
+  opacity: 0.8;
+}
+
+/* ---- Related posts ----------------------------------------- */
+
+.relatedSection {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 2rem 3rem;
+  border-top: 1px solid var(--rule);
+}
+
+.relatedTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fg-1);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 1rem;
+}
+
+.relatedList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.relatedItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--motion-fast) var(--ease-out);
+}
+.relatedItem:last-child {
+  border-bottom: none;
+}
+.relatedItem:hover .relatedItemTitle,
+.relatedItem:focus-visible .relatedItemTitle {
+  color: var(--accent);
+}
+
+.relatedGlyph {
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.relatedItemTitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--fg-0);
+  transition: color var(--motion-fast) var(--ease-out);
+}
+
+.relatedItemDate {
+  font-size: 0.78rem;
+  color: var(--fg-2);
+  margin-top: 0.15rem;
+}
+
+/* ---- Tags / Series index pages ----------------------------- */
+
+.tagPage {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tagPageHeader {
+  margin-bottom: 2.5rem;
+}
+
+.tagPageTitle {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--fg-0);
+  margin-bottom: 0.3rem;
+}
+
+.tagPageCount {
+  font-size: 0.9rem;
+  color: var(--fg-2);
+}
+
+/* ---- Responsive -------------------------------------------- */
+
+@media (max-width: 600px) {
+  .page,
+  .tagPage {
+    padding: 2rem 1rem;
+  }
+
+  .headerContent {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .content {
+    padding: 1.5rem 1rem;
+  }
+
+  .relatedSection {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .postGlyph {
+    display: none;
+  }
+
+  .articleMeta {
+    gap: 0.3rem 0.6rem;
+  }
+}

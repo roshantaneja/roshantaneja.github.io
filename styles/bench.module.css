@@ -1,0 +1,182 @@
+.container {
+  padding: 0 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  color: var(--fg-0);
+}
+
+/* Hero */
+
+.hero {
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.heroTag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--fg-0);
+  margin-bottom: 0.75rem;
+  line-height: 1.15;
+}
+
+.heroTagline {
+  font-size: 1.15rem;
+  color: var(--fg-0);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.heroSub {
+  font-size: 0.95rem;
+  color: var(--fg-1);
+  line-height: 1.7;
+  max-width: 680px;
+  margin-bottom: 1.5rem;
+}
+
+.heroBadge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warn, #fbbf24);
+  border: 1px solid var(--warn, #fbbf24);
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+}
+
+/* Generic section */
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--fg-0);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Photo grid */
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.photoPlaceholder {
+  background: var(--bg-1);
+  border: 1px dashed var(--rule);
+  border-radius: 8px;
+  padding: 2rem 1.25rem;
+  font-size: 0.875rem;
+  color: var(--fg-2);
+  text-align: center;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Attribution block */
+
+.attributionBlock {
+  background: var(--bg-1);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent-cool);
+  border-radius: 8px;
+  padding: 1.75rem;
+}
+
+.attributionBlock h2 {
+  border-bottom: none;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.attributionBlock p {
+  font-size: 0.95rem;
+  color: var(--fg-1);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.contribList {
+  list-style: disc;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contribList li {
+  font-size: 0.9rem;
+  color: var(--fg-1);
+  line-height: 1.6;
+}
+
+.contribList a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contribList a:hover,
+.contribList a:focus {
+  text-decoration: underline;
+}
+
+/* Tool chips */
+
+.toolList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.toolChip {
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.82rem;
+  color: var(--fg-1);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .photoGrid {
+    grid-template-columns: 1fr;
+  }
+}
