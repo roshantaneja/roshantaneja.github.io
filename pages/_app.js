@@ -100,6 +100,8 @@ function MyApp({ Component, pageProps }) {
     <>
       <Component {...pageProps} />
       <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
+      <Analytics />
+      <SpeedInsights />
     </>
   )
 }
