@@ -39,7 +39,8 @@ next-env.d.ts
 .fleet
 .idea
 .vscode
-.claude
+.claude/*
+!.claude/agents/
 
 #markdown writers
 .obsidian

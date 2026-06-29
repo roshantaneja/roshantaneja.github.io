@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import styles from '../styles/bench.module.css';
 import homeStyles from '../styles/Home.module.css';
 import Footer from '../components/Footer';
@@ -16,7 +17,7 @@ export default function Bench() {
       </Head>
 
       <main className={styles.main}>
-        <a href="/" className={homeStyles.backLink}>&larr; Back to Home</a>
+        <Link href="/" className={homeStyles.backLink}>&larr; Back to Home</Link>
 
         {/* Hero — Bench-1 */}
         <section className={styles.hero}>

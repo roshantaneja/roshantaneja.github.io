@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import styles from '../styles/About.module.css';
 import Footer from '../components/Footer';
 
@@ -15,7 +16,7 @@ export default function About() {
       </Head>
 
       <main className={styles.main}>
-        <a href="/" className={styles.backLink}>&larr; Back to Home</a>
+        <Link href="/" className={styles.backLink}>&larr; Back to Home</Link>
         <h1 className={styles.title}>About Me</h1>
 
         <section className={styles.section}>
@@ -31,12 +32,12 @@ export default function About() {
             The Tanzania work produced a NeurIPS 2024 paper (Machine Learning for Social
             Impact track) and a pending US patent for dwelling detection in satellite
             imagery. The iceberg tracker is in active development — you can explore it
-            at <a href="/icebergs">/icebergs</a>.
+            at <Link href="/icebergs">/icebergs</Link>.
           </p>
           <p>
-            Outside of research, I write poetry and essays at <a href="/blog">/blog</a>.
+            Outside of research, I write poetry and essays at <Link href="/blog">/blog</Link>.
             I contribute to Cal STAR&apos;s avionics subteam on the Diablo static-fire engine.
-            I build small hardware projects at <a href="/bench">/bench</a>.
+            I build small hardware projects at <Link href="/bench">/bench</Link>.
           </p>
         </section>
 

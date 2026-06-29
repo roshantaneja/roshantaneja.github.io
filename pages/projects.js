@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useState } from 'react';
 import styles from '../styles/projects.module.css';
 import homeStyles from '../styles/Home.module.css';
@@ -44,7 +45,7 @@ export default function Projects({ projects, filters }) {
       </Head>
 
       <main className={styles.main}>
-        <a href="/" className={homeStyles.backLink}>&larr; Back to Home</a>
+        <Link href="/" className={homeStyles.backLink}>&larr; Back to Home</Link>
 
         <h1 className={styles.title}>Projects</h1>
         <p className={styles.subtitle}>

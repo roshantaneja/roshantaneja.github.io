@@ -12,6 +12,7 @@
 import { useState, useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
+import Link from 'next/link'
 import path from 'path'
 import fs from 'fs'
 import styles from '../styles/icebergs.module.css'
@@ -142,9 +143,9 @@ export default function Icebergs({ summary, tracks, forecasts, pageConfig }) {
       </Head>
 
       {/* Back navigation */}
-      <a href="/" className={styles.backLink}>
+      <Link href="/" className={styles.backLink}>
         &larr; Home
-      </a>
+      </Link>
 
       {/* Hero */}
       <section className={styles.hero}>

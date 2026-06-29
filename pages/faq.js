@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import Footer from '../components/Footer';
 import siteData from '../data/site.json';
@@ -59,7 +60,7 @@ export default function Faq() {
       </Head>
 
       <main className={styles.main} style={{ alignItems: 'flex-start' }}>
-        <a href="/" className={styles.backLink}>&larr; Back to Home</a>
+        <Link href="/" className={styles.backLink}>&larr; Back to Home</Link>
 
         <h1 className={styles.title} style={{ textAlign: 'left', marginBottom: '0.5rem' }}>FAQ</h1>
         <p className={styles.description} style={{ textAlign: 'left', marginLeft: 0, marginRight: 0 }}>

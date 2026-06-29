@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
 import styles from '../styles/tanzania.module.css';
@@ -98,7 +99,7 @@ export default function Tanzania({ units, pageConfig }) {
 
       {/* Page header */}
       <header className={styles.header}>
-        <a href="/" className={styles.backLink}>&larr; Back to Home</a>
+        <Link href="/" className={styles.backLink}>&larr; Back to Home</Link>
         <h1 className={styles.headerTitle}>Tanzania Rainwater Harvesting Map</h1>
         <span className={styles.headerSubtitle}>
           {units ? `${units.features.length} units` : ''}
@@ -147,8 +148,8 @@ export default function Tanzania({ units, pageConfig }) {
 // ── Build-time data generation ──────────────────────────────────────────────
 
 /**
- * Parse photo filenames from the interactive map website's photos directory.
- * Filename format: `lat,lng[,unitId].jpg`
+ * Parse photo filenames from the vendored Tanzania photos directory
+ * (public/tanzania/photos). Filename format: `lat,lng[,unitId].jpg`
  */
 function parsePhotoFilenames(photosDir) {
   let files;
@@ -194,12 +195,7 @@ function parsePhotoFilenames(photosDir) {
 }
 
 export async function getStaticProps() {
-  const photosDir = path.join(
-    process.cwd(),
-    'interactive-rainwater-harvesting-map-website',
-    'public',
-    'photos'
-  );
+  const photosDir = path.join(process.cwd(), 'public', 'tanzania', 'photos');
 
   const features = parsePhotoFilenames(photosDir);
 

@@ -42,14 +42,16 @@ export default function Blog({ posts, categories }) {
   return (
     <>
       <div className={styles.page}>
-        <a href="/" className={styles.backLink}>
+        <Link href="/" className={styles.backLink}>
           &larr; Back to Home
-        </a>
+        </Link>
 
         <h1 className={styles.pageTitle}>Blog</h1>
         <p className={styles.pageDesc}>
           Thoughts on tech, poetry, and everything in between.
-          {' '}<a href="/feed.xml" style={{ fontSize: '0.85em' }}>RSS</a>
+          {' '}
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/feed.xml" style={{ fontSize: '0.85em' }}>RSS</a>
         </p>
 
         <div className={styles.toolbar}>
