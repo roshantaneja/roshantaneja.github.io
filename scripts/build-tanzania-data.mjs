@@ -1,7 +1,7 @@
 /**
  * build-tanzania-data.mjs
  *
- * Standalone script to generate data/tanzania/units.geojson from photo filenames.
+ * Standalone script to generate public/tanzania/units.geojson from photo filenames.
  * Run with: node scripts/build-tanzania-data.mjs
  *
  * Photo filename format: `lat,lng,unitId.jpg`  (e.g. `-3.30,36.24,33.jpg`)
@@ -15,12 +15,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
-const PHOTOS_DIR = path.join(
-  ROOT,
-  'interactive-rainwater-harvesting-map-website',
-  'public',
-  'photos'
-);
+const PHOTOS_DIR = path.join(ROOT, 'public', 'tanzania', 'photos');
 
 const OUT_DIR = path.join(ROOT, 'public', 'tanzania');
 const OUT_FILE = path.join(OUT_DIR, 'units.geojson');

@@ -144,7 +144,7 @@ export default function Tty() {
       </Head>
 
       <div className={styles.container}>
-        <p className={styles.hint}>// type &apos;help&apos; for commands</p>
+        <p className={styles.hint}>{"// type 'help' for commands"}</p>
 
         <div
           className={styles.terminal}

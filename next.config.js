@@ -5,7 +5,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    // Allow images from the imgix CDN and local photos
+    // Currently inert: next/image is not used anywhere. Kept for future use.
     remotePatterns: [
       {
         protocol: 'https',

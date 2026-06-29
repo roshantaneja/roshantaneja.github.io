@@ -34,7 +34,7 @@ Add an entry to `data/publications.json`:
 }
 ```
 
-Appears on the homepage Research Ledger tile and the /projects page automatically.
+Appears on the homepage Publications grid and Research Ledger tile automatically.
 
 ## New featured project
 
@@ -42,6 +42,24 @@ Add to `data/featured-projects.json`:
 
 ```json
 { "href": "https://...", "title": "Project Name", "blurb": "One-line description.", "external": true }
+```
+
+## New /projects entry
+
+Add to `data/projects.json` (drives the `/projects` grid):
+
+```json
+{
+  "slug": "my-project",
+  "name": "My Project",
+  "pitch": "One-line description of what it does.",
+  "role": "built solo",
+  "stack": ["nextjs", "python"],
+  "tags": ["web"],
+  "github": "user/repo",
+  "stars": null,
+  "lastPush": null
+}
 ```
 
 ## New research site
@@ -78,4 +96,8 @@ Edit `data/hero.json`.
 
 ## Change impact counter values
 
-Edit `data/impact.json`. Fields: `units`, `countries`, `students`, `papers`.
+Edit `data/impact.json`. Top-level values: `units`, `people`, `raised_usd`. The `counters` array maps each value `key` to its `label` and number `format`.
+
+## After making changes
+
+After any substantive content or code change, keep the repo coherent: follow the **Post-change maintenance protocol** in `CLAUDE.md`. In short, spawn the maintenance subagents defined in `.claude/agents/` — `claudemd-maintainer` (sync `CLAUDE.md`), `docs-syncer` (sync `README.md`, this file, inline docs), and `rot-sweeper` (remove deprecated deps/files/exports) — or carry out the same responsibilities inline, then finish with a successful `npm run build`.
