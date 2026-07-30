@@ -1,1 +1,1 @@
-DrawMyCA Prototype
+DrawMyCA: Multi-District Redistricting tool

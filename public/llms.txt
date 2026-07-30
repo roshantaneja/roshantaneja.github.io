@@ -12,7 +12,7 @@ This site (roshan.codes) is a Next.js 14 app deployed on Vercel; source is publi
 
 ## Research
 
-- [Tanzania — Rainwater for the Maasai](https://roshan.codes/tanzania): Interactive MapLibre timeline of 75 mapped rainwater harvesting unit sites in Northern Tanzania, with Nanja Dam catchment rings and field photography.
+- [Tanzania — Rainwater for the Maasai](https://roshan.codes/tanzania): Year-by-year timeline of the rainwater harvesting deployment in Northern Tanzania, 2020–2024 — fundraising rounds, field visits, unit deployments, and awards. The interactive unit map lives separately at map.roshan.codes.
 - [Icebergs — ICESat-2 Drift Forecasting](https://roshan.codes/icebergs): Calving-front detection from ICESat-2 photon returns, with a Kalman filter projecting 30-day drift corridors and covariance ellipses in the Labrador Sea (55–65°N). In active development — the data currently displayed is mock.
 - [Image Classification on Satellite Imagery for Sustainable Water Harvesting Placement (NHSJS, Dec 2024)](https://nhsjs.com/wp-content/uploads/2024/12/Image-Classification-on-Satellite-Imagery-for-Sustainable-Water-Harvesting-Placement-in-Indigenous-Communities-of-Northern-Tanzania.pdf): The NeurIPS 2024 MLSI award paper — remote sensing and ML for water accessibility in Maasai regions.
 - [Evaluating the Impact of Water Harvesting (NHSJS, Oct 2024)](https://nhsjs.com/wp-content/uploads/2024/10/Evaluating-the-Impact-of-Water-Harvesting.pdf): Measured impact of deployed rainwater harvesting units on Maasai communities in Northern Tanzania.

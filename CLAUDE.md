@@ -65,7 +65,8 @@ Almost all site content lives in `data/`. For a quick-reference on adding conten
 | `data/projects.json` | `/projects` page grid (`pages/projects.js`) |
 | `data/publications.json` | Homepage Publications grid + Research Ledger hero tile |
 | `data/impact.json` | Impact counter values, labels, and number formats |
-| `data/tanzania/page.json` | Tanzania map style URL, initial view, layer defs, Nanja Dam coords/rings |
+| `data/tanzania/page.json` | Tanzania map style URL, initial view, layer defs, Nanja Dam coords/rings — **currently unread**; the map is unmounted from `/tanzania` |
+| `data/tanzania/timelineEvents.js` | The 18 entries on `/tanzania`. `icon` and `mapView` fields are retained but unused (no `react-icons` dependency; no map to fly) |
 | `data/icebergs/page.json` | Icebergs map config, hero copy, stat labels, legend entries |
 | `data/sprint.md` | Single-line sprint label shown in the clock tile |
 | `data/footerPoems.json` | Footer poem rotation lines (shared by Footer.js and tty.js) |
@@ -99,13 +100,31 @@ The same footprints file drives `HemisphereBridge` on the research pages, but th
 
 ### Research Pages (Tanzania & Icebergs)
 
-Both `/tanzania` and `/icebergs` use **MapLibre GL** with `dynamic(() => import(...), { ssr: false })` — MapLibre requires `window` and cannot run server-side. Always keep map components in the SSR-disabled dynamic import boundary.
+`/icebergs` uses **MapLibre GL** with `dynamic(() => import(...), { ssr: false })` — MapLibre requires `window` and cannot run server-side. Always keep map components in the SSR-disabled dynamic import boundary. It reads `data/icebergs/page.json` via `getStaticProps` and passes config slices as props to the map components.
 
-Each page reads its own `page.json` via `getStaticProps` and passes config slices as props to map components. Map style URLs, initial view, colors, and layer definitions all come from these JSON files.
+#### `/tanzania` is a timeline only — the map is unmounted
 
-The Tanzania page is a click/keyboard-driven timeline experience. `ScrollyRail` is a rail of timeline events (no scroll-step `IntersectionObserver`); clicking or pressing Enter/Space on an event sets `activeEventIndex`, which flies the map to coordinates defined in `data/tanzania/timelineEvents.js` and scrolls the active rail item into view via `scrollIntoView`.
+As of the July 2026 rewrite, `pages/tanzania.js` renders a centered, single-column narrative timeline and nothing else. It is a plain static page: **no `getStaticProps`, no MapLibre, no map state.** `components/tanzania/Timeline.jsx` groups `data/tanzania/timelineEvents.js` under year headings and reveals entries on scroll via `IntersectionObserver`. The reveal is progressive enhancement — items are visible by default and only become animatable once the effect sets `data-reveal="ready"`, so the page still renders without JS or with `prefers-reduced-motion`.
 
-Tanzania unit markers are derived at build time: `getStaticProps` in `pages/tanzania.js` reads photo filenames (`lat,lng[,unitId].jpg`) from `public/tanzania/photos/` and writes `public/tanzania/units.geojson` (75 units) as a side effect; the photos are served at `/tanzania/photos/<filename>` by `UnitDrawer.jsx`. `scripts/build-tanzania-data.mjs` performs the same regeneration standalone.
+The end of the timeline hands off to `https://map.roshan.codes` (hardcoded as `MAP_URL` in `pages/tanzania.js`).
+
+> ⚠️ **Unresolved:** `map.roshan.codes` is a Vercel-dashboard alias that historically pointed at `/tanzania`. Until it is repointed at something that actually serves a map, that CTA loops back to this timeline. `pages/faq.js` still says the subdomain redirects to `/tanzania`.
+
+**The map subsystem is retained but orphaned** — no page imports it. These files still work and are kept so the map can be restored or hosted separately; do not treat them as dead code to sweep:
+
+| File | Status |
+|---|---|
+| `components/tanzania/TanzaniaMap.jsx` | orphaned (imports LayerChips + NanjaRings) |
+| `components/tanzania/ScrollyRail.jsx` | orphaned — superseded by `Timeline.jsx` |
+| `components/tanzania/UnitDrawer.jsx` | orphaned |
+| `components/tanzania/LayerChips.jsx`, `NanjaRings.jsx` | used only by the orphaned `TanzaniaMap` |
+| `data/tanzania/page.json` | orphaned (map style, layers, Nanja rings) |
+| `@turf/circle` dependency | reachable only via `NanjaRings` |
+| map/rail/drawer classes in `styles/tanzania.module.css` | retained above the `TIMELINE PAGE` section |
+
+`maplibre-gl` is still a live dependency — `/icebergs` uses it.
+
+Tanzania unit markers are no longer generated at build time. `public/tanzania/units.geojson` (75 units) and the 75 photos under `public/tanzania/photos/` are committed to git; run `node scripts/build-tanzania-data.mjs` to regenerate the geojson from photo filenames (`lat,lng[,unitId].jpg`).
 
 The icebergs page displays Kalman-filter drift forecasts as covariance ellipses (`KalmanCone`). Data is currently mock JSON; `fetch-icespy.mjs` has commented-out real-pipeline fetch logic for when `ICESPY_RELEASE_URL` is set.
 

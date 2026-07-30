@@ -17,7 +17,7 @@
   },
   "routes": [
     { "label": "Home", "href": "/", "group": "Pages" },
-    { "label": "Tanzania Map", "href": "/tanzania", "group": "Pages" },
+    { "label": "Tanzania Timeline", "href": "/tanzania", "group": "Pages" },
     { "label": "Icebergs", "href": "/icebergs", "group": "Pages" },
     { "label": "Bench", "href": "/bench", "group": "Pages" },
     { "label": "Projects", "href": "/projects", "group": "Pages" },

@@ -412,3 +412,334 @@
     display: none;
   }
 }
+
+/* =====================================================================
+   TIMELINE PAGE
+   ---------------------------------------------------------------------
+   /tanzania is now a centered, single-column narrative timeline; the
+   interactive map lives at map.roshan.codes. The map/rail/drawer classes
+   above are retained for TanzaniaMap, ScrollyRail, LayerChips, NanjaRings,
+   and UnitDrawer, which are no longer mounted by pages/tanzania.js.
+
+   Visual direction: field record. Monospace metadata borrowed from the
+   homepage telemetry deck, with --accent-warm (the Tanzania footprint
+   colour) as the through-line running down the page.
+   ===================================================================== */
+
+.timelinePage {
+  flex: 1;
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+}
+
+/* ── Masthead ──────────────────────────────────────────────────────── */
+
+.masthead {
+  padding: 2.5rem 0 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.eyebrow {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  margin-bottom: 1.25rem;
+}
+
+.mastheadTitle {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--fg-0);
+  margin-bottom: 1.25rem;
+  text-wrap: balance;
+}
+
+.lede {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--fg-1);
+  max-width: 34rem;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column-reverse; /* value above label, semantics keep dt first */
+  gap: 0.3rem;
+}
+
+.statValue {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--fg-0);
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+/* ── Timeline ──────────────────────────────────────────────────────── */
+
+.timeline {
+  padding-top: 1rem;
+  position: relative;
+}
+
+/* One continuous spine down the whole timeline, fading out at both ends.
+   Year headings carry an opaque background that breaks it into eras. */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--rule) 4%,
+    var(--rule) 94%,
+    transparent 100%
+  );
+}
+
+.tlYearGroup {
+  position: relative;
+}
+
+.tlYear {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  padding: 1.75rem 0 0.9rem;
+  margin: 0;
+  /* Opaque through most of its height so it cleanly interrupts the spine,
+     then a short fade so the line re-emerges without a hard edge. */
+  background: linear-gradient(
+    to bottom,
+    var(--bg-0) 0%,
+    var(--bg-0) 82%,
+    transparent 100%
+  );
+}
+
+.tlYearGroup:first-child .tlYear {
+  padding-top: 0.5rem;
+}
+
+.tlYearNum {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--fg-0);
+  letter-spacing: 0.02em;
+}
+
+.tlYearCount {
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+  font-weight: 400;
+}
+
+.tlList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.tlEvent {
+  position: relative;
+  display: grid;
+  grid-template-columns: 9px 1fr;
+  gap: 1.35rem;
+  padding: 0 0 2.25rem;
+}
+
+.tlEvent:last-child {
+  padding-bottom: 0.75rem;
+}
+
+/* 9px dot whose centre (4.5px) sits on the 1px spine at left:4px. */
+.tlMarker {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bg-0);
+  box-shadow: inset 0 0 0 1.5px var(--fg-2);
+  margin-top: 0.36rem;
+  transition: box-shadow var(--motion-base) var(--ease-out);
+}
+
+.tlEvent:hover .tlMarker {
+  box-shadow: inset 0 0 0 4.5px var(--accent-warm);
+}
+
+.tlBody {
+  min-width: 0;
+}
+
+.tlDate {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  margin-bottom: 0.4rem;
+}
+
+.tlTitle {
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--fg-0);
+  margin: 0 0 0.45rem;
+  text-wrap: balance;
+}
+
+.tlDesc {
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--fg-1);
+  margin: 0;
+  max-width: 33rem;
+}
+
+/* ── Reveal on scroll ──────────────────────────────────────────────
+   Only active once Timeline.jsx sets data-reveal="ready", so the page
+   renders fully visible without JS. */
+
+.timeline[data-reveal='ready'] .tlEvent {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity var(--motion-slow) var(--ease-out),
+    transform var(--motion-slow) var(--ease-out);
+  transition-delay: var(--tl-delay, 0ms);
+}
+
+.timeline[data-reveal='ready'] .tlEvent[data-visible='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline[data-reveal='ready'] .tlEvent {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ── Map hand-off ──────────────────────────────────────────────────── */
+
+.mapCta {
+  margin-top: 3.5rem;
+  padding: 2rem;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--bg-1);
+}
+
+.mapCtaLabel {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  margin-bottom: 0.85rem;
+}
+
+.mapCtaTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--fg-0);
+  margin: 0 0 0.7rem;
+}
+
+.mapCtaText {
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--fg-1);
+  margin: 0 0 1.5rem;
+  max-width: 32rem;
+}
+
+.mapCtaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.88rem;
+  color: var(--fg-0);
+  padding: 0.7rem 1.15rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--bg-0);
+  transition:
+    border-color var(--motion-base) var(--ease-out),
+    color var(--motion-base) var(--ease-out);
+}
+
+.mapCtaLink span {
+  transition: transform var(--motion-base) var(--ease-out);
+}
+
+.mapCtaLink:hover,
+.mapCtaLink:focus-visible {
+  border-color: var(--accent-warm);
+  color: var(--accent-warm);
+}
+
+.mapCtaLink:hover span,
+.mapCtaLink:focus-visible span {
+  transform: translateX(3px);
+}
+
+/* ── Narrow screens ────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .timelinePage {
+    padding: 1.5rem 1.15rem 3.5rem;
+  }
+
+  .masthead {
+    padding: 1.5rem 0 2.25rem;
+  }
+
+  .stats {
+    gap: 1.5rem 2rem;
+  }
+
+  .tlEvent {
+    gap: 1.1rem;
+    padding-bottom: 2rem;
+  }
+
+  .mapCta {
+    padding: 1.5rem;
+  }
+}

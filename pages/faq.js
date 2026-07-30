@@ -23,7 +23,7 @@ const FAQ = [
   },
   {
     q: "What is map.roshan.codes?",
-    a: "It redirects to /tanzania — the interactive map of deployed rainwater harvesting units in Northern Tanzania.",
+    a: "A shorthand alias for the Tanzania project. The interactive map of deployed rainwater harvesting units is moving there; /tanzania is now the project timeline.",
   },
   {
     q: "Can I read your papers?",
