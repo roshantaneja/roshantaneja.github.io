@@ -1,0 +1,51 @@
+# robots.txt — https://roshan.codes
+#
+# Crawling is welcome. A structured, model-friendly summary of this site
+# lives at /llms.txt (see llmstxt.org). Full URL inventory: /sitemap.xml
+# Atom feed for the blog: /feed.xml
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Explicitly welcome AI crawlers and retrieval agents. This is an affirmative
+# opt-in to both retrieval-time fetching and training use.
+# To opt a crawler out, change its Allow to `Disallow: /`.
+#
+# Note: Google-Extended and Applebot-Extended are AI-use opt-OUT tokens — they
+# do not gate crawling, and permissive is already their default. They are listed
+# only to record intent; the two lines are otherwise inert.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://roshan.codes/sitemap.xml
+
+# Non-standard discovery hint; conforming parsers ignore unknown fields.
+Llms-txt: https://roshan.codes/llms.txt

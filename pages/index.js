@@ -3,6 +3,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Footer from '../components/Footer';
 import MissionControl from '../components/hero/MissionControl';
+import PersonSchema from '../components/PersonSchema';
 import { getGithubActivity } from '../lib/github';
 import fs from 'fs';
 import path from 'path';
@@ -23,6 +24,14 @@ export default function Home({ activity, latestPost, sprint, featuredProjects, p
         <meta name="color-scheme" content="dark" />
         <meta name="theme-color" content={siteData.meta.themeColor} />
         <link rel="icon" href={siteData.meta.favicon} />
+        <link rel="canonical" href={siteData.urls.site} />
+        <link
+          rel="alternate"
+          type="application/atom+xml"
+          title={`${siteData.owner.name} — Blog`}
+          href="/feed.xml"
+        />
+        <PersonSchema />
       </Head>
 
       <main className={styles.main}>

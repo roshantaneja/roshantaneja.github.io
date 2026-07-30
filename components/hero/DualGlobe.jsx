@@ -2,6 +2,12 @@ import styles from '../../styles/mission-control.module.css';
 import LAND_PATHS from '../../data/land-paths.json';
 import footprints from '../../data/research-footprints.json';
 
+// "A", "A and B", "A, B, and C" — keeps the aria-label readable as sites are added.
+const siteList = new Intl.ListFormat('en', {
+  style: 'long',
+  type: 'conjunction',
+}).format(footprints.map((fp) => fp.label));
+
 export default function DualGlobe() {
   const viewBox = "0 0 360 180";
 
@@ -13,7 +19,7 @@ export default function DualGlobe() {
           <svg
             viewBox={viewBox}
             className={styles.globeSvg}
-            aria-label={`World map showing research sites in ${footprints.map((fp) => fp.label).join(' and ')}`}
+            aria-label={`World map showing research sites in ${siteList}`}
             role="img"
           >
             {/* Ocean background */}

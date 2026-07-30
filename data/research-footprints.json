@@ -1,7 +1,7 @@
 [
   {
     "slug": "tanzania",
-    "label": "Tanzania",
+    "label": "Arusha, TZ",
     "lat": -2.0,
     "lng": 35.5,
     "color": "#ff7849",
@@ -21,5 +21,13 @@
     "bridgeLabel": "Polar Excess",
     "bridgeTitle": "Calving in the Labrador Sea",
     "bridgeSub": "ICESat-2 · 55–65°N"
+  },
+  {
+    "slug": "statewide-database",
+    "label": "Berkeley, CA",
+    "lat": 37.8724,
+    "lng": -122.2595,
+    "color": "#dade60",
+    "href": "/blog/24_drawing_communities_on_a_map"
   }
 ]

@@ -1,0 +1,39 @@
+{
+  "_comment": "Schema.org Person fields emitted as JSON-LD by components/PersonSchema.jsx. Name and site URL come from data/site.json. Two deliberate omissions: no 'alumniOf' (that would assert a completed degree; Roshan is a current student, so 'affiliation' alone is correct) and no 'jobTitle' (it implies employment — 'description' carries the research framing instead). sameAs is listed explicitly here because it must contain identity profiles ONLY; deriving it from site.json footerLinks wrongly swept in the source-code repo.",
+  "sameAs": [
+    "https://github.com/roshantaneja",
+    "https://www.linkedin.com/in/roshan-taneja/"
+  ],
+  "description": "Third-year EECS student at UC Berkeley working on geospatial machine learning — Sentinel-2 dwelling detection for rainwater harvesting placement in Northern Tanzania, and ICESat-2 Kalman-filter iceberg drift forecasting in the Labrador Sea.",
+  "image": "/roshan.jpeg",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of California, Berkeley",
+    "sameAs": "https://www.berkeley.edu"
+  },
+  "homeLocation": {
+    "@type": "Place",
+    "name": "Berkeley, California, United States"
+  },
+  "knowsAbout": [
+    "Geospatial machine learning",
+    "Remote sensing",
+    "Satellite imagery object detection",
+    "Sentinel-2",
+    "ICESat-2 photon-counting altimetry",
+    "Kalman filtering",
+    "Rainwater harvesting",
+    "Water accessibility",
+    "Data engineering",
+    "Embedded systems",
+    "Poetry"
+  ],
+  "knowsLanguage": ["en"],
+  "award": [
+    "NeurIPS 2024 Machine Learning for Social Impact — High School Track, 1 of 4 winners",
+    "US Patent Pending 63/703,232 — Object Detection in Satellite Imagery for Optimising Rainwater Unit Placement",
+    "Sole high-school keynote presenter, ML4EO 2024, University of Exeter, UK",
+    "Presidential Volunteer Service Award — Gold Medal",
+    "Melvin Jones Humanitarian Service Award"
+  ]
+}

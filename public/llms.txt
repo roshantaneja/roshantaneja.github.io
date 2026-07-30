@@ -1,0 +1,82 @@
+# Roshan Taneja
+
+> Third-year EECS student at UC Berkeley working on geospatial machine learning — using satellite data to answer questions about water, across two hemispheres.
+
+Roshan Taneja is a third-year Electrical Engineering and Computer Sciences student at UC Berkeley. The research splits across two hemispheres: Sentinel-2 imagery over the Maasai regions of Northern Tanzania, where dwelling-detection models guide the placement of rainwater harvesting units; and ICESat-2 photon-counting altimetry over the polar oceans, where a Kalman-filter pipeline forecasts the drift of calved icebergs in the Labrador Sea.
+
+The Tanzania work won the NeurIPS 2024 Machine Learning for Social Impact high-school track (1 of 4 winners, presented in Vancouver), produced a pending US patent (63/703,232, "Object Detection in Satellite Imagery for Optimising Rainwater Unit Placement"), and was presented as the sole high-school keynote at ML4EO 2024 at the University of Exeter, UK. Two papers were published in the National High School Journal of Science (Oct 2024 and Dec 2024). The research grew out of five years of humanitarian work with the Maasai community: roughly $300K raised and ~550 rainwater harvesting units deployed, cutting daily water collection time from about 9 hours to under 2 for 30,000 people.
+
+Outside research: contributing member of Cal STAR's avionics subteam on the Diablo liquid-bipropellant static-fire ground control stack, hardware builder (Bench-1, an ESP32-S3 telemetry tag with LoRa downlink), competitive programmer, and writer of poetry, short fiction, and essays. Primary languages: Python for ML and data, JavaScript/TypeScript for web, C for embedded, some Java for competitive programming. Not currently taking freelance or consulting work; open to research collaborations via GitHub or LinkedIn.
+
+This site (roshan.codes) is a Next.js 14 app deployed on Vercel; source is public.
+
+## Research
+
+- [Tanzania — Rainwater for the Maasai](https://roshan.codes/tanzania): Interactive MapLibre timeline of 75 mapped rainwater harvesting unit sites in Northern Tanzania, with Nanja Dam catchment rings and field photography.
+- [Icebergs — ICESat-2 Drift Forecasting](https://roshan.codes/icebergs): Calving-front detection from ICESat-2 photon returns, with a Kalman filter projecting 30-day drift corridors and covariance ellipses in the Labrador Sea (55–65°N). In active development — the data currently displayed is mock.
+- [Image Classification on Satellite Imagery for Sustainable Water Harvesting Placement (NHSJS, Dec 2024)](https://nhsjs.com/wp-content/uploads/2024/12/Image-Classification-on-Satellite-Imagery-for-Sustainable-Water-Harvesting-Placement-in-Indigenous-Communities-of-Northern-Tanzania.pdf): The NeurIPS 2024 MLSI award paper — remote sensing and ML for water accessibility in Maasai regions.
+- [Evaluating the Impact of Water Harvesting (NHSJS, Oct 2024)](https://nhsjs.com/wp-content/uploads/2024/10/Evaluating-the-Impact-of-Water-Harvesting.pdf): Measured impact of deployed rainwater harvesting units on Maasai communities in Northern Tanzania.
+- [ML4EO 2024 paper (local PDF)](https://roshan.codes/pubs/ml_eo_paper.pdf): Machine Learning for Earth Observation, University of Exeter, UK.
+- [Rainwater harvesting impact paper (local PDF)](https://roshan.codes/pubs/rhu_impact_paper.pdf): Local copy of the impact study.
+- [icespy](https://github.com/roshantaneja/icespy): Source for the ICESat-2 photon → Kalman drift forecast pipeline powering /icebergs.
+
+## Projects
+
+- [Projects index](https://roshan.codes/projects): Full grid with stacks, roles, and tags.
+- [Statewide Database](https://roshan.codes/projects): Voter-registration ingestion pipeline in Dagster + DuckDB with Pydantic schema validation (backend engineer; no public repo).
+- [Cost of Colonialism (COCO)](https://roshan.codes/projects): OCR + NLP semantic search over 1600s–1800s Dutch East India Company shipping manifests with embedding-based retrieval (data science researcher; no public repo).
+- [executive-triage](https://github.com/roshantaneja/executive-triage): LLM-ranked executive decision PWA — structured prioritization under uncertainty (Next.js, OpenAI, TypeScript).
+- [ed-api](https://github.com/roshantaneja/ed-api): MCP server for Ed Discussion, deployed and used by Berkeley students (Python, FastAPI, MCP).
+- [competitive-programming](https://github.com/roshantaneja/competitive-programming): Advent of Code, CCC, Jane Street, and LeetCode solutions.
+- [rpi_f1_terminal_hud](https://github.com/roshantaneja/rpi_f1_terminal_hud): F1 live telemetry HUD rendered in the terminal on a Raspberry Pi.
+- [Diablo (Cal STAR)](https://github.com/calstar/Diablo-FSW): Static-fire ground control firmware for a liquid bipropellant engine — small contributions; board design credit belongs to the STAR avionics leads.
+- [Bench — hardware lab](https://roshan.codes/bench): Bench-1 ESP32-S3 telemetry tag (BMP390, LIS3DH, LoRa SX1262, microSD, LiPo) and Cal STAR Diablo attribution.
+- [roshan.codes source](https://github.com/roshantaneja/roshantaneja.github.io): This site — Next.js 14, MapLibre GL, CSS Modules, data-driven from JSON.
+
+## Writing
+
+- [Blog index](https://roshan.codes/blog): All posts, filterable by category, tag, and series. Categories in use: Tech, Essay, Poetry, Fiction, Video Essay.
+- [RSS feed](https://roshan.codes/feed.xml): Atom feed of the 20 most recent posts.
+- [WaTER Vision series](https://roshan.codes/series/water-vision): Posts tracking the satellite-ML water harvesting project.
+- [Sitemap](https://roshan.codes/sitemap.xml): Complete URL inventory, including every post, tag, and series page.
+- [Drawing Communities on a Map](https://roshan.codes/blog/24_drawing_communities_on_a_map): Building drawmyca, a browser-based deck.gl tool for painting census blocks into Communities of Interest for California redistricting (Tech, Jun 2026).
+- [Using Sensors for "drop and walk away" on Dagster Pipelines](https://roshan.codes/blog/23_dagster_drop_and_walk_away): Drop a file, walk away, let the pipeline figure it out (Tech, Apr 2026).
+- [Effect of Legislation on Vietnamese Immigration](https://roshan.codes/blog/22_vietnamese_immigration_impacts): From Saigon to Little Saigon — U.S. policy and the integration of Vietnamese refugees, 1970s–80s (Essay, May 2025).
+- [Senior Honors Independent Study Recording](https://roshan.codes/blog/17_SHIS): Talk on object detection over satellite data for water harvesting unit placement in East Africa (Essay, Jan 2025).
+- [Faces of Rainwater Harvesting](https://roshan.codes/blog/3_faces-of-rainwater-harvesting): A collage of 100 faces impacted by rainwater harvesting (Tech, Nov 2024).
+- [An update on WaTER Vision](https://roshan.codes/blog/2_water-vision-introduction): Progress on the satellite ML project and why it matters (Tech, Oct 2024).
+- [How to make a timeline in Next.js](https://roshan.codes/blog/4_timeline_tutorial): Tutorial with code blocks for the homepage timeline (Tech, Nov 2024).
+- [College Applications](https://roshan.codes/blog/1_college-applications): An update on the state of things (Essay, Oct 2024).
+- [How I made this Blogging Platform](https://roshan.codes/blog/0_first-blog-post): The build behind this blog (Essay, Oct 2024).
+- [Really, Luhrmann?](https://roshan.codes/blog/21_thoughts_on_great_gatsby): On The Great Gatsby and the 2013 film adaptation (Essay, Jul 2023).
+- [A Walk Down University Avenue](https://roshan.codes/blog/14_walk_down_university): Short observational essay (Essay, Dec 2022).
+
+## Site
+
+- [Home](https://roshan.codes/): Mission-control hero deck — clock, GitHub activity, research-footprint globe, research ledger, latest post, humanitarian impact counters.
+- [About](https://roshan.codes/about): Research summary, awards, humanitarian work, interests.
+- [FAQ](https://roshan.codes/faq): Direct answers on research, collaborations, Cal STAR, languages, and how the site is built.
+- [Resume (PDF)](https://roshan.codes/resume/Roshan%20Taneja%20Resume.pdf): Current CV.
+- [GitHub](https://github.com/roshantaneja): Code, mostly Python and TypeScript.
+- [LinkedIn](https://www.linkedin.com/in/roshan-taneja/): Preferred contact for research collaborations.
+
+## Optional
+
+- [America (Recycling Alan Ginsberg)](https://roshan.codes/blog/19_america): Essay, Mar 2023.
+- [Chill Times with Mason Maywood](https://roshan.codes/blog/15_mason_maywood): Video essay, Jan 2023.
+- [Poetry collection series](https://roshan.codes/series/poetry-collection): Ballads, haiku, sonnets, villanelles, and limericks written 2022–2023.
+- [An Ode to Mold](https://roshan.codes/blog/18_ode_to_mold): Poetry, Feb 2023.
+- [The Misanthrope](https://roshan.codes/blog/16_the_misanthrope): Fiction, Feb 2023.
+- [The Nightmare of Dissolution](https://roshan.codes/blog/20_nightmare_of_dissolution): Fiction, May 2023.
+- [Myself in 10 Sentences](https://roshan.codes/blog/13_self_in_10_sentences): Fiction, Nov 2022.
+- [Haikus About Myself](https://roshan.codes/blog/11_haikus_about_self): Poetry, Aug 2022.
+- [A letter from my Future Self — A Ballad](https://roshan.codes/blog/10_letter_ballad): Poetry, Jun 2022.
+- [Zoom Bedroom — A Limerick](https://roshan.codes/blog/12_zoom_bedroom_limerick): Poetry, Sep 2022.
+- [Quiet Classroom — A Limerick](https://roshan.codes/blog/9_quiet_classroom_limerick): Poetry, May 2022.
+- [Envelopes — A Haiku](https://roshan.codes/blog/8_envelopes): Fiction, Apr 2022.
+- [The Beginning — A Villanelle](https://roshan.codes/blog/7_the_beginning_villanelle): Poetry, Apr 2022.
+- [Pandemonium — A Sonnet](https://roshan.codes/blog/6_pandemonium_sonnet): Poetry, Apr 2022.
+- [Maasai Water Projects summary deck (PDF)](https://roshan.codes/Summary%20Presentation%20Maasai%20Water%20Projects%20April%202023.pdf): April 2023 presentation.
+- [GIS presentation (PDF)](https://roshan.codes/docs/GIS_Prezo.pdf): Geospatial methods deck.
+- [tty](https://roshan.codes/tty): Terminal easter egg with rotating footer poems.
+- [Privacy](https://roshan.codes/privacy): Analytics and data handling.

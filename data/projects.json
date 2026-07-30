@@ -57,7 +57,7 @@
   {
     "slug": "competitive-programming",
     "name": "competitive-programming",
-    "pitch": "Daily algorithmic puzzles and advent calendar solutions.",
+    "pitch": "[AOC, CCC, Jane St, LeetCode]: Daily algorithmic puzzles and advent calendar solutions.",
     "role": "built solo",
     "stack": ["python", "java", "c++"],
     "tags": ["fun"],

@@ -42,9 +42,10 @@ Without these the view counter silently returns `null` — the site works fully 
 
 ## Architecture
 
-This is a **Next.js 14 personal portfolio** site deployed on Vercel at `roshan.codes`. It is mostly statically generated (`getStaticProps`), with two server-side exceptions:
+This is a **Next.js 14 personal portfolio** site deployed on Vercel at `roshan.codes`. It is mostly statically generated (`getStaticProps`), with three server-side exceptions:
 
-- `pages/feed.xml.js` — uses `getServerSideProps` to stream XML directly
+- `pages/feed.xml.js` — uses `getServerSideProps` to stream an Atom feed (20 newest posts) directly
+- `pages/sitemap.xml.js` — same streaming pattern; emits 51 URLs (10 static routes + every post, tag, and series page) derived from `lib/posts-index` at request time, so new content needs no code change
 - `pages/api/view/[slug].js` — edge-runtime Upstash Redis view counter
 
 The `output: 'export'` option was intentionally removed from `next.config.js` to keep API routes and ISR alive on Vercel. All images are local assets under `public/` — blog media renders as plain `<img>`/`<video>` from relative paths, and profile/figure assets are static files in `public/`. `next/image` is not imported anywhere, so the `images` block in `next.config.js` (imgix `remotePatterns` + `unoptimized: true`) is currently inert.
@@ -57,7 +58,8 @@ Almost all site content lives in `data/`. For a quick-reference on adding conten
 |---|---|
 | `data/site.json` | Owner name, resume URL, GitHub/LinkedIn, nav routes, footer links, ⌘K palette, console easter egg |
 | `data/hero.json` | All 6 hero tile labels, Berkeley timezone config, sprint prefix, blog URL prefix |
-| `data/research-footprints.json` | Globe dots on hero map, HemisphereBridge cards on research pages |
+| `data/research-footprints.json` | Globe dots on hero map; HemisphereBridge cards on research pages (only entries that declare `bridgeLabel`/`bridgeTitle`/`bridgeSub`) |
+| `data/person.json` | schema.org `Person` JSON-LD emitted by `components/PersonSchema.jsx` on `/` and `/about` |
 | `data/land-paths.json` | Landmass paths drawn on the hero globe (`DualGlobe`) |
 | `data/featured-projects.json` | Homepage Featured Projects grid |
 | `data/projects.json` | `/projects` page grid (`pages/projects.js`) |
@@ -91,7 +93,9 @@ Blog posts render YouTube links as embedded iframes and `.mp4` image srcs as `<v
 
 `MissionControl` renders a 6-tile telemetry deck on the homepage. Each tile is a standalone component under `components/hero/`. Tiles collapse gracefully when data is unavailable (e.g. `GithubActivity` hides when `activity === null`).
 
-`DualGlobe` renders a dot for each entry in `data/research-footprints.json` — adding a new research site means adding one JSON entry, with no component edits. Same footprints file drives `HemisphereBridge` on the research pages.
+`DualGlobe` renders a dot for each entry in `data/research-footprints.json` — adding a new research site means adding one JSON entry, with no component edits. It is a flat equirectangular SVG (`x = lng + 180`, `y = 90 - lat`), not two globes. Three sites are currently plotted: Tanzania (`--accent-warm`), Labrador Sea (`--accent-cool`), and Berkeley (`#4ade80`, the Statewide Database work, linking to `/projects`).
+
+The same footprints file drives `HemisphereBridge` on the research pages, but that component **only renders entries that declare `bridgeTitle`** — a footprint meant just for the hero globe (no dedicated page) is skipped instead of rendering an empty card. `styles.bridge` is a fixed `1fr auto 1fr` grid built around exactly two cards flanking the divider, so promoting a third footprint to a bridge card requires a CSS change as well.
 
 ### Research Pages (Tanzania & Icebergs)
 
@@ -112,6 +116,21 @@ The icebergs page displays Kalman-filter drift forecasts as covariance ellipses 
 - **⌘K command palette** — route list sourced from `data/site.json` routes array. When adding a new page, add it to `data/site.json`, not to `_app.js`.
 - **Console manifest easter egg** — content sourced from `data/site.json` console fields.
 - Vercel `<Analytics>` and `<SpeedInsights>` are injected in `_app.js` and individually on some pages (duplication is harmless).
+
+### Machine discoverability (crawlers, LLMs, retrieval agents)
+
+Four pieces, two hand-maintained and two generated:
+
+| Path | Kind | Notes |
+|---|---|---|
+| `public/llms.txt` | **hand-written** | [llmstxt.org](https://llmstxt.org) format — H1, summary blockquote, prose bio, then link sections (`Research`, `Projects`, `Writing`, `Site`, `Optional`). **Drifts as content is added — update it when adding posts, projects, or publications.** |
+| `public/robots.txt` | **hand-written** | Allows all crawlers, disallows `/api/`, names the major AI crawlers explicitly, and points at `/sitemap.xml`. Hardcodes the production domain. |
+| `pages/sitemap.xml.js` | generated | Derived from `lib/posts-index` — self-maintaining. |
+| `components/PersonSchema.jsx` | generated | schema.org `Person` JSON-LD from `data/person.json` + `data/site.json`, rendered on `/` and `/about`. `sameAs` must hold identity profiles only (not the source repo). |
+
+`/` and `/about` also carry `rel="canonical"`, and `/` advertises the Atom feed via `rel="alternate"`. No Open Graph or Twitter Card tags exist anywhere yet.
+
+Known data inconsistencies worth fixing when touching these: `data/site.json` `owner.linkedin` is `"roshantaneja"` but the real profile URL used in `footerLinks` (and in `person.json`) is `linkedin.com/in/roshan-taneja/`; and unit counts read 550 in `data/impact.json` + `data/featured-projects.json` but 500 in the `about.js` / `faq.js` prose.
 
 ### Styling
 

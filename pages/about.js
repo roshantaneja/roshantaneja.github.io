@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/About.module.css';
 import Footer from '../components/Footer';
+import PersonSchema from '../components/PersonSchema';
+import siteData from '../data/site.json';
 
 export default function About() {
   return (
@@ -13,6 +15,8 @@ export default function About() {
           content="Roshan Taneja — UC Berkeley EECS student, geospatial ML researcher, humanitarian engineer."
         />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href={`${siteData.urls.site}/about`} />
+        <PersonSchema />
       </Head>
 
       <main className={styles.main}>

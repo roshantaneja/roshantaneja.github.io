@@ -82,6 +82,27 @@ Add to `data/research-footprints.json`:
 
 A dot appears on the homepage globe and a card appears in HemisphereBridge on all other research pages automatically. Then create `pages/my-site.js` for the actual page and pass `currentSlug="my-site"` to `<HemisphereBridge>`.
 
+**Globe dot only (no dedicated page).** Omit the three `bridge*` fields and point `href` at an existing route. HemisphereBridge skips entries without `bridgeTitle`, so you get the dot without an empty card — this is how the Berkeley / Statewide Database footprint works:
+
+```json
+{
+  "slug": "statewide-database",
+  "label": "Berkeley, CA",
+  "lat": 37.8724,
+  "lng": -122.2595,
+  "color": "#4ade80",
+  "href": "/projects"
+}
+```
+
+Pick a `color` distinct from the ones already in use (`#ff7849`, `#7dd3fc`, `#4ade80`). Note that `styles.bridge` is a fixed `1fr auto 1fr` grid built for exactly two cards flanking the divider, so adding a **third** full bridge entry needs a CSS change in `styles/icebergs.module.css` too.
+
+## Update the machine-readable summary (`public/llms.txt`)
+
+`public/llms.txt` is **hand-written** and will drift. After adding a post, project, or publication, add the matching line to the relevant section (`Research`, `Projects`, `Writing`, `Site`, or `Optional`). Rules: absolute `https://roshan.codes/...` URLs, blog slugs keep their numeric prefix (`/blog/23_dagster_drop_and_walk_away`), percent-encode spaces, and every section body must be a bullet list of links — prose only goes in the intro block below the blockquote.
+
+`public/robots.txt` is also hand-written but rarely needs edits. `/sitemap.xml` and the `Person` JSON-LD regenerate themselves; no action needed.
+
 ## Change sprint label
 
 Edit the single line in `data/sprint.md`.

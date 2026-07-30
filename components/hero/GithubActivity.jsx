@@ -1,5 +1,6 @@
 import styles from '../../styles/mission-control.module.css';
 import heroConfig from '../../data/hero.json';
+import siteConfig from '../../data/site.json';
 
 export default function GithubActivity({ activity }) {
   // activity is null → tile is hidden (handled by parent)
@@ -24,8 +25,16 @@ export default function GithubActivity({ activity }) {
     }
   }
 
+  const githubUrl = `https://github.com/${siteConfig.owner.github}`;
+
   return (
-    <div className={styles.tile}>
+    <a
+      className={styles.tile}
+      href={githubUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View GitHub profile"
+    >
       <p className={styles.tileLabel}>{heroConfig.github.label}</p>
       <div className={styles.tileBody}>
         <div
@@ -47,6 +56,6 @@ export default function GithubActivity({ activity }) {
         </div>
         {pushText && <p className={styles.ghMeta}>{pushText}</p>}
       </div>
-    </div>
+    </a>
   );
 }
